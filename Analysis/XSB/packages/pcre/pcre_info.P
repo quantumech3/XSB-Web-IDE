@@ -28,5 +28,5 @@
 
 pcre_info(support, 'no').
 pcre_info(libdir,  '').
-pcre_info(ccflags, '-g -O2').
+pcre_info(ccflags, '').
 pcre_info(ldflags, '').

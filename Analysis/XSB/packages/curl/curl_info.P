@@ -26,7 +26,7 @@
 
 :- export curl_info/2.
 
-curl_info(support, 'yes').
+curl_info(support, 'no').
 curl_info(libdir,  '').
-curl_info(ccflags, '-g -O2').
+curl_info(ccflags, '').
 curl_info(ldflags, '').
