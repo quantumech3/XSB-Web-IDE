@@ -487,7 +487,7 @@ shared:WARNING: emcc: cannot find library "nsl"
 error: undefined symbol: readline
 warning: To disable errors for undefined symbols use `-s ERROR_ON_UNDEFINED_SYMBOLS=0`
 Error: Aborting compilation due to previous errors
-shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmpIFOrst.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
+shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmpP56A4C.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
 configure:5493: $? = 1
 configure: failed program was:
 | /* confdefs.h */
@@ -554,7 +554,7 @@ shared:WARNING: emcc: cannot find library "nsl"
 error: undefined symbol: sched_get_priority_max
 warning: To disable errors for undefined symbols use `-s ERROR_ON_UNDEFINED_SYMBOLS=0`
 Error: Aborting compilation due to previous errors
-shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmpjceQCG.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
+shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmppe70Jc.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
 configure:5513: $? = 1
 configure: failed program was:
 | /* confdefs.h */
@@ -644,7 +644,7 @@ shared:WARNING: emcc: cannot find library "nsl"
 error: undefined symbol: sched_get_priority_max
 warning: To disable errors for undefined symbols use `-s ERROR_ON_UNDEFINED_SYMBOLS=0`
 Error: Aborting compilation due to previous errors
-shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmp69CMLK.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
+shared:ERROR: '/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmp5cdMKw.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)
 configure:5542: $? = 1
 configure: failed program was:
 | /* confdefs.h */
@@ -1332,7 +1332,6 @@ configure: failed program was:
 configure:6897: result: no
 configure:6897: checking for jni_md.h
 configure:6897: result: no
-configure:7117: updating cache /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/config.cache
 configure:7166: creating ./config.status
 
 ## ---------------------- ##
@@ -1369,6 +1368,7 @@ config.status:: creating windows/MSVC_mkfile.mak
 config.status:: creating windows64/MSVC_mkfile.mak
 config.status:: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
 config.status:: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status:: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h is unchanged
 config.status:: creating windows/xsb_config.h
 config.status:: windows/xsb_config.h is unchanged
 config.status:: creating windows/xsb_debug.h
@@ -1378,6 +1378,7 @@ config.status:: windows64/xsb_config.h is unchanged
 config.status:: creating windows64/xsb_debug.h
 config.status:: windows64/xsb_debug.h is unchanged
 config.status:: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+config.status:: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h is unchanged
 
 ## ---------------- ##
 ## Cache variables. ##
