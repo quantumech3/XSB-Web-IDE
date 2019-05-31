@@ -1,0 +1,17 @@
+You have 2 options when building with Emscripten, you can either just compile to JS and WASM, or you can compile to JS, WASM and also generate an HTML webpage that automatically runs the WASM
+You specify which option you want by either setting the output target to 'X.html' (for the HTML file) or 'X.js' (for the WASM code and JS binding)
+
+Emscripten is built off of Clang, so basically all arguements you can use with gcc you can use with Emscriptens 'emcc' as well.
+'emcc' <=> 'gcc' <=> 'clang'
+
+If you want to link a static library with Emscripten, you need to make sure that the library was built to LLVM Bitcode instead of Assembly
+LLVM IR turns into bitcode just as Assembly turns into object code
+
+To compile to LLVM bitcode instead of assembly, you need to use the '-emit-llvm' flag. Obviously, you also need to use the '-c' flag to specify that you do not want to link. 
+Only Clang has this capability so you cannot use GCC to do this.
+Past compiling to LLVM Bitcode instead of object code, you can just archive the Bitcode together into 1 big library with the 'ar' command as normal
+
+You can easily run an Emscripten HTML file by invoking the 'emrun <file.html>' command
+	Note that if you do this, then you also have to compile the HTML file with the '--emrun' linker flag
+
+Emscripten simulates a file system that you can access from your compiled C/C++ code using the normal libc stdio API.

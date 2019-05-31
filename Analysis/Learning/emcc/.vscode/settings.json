@@ -1,0 +1,6 @@
+{
+	"C_Cpp.default.includePath": [
+		"C:\\emsdk\\emscripten\\1.38.30\\system\\include"
+	],
+	"git.postCommitCommand": "push"
+}

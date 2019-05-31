@@ -1,0 +1,1320 @@
+@node Memory allocation
+@chapter Memory allocation
+
+@cpindex Memory allocation
+@cpindex Allocate memory
+The ability to allocate memory of on at compile-time
+unknown amount is an important feature for most
+programs.
+
+@cpindex Virtual address space
+@cpindex Virtual memory-address
+@cpindex Memory, virtual address space
+@cpindex @sc{RAM}
+@cpindex Swap space
+On modern operating systems, processes do not have
+direct access to the memory. Only the operating system
+kernel does. Instead, the process have virtual
+memory-addresses, that the kernel maps to either,
+real @sc{RAM}, swap space (disc backed), file segments,
+or zeroes.
+
+@cpindex Forks
+@cpindex Exec:s
+@cpindex Process image
+@cpindex Memory sharing, private memory
+@cpindex Private memory sharing
+@cpindex Memory deduplication
+@cpindex Deduplication memory
+Memory for a process is either allocated programmatically,
+or when the process forks (is created) or exec:s
+(changes process image.) The operating system kernel is
+typically configured to share a much memory between processes
+as possible. For example, and a process forks, they will
+share their memory rather than duplicate the memory, and
+the kernel will only remap the memory when the processs'
+memory content diverges. It is also possible to allocate
+memory in such a way that processes can share it. so that
+updates from one process influences the other processes.
+
+@cpindex Virtual address space segments
+@cpindex Memory segments
+@cpindex Segments, virtual address space
+A process' virtual address space is divided into segments.
+There are three important segments.
+
+@table @i
+@item text segment
+@cpindex Segment, text
+@cpindex Text segment
+@cpindex @code{.text}
+@cpindex Instructions
+@cpindex Static constants
+@cpindex Constants, static
+@cpindex Literals
+@cpindex Strings, literals
+When a process exec:s this segment is allocated.
+It contains instructions, static constants, and
+literals.
+@item BSS segment
+@cpindex Segment, @sc{BSS}
+@cpindex @sc{BSS} segment
+@cpindex @code{.bss}
+@cpindex Block Started by Symbol
+@cpindex Uninitialised variables
+@cpindex Zero variables
+@cpindex Global variables
+@cpindex Static variables
+When a process exec:s this segment is allocated.
+It contains all global and static variables that are
+initialised to zero or lacks explicit initialisation.
+On some systems this segment is merged into the data
+segment. @sc{BSS} is an acronym: `Block Started by Symbol'.
+@item data segment
+@cpindex Segment, data
+@cpindex Data segment
+@cpindex @code{.data}
+@cpindex Heap
+@cpindex Memory, heap
+@cpindex Global variables
+@cpindex Static variables
+When a process exec:s this segment is allocated.
+It is filled all global and static variables that
+are not covered by the @sc{BSS} segment.
+This segment's lower end is fixed, and its upper end
+is unfixed; it can be resized. Any part of the segment
+that is a result of it being resized, is referred to
+as the heap.
+@item stack segment
+@cpindex Segment, stack
+@cpindex Stack segment
+@cpindex Memory, stack
+@cpindex Call-stack
+@cpindex Automatic variables
+This segment contains a@footnote{Program stack's can
+created programmtically, hence `a' rather than `the'.}
+program stack. A program stack contains information
+required to return after a function call, and automatic
+variables. Depending on the platform and the function
+it may also contain arguments passed in function calls
+and return values. It grows as the stack grows, but
+it does not shrink as the stack shrinks.
+@end table
+
+The layout of the segments is machine dependent and
+operating system. However, a common@footnote{Keeping
+in mind this cannot be assumed practice, and that
+it is in fact different between systems.} layout is
+have the text segment (as other fixed segments) start
+at 0, and end at some positive address. The text
+segment is then followed by the @sc{BSS} segment, and
+the data segment. The stack segment however, grows
+from the highest address (@math{-1} on two's
+complement-machines) downwards. The process cannot
+allocate any more memory when the allocation would
+require the data segment to be grown to such an
+extent that it would overlap with the stack segment.
+
+In C there are multiple ways to allocate memory.
+@itemize @bullet{}
+@item
+@cpindex Global variables
+@cpindex Static allocations
+Variables that are declared outside functions are
+called global variables@footnote{Even if that are
+declared with @code{static}. In this context,
+@code{static} is only use to hide object from
+other translation units.}. These are stored either
+in the @sc{BSS} segment or in the data segment, depending
+on their initialisation. Pointer are stored as
+numerical values, and the content is stored in the
+text segment. Arrays however are not stored, but
+their content is. In the data segment (or in the
+@sc{BSS} segment if the elements are zeroes.) These
+allocations are known as @i{static allocations}.
+@item
+@cpindex @code{static}
+@cpindex Static variables
+@cpindex Static allocations
+Variables that are declared inside functions, with
+@code{static}, are stored just like global variables.
+These are called static variables, and remain unchanged
+between function calls, and only change in statements
+other than the declaration statement. These allocations
+are known as @i{static allocations}.
+@item
+@cpindex @code{auto}
+@cpindex Local variables
+@cpindex Automatic variables
+@cpindex Automatic allocations
+@cpindex Stack-allocations
+Variables that are declared inside functions (these
+are known as local variables), without @code{static},
+but with @code{auto}, are called automatic variables.
+These are stored in the stack segment, and are
+deallocated when the function returns. Local variables
+that are declared with neither @code{static},
+@code{auto}, or @code{register} are often though of
+as automatic; however, the compiler may choose to
+add @code{register}. These allocations are known as
+@i{automatic allocations}@footnote{Known in some other
+programming languages as stack-allocations.}.
+@item
+@cpindex @code{register}
+@cpindex Register variables
+Variables that are declared with @code{register}
+are not stored in any segment. They lack addresses
+and stored as CPU registers.
+@item
+@cpindex Dynamic allocation
+@cpindex Heap-allocation
+Using system calls, a heap can be created, where
+new allocations are stored. These are often allocated
+with the function @code{malloc}, and are known as
+@i{dynamic allocations}@footnote{Known in some other
+programming languages as heap-allocations.}.
+@end itemize
+
+@cpindex Dynamic allocation
+@cpindex Automatic allocations
+@cpindex Stack-allocations
+Some compilers, including @sc{GCC}, provide two
+additional ways to allocate memory.
+@table @asis
+@item @i{Variable-length arrays}
+@cpindex Variable-length arrays
+@cpindex Arrays, variable-length
+A simple example of variable-length arrays, available
+with some compilers, is
+@example
+void function(size_t n)
+@{
+  int array[n];
+  /* ... */
+@}
+@end example
+Variable-length arrays have a special property:
+they may be deallocated before the function returns.
+In fact, they are returned once the variable becomes
+invisible, this causes the follow example to work
+without every exhausting the memory.
+@example
+void function(size_t n)
+@{
+  for (;;)
+    @{
+      int array[n];
+      /* ... */
+    @}
+@}
+@end example
+
+@item @code{alloca}
+@fnindex alloca
+@code{alloca} is a special function that is implement
+by the compiler. It increases the stack and returns
+a pointer to the beginning of the new part of the stack.
+It is similar to variable-length arrays, however the
+allocation is not deallocated before the function returns.
+This causes the follow example to eventually exhaust
+the memory.
+@example
+void function(size_t n)
+@{
+  for (;;)
+    @{
+      int pointer* = alloca(n);
+      /* ... */
+    @}
+@}
+@end example
+@end table
+
+Both of these allocation-methods are both automatic
+and dynamic.
+
+@ifnottex
+Etymology: (Alloca)te!
+@end ifnottex
+@iftex
+Etymology: @b{Alloca}te!
+@end iftex
+
+@cpindex Memory exhaustion
+Memory allocation functions return @code{NULL} if
+the process cannot allocate more memory. However,
+under typical configurations of the operating system
+kernel, memory allocation functions can return
+succesfully, even if the system's memory is exhausted.
+The process's virtual address space is not exhausted,
+so it thinks it can allocate the memory, but the machines
+memory is exhausted, so once the process tries to write
+to the memory, the kernel cannot map the virtual address
+to a real address. When this happens the process is
+killed by a @code{SIGSEGV}@footnote{Segmentation
+violation, also known as segmentation fault.} signal.
+
+
+@menu
+* The alloca function::                       Dynamically allocate automatically freed memory.
+* Basic memory allocation::                   Basic functions for dynamic memory allocation.
+* Aligned memory allocation::                 Dynamic memory allocation with alignment.
+* Resizing memory allocations::               How to resize memory allocations.
+* Efficient stack-based allocations::         Improving the performance using constrained allocation methods.
+* Resizing the data segment::                 How to change the size of the heap.
+* Memory locking::                            How to prevent pages from being swapped out.
+@end menu
+
+
+
+@node The alloca function
+@section The @code{alloca} function
+
+@cpindex Dynamic allocation
+@cpindex Automatic allocations
+@cpindex Stack-allocations
+@fnindex alloca
+@hfindex alloca.h
+The function @code{void* alloca(size_t n)} appears
+on multiple systems: 32V, @sc{PWB}, @sc{PWB}.2,
+3@sc{BSD}, 4@sc{BSD}, and @sc{GNU}. It has been
+added to @command{slibc}, without require on
+feature-test macros, despite not being standardised
+(for instance, it does not appear in @sc{POSIX}).
+This function is however not portable, and will not
+be made available if @code{_PORTABLE_SOURCE} or
+@code{_LIBRARY_HEADER} is defined. @code{alloca}
+is defined in the header file @file{<alloca.h>}.
+
+@code{void* alloca(size_t n)} is similar to the
+function @code{malloc}. It allocates a contiguous
+space of usable memory of @code{n} bytes, and
+returns a pointer, which points to the beginning
+of the allocated memory. However, the allocate
+appears on the stack rather than the heap, and
+it automatically deallocated when the function
+whence the call to @code{alloca} was made. Be
+cause if this, @code{alloca} is implemented as
+a macro --- using an intrinsic function provided
+by the compiler --- rather than as a function.
+
+You must not try to free the memory explicitly,
+with a function like @code{free}, or resize it
+with a function like @code{realloc}. Just like
+arrays and pointers to automatic variables,
+memory management functions cannot operate
+memory allocated with @code{alloca}.
+
+@cpindex Memory exhaustion
+Unlike @code{malloc}, @code{alloca} does not detect
+memory exhaustion, thus it will never return
+@code{NULL}. However, it is likely that the process
+will receive @code{SIGSEGV}@footnote{Segmentation
+violation, also known as segmentation fault.} if it
+tries to access memory that could not be allocated,
+or, depending on the kernel's configuration, before
+it returns.
+
+On typical kernels and kernel configurations,
+@code{alloca} and @code{malloc} will handle memory
+exhaustion identically.
+
+Undefined behaviour may be invoked if @code{alloca}
+is called within a function call. The behaviour
+depends on the machine, the compiler, and
+optimisations. You should avoid code similar to
+@example
+#define strdupa(string)  \
+  strcpy(alloca((strlen(string) + 1) * sizeof(char)), string)
+@end example
+
+@code{alloca} has its restrictions --- limited lifetime,
+cannot be explicitly deallocated, not growable, and
+not shrinkable ---  but it can also be advantageous
+because:
+@itemize
+@item
+Results in cleaner code because it is deallocated
+automatically.
+@item
+It does not waste any space on metainformation
+required for bookkeeping.
+@item
+Uses a faster memory allocation mechanism.
+@end itemize
+
+
+
+@node Basic memory allocation
+@section Basic memory allocation
+
+@cpindex Dynamic allocation
+@fnindex malloc
+@hfindex malloc.h
+@hfindex stdlib.h
+@code{malloc} is the most general, and most commonly
+used memory allocation facility. It is also the most
+portable, and is available on all environments. There
+are three important function that were introduced in
+@sc{ANSI}@tie{}C. These are defined in @file{<malloc.h>},
+however, they should be included via @file{<stdlib.h>}
+whihc includes @file{<malloc.h>}.
+
+@table @code
+@item void* malloc(size_t size)
+@fnindex malloc
+@cpindex Memory allocation without initialisation
+@cpindex Initialised memory allocation
+Allocates a contiguous memory block of @code{size}
+bytes of usuable memory, and returns a pointer
+to the beginning of the usable part of the allocation.
+The function allocates some extra memory for internal
+bookkeeping, this part of the allocation is located
+before the address the returned pointer points.
+Allocated memory is uninitialised.
+
+If the memory cannot be allocated (due to memory
+exhaustion,) @code{NULL} is returned and @code{errno}
+is set to @code{ENOMEM}.
+
+It is implementation defined whether this function
+returns @code{NULL} or a unique pointer, that can
+be passed to @code{free}, if @code{size} is zero.
+In @code{slibc}, @code{NULL} is returned.
+
+The allocation be grown or shrinked at any time.
+See @ref{Resizing memory allocations}.
+
+In @sc{ISO}@tie{}C, @code{void*} can be implicitly
+casted to any other pointer type. Therefore it
+is sufficient (and preferable) to write
+@example
+int* ten_integers = malloc(10 * sizeof(int));
+@end example
+You do not need to write
+@example
+int* ten_integers = (int*)malloc(10 * sizeof(int));
+@end example
+
+@tpindex max_align_t
+@sc{ISO}@tie{}C11 defines the auxiliary data
+type @code{max_align_t} which has a size
+the guaranteed to be a power-of-two (possibly
+1) multiple of the size of any intrinsic data
+type defined by the C standard. Its size a
+suitable aligment for any pointer type.
+@code{malloc}, even before C11, uses its size
+for the aligment of all pointers it returns.
+@code{malloc(n)} is hence equivalent to
+@code{memalign(sizeof(max_align_t), n)}. If
+you want the pointer to be unaligned, call
+@code{memalign(1, n)}.
+
+@ifnottex
+Etymology: (M)emory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{M}emory @b{alloc}ation.
+@end iftex
+
+@item void* calloc(size_t count, size_t size)
+@fnindex calloc
+@cpindex Memory allocation without uninitialisation
+@cpindex Uninitialised memory allocation
+This function is similar to @code{malloc}, but
+it initialises the memory to zeroes. The only
+other difference is that it as two parameters
+rather than one.
+
+If @code{count * size} would overflow, @code{NULL}
+is returned and @code{errno} is set to @code{ENOMEM}.
+Otherwise, @code{p = calloc(a, b)} is identical to
+@example
+p = malloc(a * b);
+memset(p, 0, a * b);
+@end example
+
+@ifnottex
+Etymology: (C)leared memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{C}leared memory @b{alloc}ation.
+@end iftex
+
+@item void free(void* ptr)
+@fnindex free
+@cpindex Deallocate memory
+@cpindex Memory, deallocation
+Memory that is dynamically allocated (without
+automatic deallocation) can be deallocated with
+this function. It is required that @code{ptr}
+is the pointer returned by the function that
+allocated it. It must not have been incremented.
+Undefined behaviour is invoked otherwise. One
+exception is @code{NULL}, if @code{ptr} is
+@code{NULL} nothing happens.
+
+Do not try to free a pointer twice, undefined
+behaviour. Neither should you try to pass
+pointers to variables to this function, nor
+pointers to functions, arrays, @code{main}'s
+parameters, memory-mapped I/O, or memory allocate
+with @code{alloca}. Function-like macros that allocate
+memory with @code{alloca}@footnote{There functions
+that will return pointers allocate with @code{alloca},
+because the memory would be deallocated at the
+return. Thus, such facilities are implemented as
+function-like macros.} specifies so, and their
+name typically end with an `a', which is not too
+common for other functions.
+
+Be also cautious of whether functions return
+statically allocated arrays, which must not
+be deallocated, or dynamically allocated
+memory, which should be deallocated to avoid
+memory leaks.
+
+@ifnottex
+Etymology: (Free) allocated memory.
+@end ifnottex
+@iftex
+Etymology: @b{Free} allocated memory.
+@end iftex
+@end table
+
+@file{<malloc.h>} also includes four unportable
+functions.
+@table @code
+@item void* zalloc(size_t size)
+@fnindex zalloc
+This function is similar to @code{calloc}, but it
+only has one parameter. Assuming @code{a} and
+@code{b} are two @code{size_t}:s, and @code{a * b}
+does not overflow, @code{calloc(a, b)} is identical
+to @code{zalloc(a * b)}. @code{zalloc} is a
+@command{klibc} extension.
+
+@ifnottex
+Etymology: (Z)eroed memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{Z}eroed memory @b{alloc}ation.
+@end iftex
+
+@item void* mallocz(size_t size, int clear)
+@fnindex mallocz
+This function is similar to @code{malloc}. However,
+it has one second parameter. If the second parameter
+is non-zero, the allocated memory will be initialised.
+
+@code{mallocz(size, clear)} is identical to
+@code{(clear ? zalloc : malloc)(size)}.
+
+This function is a Plan 9 from Bell Labs extension
+and requires @code{_PLAN9_SOURCE}.
+
+@ifnottex
+Etymology: (M)emory (alloc)ation with potential (z)eroing.
+@end ifnottex
+@iftex
+Etymology: @b{M}emory @b{alloc}ation with potential @b{z}eroing.
+@end iftex
+
+@item void cfree(void* ptr, ...)
+@fnindex cfree
+This function is an obsolete function provided
+by a number of C standard library implementations.
+It has been replaced by @code{free}. @code{cfree}
+is identical to @code{free}.
+
+Different implementions of @command{libc}, defined
+@code{cfree} with different numbers of parameters,
+therefore @code{slibc} declares @code{cfree} as
+a variadic function, and ignores all but the first
+argument.
+
+@item size_t malloc_usable_size(void* ptr)
+@fnindex malloc_usable_size
+@cpindex Retrieve allocation size
+@cpindex Allocation size, retrieve
+This function returns the number of usable bytes
+for a pointer. If @code{ptr} is @code{NULL}, zero
+is returned. It has the same restrictions as the
+function @code{free}.
+
+@code{malloc_usable_size(malloc(n))} returns
+@code{n} (and allocates memory in the process.)
+
+This function is a @sc{GNU} extension and requires
+@code{_GNU_SOURCE}.
+
+@ifnottex
+Etymology: (@code{malloc})-subsystem: user-(usable size) of allocation.
+@end ifnottex
+@iftex
+Etymology: @b{malloc}-subsystem: user-@b{usable size} of allocation.
+@end iftex
+@end table
+
+@hfindex slibc-alloc.h
+@command{slibc} provides a number of additional
+methods for memory management. These are defined
+in the header file @file{<slibc-alloc.h>}. They
+are available even if @code{_SLIBC_SOURCE} is not
+defined, but it is required that neither
+@code{_PORTABLE_SOURCE} nor @code{_LIBRARY_HEADER}
+is defined.
+
+@table @code
+@item void fast_free(void* ptr)
+@fnindex fast_free
+@cpindex Deallocate memory
+@cpindex Memory, deallocation
+This function is similar to @code{free}, but it
+is guaranteed not to clear the memory. However,
+the operating system kernel may still clear the
+memory.
+
+@ifnottex
+Etymology: (Fast) variant of (@code{free}).
+@end ifnottex
+@iftex
+Etymology: @b{Fast} variant of @b{free}.
+@end iftex
+
+@item void secure_free(void* ptr)
+@fnindex secure_free
+@cpindex Deallocate memory
+@cpindex Memory, deallocation
+This function is similar to @code{free}, but it
+is guaranteed that the memory is clear.
+
+@ifnottex
+Etymology: (Secure) variant of (@code{free}).
+@end ifnottex
+@iftex
+Etymology: @b{Secure} variant of @b{free}.
+@end iftex
+
+@item void FAST_FREE(void* ptr)
+@fnindex FAST_FREE
+@cpindex Deallocate memory
+@cpindex Memory, deallocation
+This clears deallocates a pointer with
+@code{fast_free}, and sets @code{ptr} to
+@code{NULL}.
+
+@ifnottex
+Etymology: Macro version of (@code{fast_free}).
+@end ifnottex
+@iftex
+Etymology: Macro version of @b{fast_free}.
+@end iftex
+
+@item void SECURE_FREE(void* ptr)
+@fnindex SECURE_FREE
+@cpindex Deallocate memory
+@cpindex Memory, deallocation
+This clears deallocates a pointer with
+@code{secure_free}, and sets @code{ptr} to
+@code{NULL}.
+
+@ifnottex
+Etymology: Macro version of (@code{secure_free}).
+@end ifnottex
+@iftex
+Etymology: Macro version of @b{secure_free}.
+@end iftex
+
+@item size_t allocsize(void* ptr)
+@fnindex allocsize
+@cpindex Retrieve allocation size
+@cpindex Allocation size, retrieve
+This function returns the number of usable bytes
+for a pointer. If @code{ptr} is @code{NULL}, zero
+is returned. It has the same restrictions as the
+function @code{free}.
+
+@code{allocsize(malloc(n))} returns @code{n}
+(and allocates memory in the process.)
+
+@ifnottex
+Etymology: Memory (alloc)ation (size).
+@end ifnottex
+@iftex
+Etymology: Memory @b{alloc}ation @b{size}.
+@end iftex
+@end table
+
+
+
+@node Aligned memory allocation
+@section Aligned memory allocation
+
+@cpindex Memory alignment
+@cpindex Pointer alignment
+@cpindex Aligned pointers
+@hfindex stdlib.h
+@hfindex malloc.h
+The library provides dynamic memory allocation
+methods that returns pointers with specified
+aligments. This can improve performance, but
+can waste some memory.
+
+@table @code
+@item void* memalign(size_t boundary, size_t size)
+@fnindex memalign
+This function is similar to @code{malloc},
+but it has an extra parameter as its first
+parameter: the alignment of the return pointer.
+If @code{boundary} is not a power of two,
+@code{NULL} is returned and @code{errno} is
+set to @code{EINVAL}.
+
+This function is declared in the header file
+@file{<malloc.h>}, you should however include
+it via @file{<stdlib.h>} for portability.
+It was deprecated by @sc{ISO}@tie{}C11, and
+@code{aligned_alloc} was recommended.
+
+It is unspecified how the function works. The
+implemention in @code{slibc} will allocate a bit
+of extra memory and shift the returned pointer
+so that it is aligned.
+
+As an extension, derived from @sc{GNU}, the
+allocated memory can be deallocate (with
+@code{free},) or reallocated. Note however, if
+it is reallocated with @code{realloc}, it is
+unspecified whether the pointer is guaranteed
+to be aligned if a new pointer is returned.
+In @code{slibc}, the alignment may be lost.
+This behaviour has been chosen because aligned
+memory allocation is uncommon in practice.
+
+@ifnottex
+Etymology: (Mem)ory (align)ment.
+@end ifnottex
+@iftex
+Etymology: @b{Mem}ory @b{align}ment.
+@end iftex
+
+@item int posix_memalign(void** ptrptr, size_t boundary, size_t size)
+@fnindex posix_memalign
+This function is similar to @code{malloc},
+but it has two extra parameters as its first
+parameters:
+@table @code
+@item ptrptr
+Output parameter for the pointer. Instead
+of return a pointer, it is stored to
+@code{*ptrptr} upon successful completion.
+@item boundary
+The alignment of the return pointer.
+@end table
+
+Additionally, the function returns zero
+upon successful completion, or on error,
+an @code{errno}-error code, rather than
+setting the value of @code{errno}. Like
+@code{malloc}, it can fail due to memory
+exhaustion. In this can, @code{ENOMEM} is
+returned. But it can also fails, and
+returns @code{EINVAL}, if @code{boundary}
+is not a multiple of @code{sizeof(void*)},
+or if @code{boundary / sizeof(void*)} is
+not a power of two.
+
+This function is declared in the header file
+@file{<malloc.h>}, you should however include
+it via @file{<stdlib.h>} for portability.
+It is only available if
+@code{(_POSIX_C_SOURCE >= 200112L) || (_XOPEN_SOURCE >= 600)}.
+
+It is unspecified how the function works. The
+implemention in @code{slibc} will allocate a bit
+of extra memory and shift the returned pointer
+so that it is aligned.
+
+As an extension, derived from @sc{GNU}, the
+allocated memory can be deallocate (with
+@code{free},) or reallocated. Note however, if
+it is reallocated with @code{realloc}, it is
+unspecified whether the pointer is guaranteed
+to be aligned if a new pointer is returned.
+In @code{slibc}, the alignment may be lost.
+This behaviour has been chosen because aligned
+memory allocation is uncommon in practice.
+
+@code{posix_memalign(&p, b, n)} is equivalent to
+@code{(p = memalign(b, n))? 0: errno}, except
+@code{posix_memalign} fails if its second argument
+is not a multiple of @code{sizeof(void*)}, and
+@code{errno} is unspecified.
+
+@ifnottex
+Etymology: (@sc{POSIX})-extension: (mem)ory alignment.
+@end ifnottex
+@iftex
+Etymology: @b{POSIX}-extension: @b{mem}ory alignment.
+@end iftex
+
+@item void* valloc(size_t size)
+@fnindex valloc
+This function is similar to @code{memalign}.
+@code{valloc(n)} is equivalent to
+@code{memalign@-(sysconf(_SC_PAGESIZE), n)};
+the alignment is the memory page size.
+
+This function is declared in the header file
+@file{<malloc.h>}, you should however include
+it via @file{<stdlib.h>} for portability.
+It is only available if either of @code{_BSD_SOURCE},
+@code{_XOPEN_SOURCE_EXTENDED}, or @code{__SLIBC_SOURCE}
+is defined. It has been deprecated, and it is
+recommended to use @code{memalign} or
+@code{posix_memalign} instead.
+
+It is unspecified how the function works. The
+implemention in @code{slibc} will allocate a bit
+of extra memory and shift the returned pointer
+so that it is aligned.
+
+As an extension, derived from @sc{GNU}, the
+allocated memory can be deallocate (with
+@code{free},) or reallocated. Note however, if
+it is reallocated with @code{realloc}, it is
+unspecified whether the pointer is guaranteed
+to be aligned if a new pointer is returned.
+In @code{slibc}, the alignment may be lost.
+This behaviour has been chosen because aligned
+memory allocation is uncommon in practice.
+
+@ifnottex
+Etymology: Whole-(v)irtual-memory-page aligned memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: Whole-@b{v}irtual-memory-page aligned memory @b{alloc}ation.
+@end iftex
+
+@item void* pvalloc(size_t size)
+@fnindex pvalloc
+This function is almost identical to
+@code{valloc}, but @code{size} is rounded
+up to the next multiple of the page size,
+cause it allocate only whole pages, except
+that the @code{slibc} implementation, among
+other implementations, allocates extra memory
+before the returned pointer for bookkeeping
+and pointer shifting for alignment.
+
+This function is declared in the header file
+@file{<malloc.h>}, you should however include
+it via @file{<stdlib.h>} for portability.
+It has been deprecated, and it is recommended
+to use @code{memalign} or @code{posix_memalign}
+instead.
+
+It is unspecified how the function works. The
+implemention in @code{slibc} will allocate a bit
+of extra memory and shift the returned pointer
+so that it is aligned.
+
+As an extension, derived from @sc{GNU}, the
+allocated memory can be deallocate (with
+@code{free},) or reallocated. Note however, if
+it is reallocated with @code{realloc}, it is
+unspecified whether the pointer is guaranteed
+to be aligned if a new pointer is returned.
+In @code{slibc}, the alignment may be lost.
+This behaviour has been chosen because aligned
+memory allocation is uncommon in practice.
+
+@ifnottex
+Etymology: Whole-(p)age-allocation variant of (@code{valloc}).
+@end ifnottex
+@iftex
+Etymology: Whole-@b{p}age-allocation variant of @b{valloc}.
+@end iftex
+
+@item void* aligned_alloc(size_t boundary, size_t size)
+@fnindex aligned_alloc
+This function is identical to @code{memalign},
+except it the memory can be deallocated in
+all C standard library implementations.
+
+This function is declared in the header file
+@file{<malloc.h>}, you should however include
+it via @file{<stdlib.h>} for portability.
+It was added by @sc{ISO}@tie{}C11.
+
+It is unspecified how the function works. The
+implemention in @code{slibc} will allocate a bit
+of extra memory and shift the returned pointer
+so that it is aligned.
+
+A recommended practice, to align pointers is:
+@example
+p = aligned_alloc(sizeof(*p), n)
+@end example
+
+@ifnottex
+Etymology: (Aligned) memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{Aligned} memory @b{alloc}ation.
+@end iftex
+@end table
+
+
+@hfindex slibc-alloc.h
+@command{slibc} provides a number of additional
+methods for memory management. These are defined
+in the header file @file{<slibc-alloc.h>}. They
+are available even if @code{_SLIBC_SOURCE} is not
+defined, but it is required that neither
+@code{_PORTABLE_SOURCE} nor @code{_LIBRARY_HEADER}
+is defined.
+
+@table @code
+@item void* rememalign(void* ptr, size_t boundary, size_t size, enum rememalign_mode mode)
+@fnindex rememalign
+@tpindex rememalign_mode
+@tpindex enum rememalign_mode
+@cpindex Reallocating memory
+@cpindex Memory, reallocation
+@cpindex Resizing memory allocations
+@cpindex Memory, resize allocations
+This function is similar to @code{realloc}, however its 
+behaviour and pointer alignment can be tuned.
+
+The pointer's alignment is specified by the parameter
+@code{boundary}. It must be a power of two, lest the
+function fail with @code{errno} set to @code{EINVAL}.
+@code{boundary} is not validated before it is necessary,
+that is, it will only be validated if a new allocation
+is created.
+
+The function's behaviour is tuned with the @code{mode}
+paarameter. It may be any combination of
+@table @code
+@item REMEMALIGN_CLEAR
+@lvindex REMEMALIGN_CLEAR
+If the allocation shrunk, the disowned memory is cleared.
+If @code{ptr} is deallocated, it will be cleared.
+@item REMEMALIGN_INIT
+@lvindex REMEMALIGN_INIT
+If the allocation growed, the newly available memory
+is zero-initialised. If @code{REMEMALIGN_MEMCPY} is not
+used but a new allocation was created, the entire
+allocation is zero-initialised.
+@item REMEMALIGN_MEMCPY
+@lvindex REMEMALIGN_MEMCPY
+If a new allocation is created, and @code{ptr} is not
+@code{NULL}, the data from the old allocation is copied
+over to the new allocation.
+@end table
+
+If @code{mode} contains any other set bit that those
+set by @code{REMEMALIGN_CLEAR}, @code{REMEMALIGN_INIT},
+or @code{REMEMALIGN_MEMCPY}, the function fails with
+@code{errno} set to @code{EINVAL}.
+
+Upon successful completion, @code{errno} is set to zero
+if @code{NULL} is returned.
+
+@ifnottex
+Etymology: (Re)allocate (mem)ory and (align).
+@end ifnottex
+@iftex
+Etymology: @b{Re}allocate @b{mem}ory and @b{align}.
+@end iftex
+
+@item void* naive_realloc(void* ptr, size_t boundary, size_t size)
+This function is discussed in @ref{Resizing memory allocations}.
+
+@item void* falloc(void* ptr, size_t* ptrshift, size_t boundary, size_t old_size, size_t new_size, enum falloc_mode mode)
+This function is discussed in @ref{Resizing memory allocations}.
+@end table
+
+
+
+@node Resizing memory allocations
+@section Resizing memory allocations
+
+@cpindex Reallocating memory
+@cpindex Memory, reallocation
+@cpindex Resizing memory allocations
+@cpindex Memory, resize allocations
+Since @sc{ANSI}@tie{}C, it has been possible
+to resize memory allocations. In true C fashion
+this should be avoided, and linked lists should
+be used instead. However, this is useful because
+it simplifies to the program code.
+
+@table @code
+@item void* realloc(void* ptr, size_t size)
+@hfindex stdlib.h
+@hfindex malloc.h
+@sc{ANSI}@tie{}C defines this function to be
+defined in the header file @file{<stdlib.h>},
+although some implementations, including
+@code{slibc} defines it in the non-standard
+header file @file{<malloc.h>} which is included
+by @file{<stdlib.h>}.
+
+This function resizes a memory allocation,
+and if necessary creates a new allocation.
+
+@code{realloc}'s behaviour depends on the
+arguments passed:
+@table @asis
+@item @code{ptr == NULL}
+The behaviour is identical to that of @code{malloc}.
+@item @code{ptr != NULL && size == 0}
+The behaviour is identical to that of @code{free},
+and @code{NULL} is returned, 
+@item Otherwise
+The allocation created by the function call that
+return @code{ptr} will be resized so that its
+usable area is @code{size} bytes. It up to the
+implemention to select whether the reallocation
+is necessary. @command{slibc} will always resize
+unless the @code{size} equals the old size.
+However, if a reallocation is impossible,
+the function will use @code{malloc} to create
+a new allocation, copy the data from the old
+to the new allocation, and then deallocate
+the old allocation.
+
+The function will return @code{ptr} if a
+reallocation was possible, a unique pointer
+a new allocation was required, or @code{NULL}
+on error. On @code{NULL}, @code{errno} will
+be set to @code{ENOMEM} (there was a memory
+exhaustion,) and @code{ptr} is untouched.
+
+An appropriate way to use @code{realloc} is
+@example
+void* p;
+size_t psize, new_size;
+/* ... */
+@{
+  void* old = p;
+  p = realloc(p, new_size);
+  if (p == NULL)
+    @{
+      p = old;
+      goto fail; /* @w{@xrm{}Where `@xtt{}p@xrm{}` is cleaned up.@xtt{}} */
+    @}
+  psize = new_size;
+@}
+@end example
+
+@ifnottex
+Etymology: Memory (realloc)ation.
+@end ifnottex
+@iftex
+Etymology: Memory @b{realloc}ation.
+@end iftex
+@end table
+
+Note that if @code{ptr == NULL && size == 0},
+the behaviour is identical to that of @code{malloc},
+not @code{free}. It is implemention defined,
+whether @code{NULL} or a unique pointer, that
+can be passed to @code{free}, is returned. In
+the @command{slibc} implementation, @code{NULL}
+is returned, and thus, the behaviour is also
+identical to that of @code{free}.
+@end table
+
+@hfindex slibc-alloc.h
+@command{slibc} provides a number of additional
+methods for memory management. These are defined
+in the header file @file{<slibc-alloc.h>}. They
+are available even if @code{_SLIBC_SOURCE} is not
+defined, but it is required that neither
+@code{_PORTABLE_SOURCE} nor @code{_LIBRARY_HEADER}
+is defined.
+
+@table @code
+@item void* crealloc(void* ptr, size_t size)
+@fnindex crealloc
+This function is similar to @code{realloc},
+but it clears the disowned area when the allocation
+shrinks, clears the old allocation when a new
+allocation is created, and zero-initialises the
+newly available memory when the allocation has
+grown.
+
+@ifnottex
+Etymology: (C)lear and (realloc)ate memory.
+@end ifnottex
+@iftex
+Etymology: @b{C}lear and @b{realloc}ate memory.
+@end iftex
+
+@item void* fast_realloc(void* ptr, size_t size)
+@fnindex fast_realloc
+This function is similar to @code{realloc},
+but it does not clear the disowned area when the
+allocation shrinks, it does not clears the old
+allocation when a new allocation is created,
+and does not  zero-initialise the newly available
+memory when the allocation has grown. The
+operating system kernel may still clear the
+disowned memory area or the old allocation.
+
+@ifnottex
+Etymology: (Fast) variant of (@code{realloc}).
+@end ifnottex
+@iftex
+Etymology: @b{Fast} variant of @b{realloc}.
+@end iftex
+
+@item void* secure_realloc(void* ptr, size_t size)
+@fnindex secure_realloc
+This function is similar to @code{realloc},
+but it clears the disowned area when the allocation
+shrinks, clears the old allocation when a new
+allocation is created, but does not zero-initialise
+the newly available memory when the allocation has
+grown.
+
+@ifnottex
+Etymology: (Secure) variant of (@code{realloc}).
+@end ifnottex
+@iftex
+Etymology: @b{Secure} variant of @b{realloc}.
+@end iftex
+
+@item void* custom_realloc(void* ptr, size_t size, int clear_old, int clear_new, int clear_free)
+@fnindex custom_realloc
+This function is similar to @code{realloc}, but
+@itemize @bullet{}
+@item
+if @code{clear_old} is non-zero, the disowned area
+of the allocation is clear, if the allocation has
+shrunk,
+@item
+if @code{clear_new} is non-zero, the newly available
+memory is not zero-initialised, if the allocation has
+grown, and
+@item
+if @code{clear_free} is non-zero, the old allocation
+is cleared, if a new allocation is created.
+@end itemize
+The operating system kernel may still clear the
+disowned memory area or the old allocation, if
+the parameters specifies that the memory should
+not be cleared.
+
+@ifnottex
+Etymology: (Custom)isable variant of (@code{realloc}).
+@end ifnottex
+@iftex
+Etymology: @b{Custom}isable variant of @b{realloc}.
+@end iftex
+
+@item void* extalloc(void* ptr, size_t size, enum extalloc_mode mode)
+@fnindex extalloc
+@tpindex extalloc_mode
+@tpindex enum extalloc_mode
+@lvindex EXTALLOC_MALLOC
+@lvindex EXTALLOC_CLEAR
+This function is similar to @code{realloc}, but if it
+creates a new allocation, data is not copied over from
+the old allocation to the new allocation. If it is
+necessary to create a new allocation, @code{errno} is
+set to zero and @code{NULL} is returned, unless
+@code{mode & EXTALLOC_MALLOC}. This funtion will not
+initialise new memory, additionally, it will only clear
+old memory --- disowned, or the old allocation --- if
+@code{mode & EXTALLOC_CLEAR}. @code{EXTALLOC_MALLOC}
+and @code{EXTALLOC_CLEAR} can be combined freely.
+
+@ifnottex
+Etymology: (Ext)end memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{Ext}end memory @b{alloc}ation.
+@end iftex
+
+@item void* naive_realloc(void* ptr, size_t boundary, size_t size)
+@fnindex naive_realloc
+This is a naïve bare-bones version of @code{realloc},
+intended to be used to implement @code{realloc}-functions.
+It behaviour is identical to that if @code{fast_realloc},
+with a new exceptions:
+@itemize @bullet{}
+@item
+Its behaviour is undefined if @code{ptr} is @code{NULL}.
+@item
+Its behaviour is undefined if @code{size} equals the old
+allocation size.
+@item
+Its behaviour is undefined if @code{size} is zero.
+@item
+It will never free @code{ptr}.
+@item
+The alignment of new pointers can be specified.
+If and only if, a new allocation is created, the
+returned pointer's alignment will be @code{boundary}.
+@end itemize
+
+@ifnottex
+Etymology: (Naïve) variant of (@code{realloc}).
+@end ifnottex
+@iftex
+Etymology: @b{Naïve} variant of @b{realloc}.
+@end iftex
+
+@item void* naive_extalloc(void* ptr, size_t size)
+@fnindex naive_extalloc
+This is a naïve bare-bones version of @code{extalloc},
+intended to be used to implement @code{extalloc}-functions.
+This fucntion is identical to that of @code{naive_realloc},
+except it will return @code{NULL} with @code{errno} set to
+zero, if it is not possible to perform the shrink or grow
+without creating new pointer.
+
+@ifnottex
+Etymology: (Naïve) variant of (@code{extalloc}).
+@end ifnottex
+@iftex
+Etymology: @b{Naïve} variant of @b{extalloc}.
+@end iftex
+
+@item void* falloc(void* ptr, size_t* ptrshift, size_t boundary, size_t old_size, size_t new_size, enum falloc_mode mode)
+@fnindex falloc
+@tpindex falloc_mode
+@tpindex enum falloc_mode
+@cpindex Memory alignment
+@cpindex Pointer alignment
+@cpindex Aligned pointers
+This function is similar to @code{realloc}, but it does
+not do internal bookkeeping. It can allocates, deallocates,
+or reallocates memory. The created allocation may not be
+inspected, deallocated, or reallocated with any other
+function than this function. @code{falloc} can be used to
+minimise the memory footprint.
+
+This function has six parameters:
+@table @code
+@item void* ptr
+The old pointer, @code{NULL} if a new shall be created.
+@item size_t* ptrshift
+Pointer that is used to keep track of the pointer's
+shift for alignment. @code{NULL} if the shift shall not
+be tracked. If this is the case, @code{falloc} cannot
+be used to reallocate or deallocate an allocation,
+unless the pointer is unaligned (@code{alignment} is
+zero or one).
+@item size_t boundary
+The aligment of both the new and old pointer, zero 
+or one if it should not be aligned.
+@item size_t old_size
+The old allocation size, zero if a new shall be created.
+@item size_t new_size
+The new allocation size, zero if it shall be freed.
+@item enum falloc_mode mode
+Any combination of
+@table @code
+@item FALLOC_CLEAR
+@lvindex FALLOC_CLEAR
+If the allocation shrunk, the disowned memory is cleared.
+If @code{ptr} is deallocated, it will be cleared.
+@item FALLOC_INIT
+@lvindex FALLOC_INIT
+If the allocation growed, the newly available memory
+is zero-initialised. If @code{FALLOC_MEMCPY} is not
+used but a new allocation was created, the entire
+allocation is zero-initialised.
+@item FALLOC_MEMCPY
+@lvindex FALLOC_MEMCPY
+If a new allocation is created, and @code{ptr} is not
+@code{NULL}, the data from the old allocation is copied
+over to the new allocation.
+@end table
+@end table
+
+The function will return the old pointer if it has been
+shrunk or grown, a new pointer if a new allocation was
+required (the allocation is deallocated and @code{ptr}
+has become an invalid pointer,) @code{NULL}, with
+@code{errno} set to zero, if the @code{ptr} is deallocated
+and no new allocation was created (@code{new_size} is zero),
+or if @code{new_size} and @code{old_size} is zero and
+@code{ptr} is @code{NULL}, or @code{NULL} with errno set
+to describe the error on failure.
+
+On error, @code{errno} is set to either @code{EINVAL},
+if the input arguments invalid, or @code{ENOMEM} if the
+process could not allocate the requested memory.
+
+If @code{new_size} is zero and @code{ptr} is @code{NULL},
+nothing happens, but @code{errno} is set to zero and
+@code{NULL} is returned.
+
+If @code{new_size} is non-zero, @code{old_size} is zero,
+and @code{ptr} is not @code{NULL} or if @code{new_size}
+and @code{old_size} is non-zero, and @code{ptr} is
+@code{NULL}, @code{errno} is set to @code{EINVAL} and
+@code{NULL} is returned.
+
+If @code{new_size} and @code{old_size} is zero and
+@code{ptr} is not @code{NULL}, @code{errno} is set to
+@code{EINVAL} and @code{NULL} is returned.
+
+If @code{new_size} is zero, @code{old_size} is non-zero,
+and @code{ptr} is not @code{NULL}, @code{ptr} is deallocated,
+and @code{NULL} is returned with @code{errno} set to zero.
+The memory cleared before it is deallocated if
+@code{mode & FALLOC_CLEAR}.
+
+If @code{new_size} is non-zero, @code{old_size} is zero,
+and @code{ptr} is @code{NULL}, a new allocation is created
+of @code{new_size} bytes. It will be zero-initialised if
+@code{mode & FALLOC_INIT}.
+
+If @code{new_size} and @code{old_size} is non-zero and
+@code{ptr} is not @code{NULL}, @code{ptr} is reallocated.
+if the allocation is shrunk, the disowned area is cleared
+if @code{mode & FALLOC_CLEAR}. Newly available memory is
+zero-initialised if @code{mode & FALLOC_INIT}. If a new
+allocation is required, the data from the old allocation
+is only copied over to the new allocation if
+@code{mode & FALLOC_MEMCPY}. If
+@code{(mode & FALLOC_INIT) && !(mode & FALLOC_MEMCPY)},
+the entire allocation will be cleared.
+
+@ifnottex
+Etymology: (F)ast memory (alloc)ation.
+@end ifnottex
+@iftex
+Etymology: @b{F}ast memory @b{alloc}ation.
+@end iftex
+@end table
+
+
+
+@node Efficient stack-based allocations
+@section Efficient stack-based allocations
+
+TODO obstack.h
+
+
+
+@node Resizing the data segment
+@section Resizing the data segment
+
+TODO brk, sbrk
+
+
+
+@node Memory locking
+@section Memory locking
+
+TODO mlock, munlock, mlockall, munlockall
+

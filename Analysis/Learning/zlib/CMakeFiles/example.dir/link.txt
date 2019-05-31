@@ -1,0 +1,1 @@
+C:\emsdk\emscripten\1.38.30\emcc.bat    @CMakeFiles\example.dir\objects1.rsp  -o example.js @CMakeFiles\example.dir\linklibs.rsp

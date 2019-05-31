@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/minigzip.c
+zlib.h
+C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/zlib.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+sys/types.h
+-
+sys/mman.h
+-
+sys/stat.h
+-
+fcntl.h
+-
+io.h
+-
+stdlib.h
+-
+unix.h
+-
+windows.h
+-
+
+C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/zconf.h
+windows.h
+-
+sys/types.h
+-
+unistd.h
+-
+unixio.h
+-
+
+C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/zlib.h
+zconf.h
+C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/zconf.h
+

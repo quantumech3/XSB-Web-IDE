@@ -1,0 +1,81 @@
+In C/C++, it is possible to declare a method and then overload it during linking with a definition from another C file. In Emscripten, you are able to do the same thing with C/C++ files, except you can also overload C declarations in JS as well! This allows you to define methods that can be used across both JS and C.
+
+Emscripten links C code with JS at compile time.
+
+\emsdk\emscripten\1.38.30\src\system.js contains alot of the function definitions for Emscriptens standard library
+
+Do the following to declare and define JS methods that can be invoked in C/C++
+
+main.cpp:
+// Copy function definitions into the global scope 'LibraryManager.library'.
+// LibraryManager.library is a global space that contains all C and JS definitions..
+// ..at link time.
+// That is why you are able to call 'UTF8ToString()' (assuming that you used the proper..
+// ..linker flags at compilation of course)
+mergeInto(LibraryManager.library, {
+	// Definition for jsPrint_int() C method
+	jsPrint_int: function(a) {
+		console.log(a);
+	},
+	// Definition for jsPrint_str() C method
+	jsPrint_str: function(a) {
+		console.log(UTF8ToString(a));
+	}
+})
+
+cLib.js
+// Copy function definitions into the global scope 'LibraryManager.library'.
+// LibraryManager.library is a global space that contains all C and JS definitions..
+// ..at link time.
+// That is why you are able to call 'UTF8ToString()' (assuming that you used the proper..
+// ..linker flags at compilation of course)
+mergeInto(LibraryManager.library, {
+	// Definition for jsPrint_int() C method
+	jsPrint_int: function(a) {
+		console.log(a);
+	},
+	// Definition for jsPrint_str() C method
+	jsPrint_str: function(a) {
+		console.log(UTF8ToString(a));
+	}
+})
+
+Build command:
+emcc main.cpp -o index.html --js-library cLib.js -s EXTRA_EXPORTED_RUNTIME_METHODS="["UTF8ToString"]"
+
+To link against a JS library, use the following flag:
+`--js-library`
+
+Make a function in a JS library replace itsself initially and after each call
+// This example shows how you can implement closures into a JS library
+// '<funcName>__postset': '<newFuncName>'
+// Sets the function 'closure()' to a new version of itsself after every call
+mergeInto(LibraryManager.library, {
+// '<funcName>__postset': '<newFuncName>'
+	closure__postset: '_closure()',
+	closure: function()
+	{
+		// Set initial value of a
+		var a = 0;
+		
+		// Create new method with an incremented 'a' in its local scope
+		_closure = function(){a++; return a}
+	}
+})
+
+cLib.js
+#include <stdio.h>
+
+// Since this example is written in a CPP file, all externals must be declared as "C"
+extern "C"
+{
+	int closure();
+}
+
+// Invoke the example JS methods
+int main()
+{
+	printf("%d\n", closure()); // Prints 1
+	printf("%d\n", closure()); // Prints 2
+	printf("%d\n", closure()); // Prints 3
+}
