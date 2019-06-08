@@ -1,0 +1,53 @@
+
+
+            INSTALLATION SUMMARY
+            --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Sat Jun  8 16:16:16 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Normal/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  gcc  -O3 -fno-strict-aliasing  -Wall -pipe
+  builtin.c will be built with: 		  gcc  -O3 -fno-strict-aliasing  -Wall -pipe
+  loader_xsb.c will be built with: 		  gcc  -O3 -fno-strict-aliasing  -Wall -pipe
+  emuloop.c will be built with: 		  gcc  -O3 -fno-strict-aliasing  -Wall -pipe
+  tr_utils.c will be built with:		  gcc  -O3 -fno-strict-aliasing  -Wall -pipe
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  yes
+  Demand support:                                 no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:                                  /usr/bin/javac
+  Support for InterProlog's native engine:   	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:                yes
+  POSIX wildcard matching libraries:              yes
+
+  Curl support (HTTP protocol library):           no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching):           no
+
+
