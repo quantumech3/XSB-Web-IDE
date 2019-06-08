@@ -24,7 +24,7 @@
 
 CXX = /usr/include/emsdk/emscripten/1.38.30/em++
 GCC = /usr/include/emsdk/emscripten/1.38.30/emcc
-CFLAGS= -O4  
+CFLAGS= -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
 LDFLAGS=  -lm -ldl -Wl,-export-dynamic -lpthread 
 PROLOG = ../../bin/xsb
 DEFFILE=

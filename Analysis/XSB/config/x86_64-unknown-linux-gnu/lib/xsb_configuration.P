@@ -42,10 +42,10 @@ windows_os64 :- fail.
 
 xsb_configuration(compiler, '/usr/include/emsdk/emscripten/1.38.30/emcc').
 %% xsb_configuration(cpp, '@xsbCPP@').
-xsb_configuration(compiler_flags, ' -O4  ').
+xsb_configuration(compiler_flags, ' -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP').
 xsb_configuration(loader_flags, '  -lm -ldl -Wl,-export-dynamic -lpthread').
 
-xsb_configuration(build_date, '2019-05-29').
+xsb_configuration(build_date, '2019-06-07').
 
 /* Packages */
 

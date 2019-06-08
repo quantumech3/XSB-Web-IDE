@@ -1,0 +1,257 @@
+Script started on 2019-06-07 22:31:16-0700
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd XSB//buil=[K[K[K[K[K[Kui[K[Kbuild/
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ cd [K[K[K./configure CFLAGDS[K[KS=""-"D" "[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kemconfigure ./configure
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h is unchanged
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h is unchanged
+
+
+            INSTALLATION SUMMARY
+            --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Fri Jun  7 22:32:47 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc  -O4  
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    
+  loader_xsb.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc    
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:                                 no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:                                  /usr/bin/javac
+  Support for InterProlog's native engine:   	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:                yes
+  POSIX wildcard matching libraries:              yes
+
+  Curl support (HTTP protocol library):           no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching):           no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***          Install one of these to speed up compilation of XSB in Windows
+***          Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ ./makexsb
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making XSB module...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making a C-callable XSB module
+ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o slgdelay.o socket_xsb.o string_xsb.o storage_xsb.o struct_manager.o struct_intern.o sub_delete.o subp.o system_xsb.o table_stats.o tables.o thread_xsb.o timer_xsb.o token_xsb.o tr_utils.o trace_xsb.o trie_lookup.o trie_search.o tries.o tst_insert.o tst_retrv.o tst_unify.o tst_utils.o varstring.o ubi_BinTree.o ubi_SplayTree.o hashtable.o hashtable_itr.o sha1.o md5.o url_encode.o getMemorySize.o incr_xsb.o call_graph_xsb.o    
+
+auxlry.o: file not recognized: File format not recognized
+Makefile:179: recipe for target 'xsbmod' failed
+make[1]: *** [xsbmod] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:228: recipe for target 'xsbmod' failed
+make: *** [xsbmod] Error 2
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ exit
+exit
+
+Script done on 2019-06-07 22:33:19-0700

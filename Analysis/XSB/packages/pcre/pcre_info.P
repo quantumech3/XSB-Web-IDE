@@ -28,5 +28,5 @@
 
 pcre_info(support, 'no').
 pcre_info(libdir,  '').
-pcre_info(ccflags, '').
+pcre_info(ccflags, '-D PTHREAD_MUTEX_ERRORCHECK_NP').
 pcre_info(ldflags, '').

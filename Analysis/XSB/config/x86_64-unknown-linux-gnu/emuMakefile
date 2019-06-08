@@ -31,13 +31,13 @@
 
 CC=/usr/include/emsdk/emscripten/1.38.30/emcc
 CPP=/usr/include/emsdk/emscripten/1.38.30/emcc -E
-CFLAGS= -O4  
+CFLAGS= -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
 # Compilation flags for files requiring lower optimization level
 # (builtin.c,emuloop.c,tr_utils.c)
-loaderCFLAGS=   
-builtinsCFLAGS=   
-emuloopCFLAGS=   
-trutilsCFLAGS=   
+loaderCFLAGS=   -D PTHREAD_MUTEX_ERRORCHECK_NP
+builtinsCFLAGS=   -D PTHREAD_MUTEX_ERRORCHECK_NP
+emuloopCFLAGS=   -D PTHREAD_MUTEX_ERRORCHECK_NP
+trutilsCFLAGS=   -D PTHREAD_MUTEX_ERRORCHECK_NP
 CPPFLAGS=
 LDFLAGS=  -lm -ldl -Wl,-export-dynamic -lpthread
 ODBCSRC=

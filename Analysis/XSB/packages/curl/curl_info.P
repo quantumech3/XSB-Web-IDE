@@ -28,5 +28,5 @@
 
 curl_info(support, 'no').
 curl_info(libdir,  '').
-curl_info(ccflags, '').
+curl_info(ccflags, '-D PTHREAD_MUTEX_ERRORCHECK_NP').
 curl_info(ldflags, '').

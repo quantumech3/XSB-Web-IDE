@@ -36,7 +36,7 @@ arch_dir=/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown
 
 CC=/usr/include/emsdk/emscripten/1.38.30/emcc
 CPP=/usr/include/emsdk/emscripten/1.38.30/emcc -E
-CFLAGS= -O4  
+CFLAGS= -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
 # Flags for files requiring lower optimization level (emuloop.c)
 CPPFLAGS=
 LDFLAGS=  -lm -ldl -Wl,-export-dynamic -lpthread
