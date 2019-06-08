@@ -1,0 +1,890 @@
+@node Error reporting
+@chapter Error reporting
+
+Many functions, especially those involving
+system calls, detect and report exceptional
+conditions, including error conditions and
+interruptions. Exception conditions must often
+be checked and handled, often by retrying,
+doing something else, or reporting the error
+to the user and exit.
+
+Unless otherwise specified, exceptional
+conditions are reporting using the facilities
+described in this chapter.
+
+
+@menu
+* Error checking::                            Checking whether an exception condition occurred.
+* Error codes::                               Values for @code{errno}.
+* Error messages::                            Reporting errors to the user.
+@end menu
+
+
+
+@node Error checking
+@section Error checking
+
+@cpindex Checking for errors
+@cpindex Errors checking
+@cpindex Exception checking
+Most functions return a sentinel value when an
+exceptional condition occurs, typically a negative
+value (actually @code{-1}), a constant such as
+@code{EOF}, or @code{NULL}@. This return value only
+tells you that an exeception condition has occurred.
+
+@hfindex errno.h
+@lvindex errno
+By including the header file @file{<errno.h>}, the
+modifiable lvalue @code{errno} is made available.
+@sc{ISO}@tie{}C specifies that @code{errno} is not
+necessarily a variable, but rather just an modifiable
+lvalue. In fact, must @code{libc}:s, including
+@code{slibc} defines it as a macro that calls a
+function and uses the unary @code{*}-operator on the
+return.
+
+@code{errno} is often thought of as a variable
+declared as @code{int errno}, or @code{volatile int errno}.
+But the value is thread-local, and is thus more
+like @code{_Thread_local volatile int errno}. Because
+of this, the @code{errno} is defined as a macro that
+calls a function. Otherwise, it would not be
+implementable without @sc{ISO}@tie{}C11.
+
+The value of @code{errno} is describes the error,
+if and only if the function returned a value indicating
+an error. Some, function can return the sentinel
+value both on success and error. Therefore, the value
+@code{0} on @code{errno} means that the function
+returned after successful completion rather than on
+failure. Exceptional conditions are describe by
+non-zero values listed in @ref{Error codes}.
+
+The state of @code{errno} is undefined unless otherwise
+specified after a succesful completion of a function call.
+This means that you, generally, cannot check whether an
+error has occurred by checking the value of @code{errno}
+rather than the return value.
+
+@ifnottex
+Etymology for @code{errno}: (Err)or (number).
+@end ifnottex
+@iftex
+Etymology for @code{errno}: @b{Err}or @b{number}.
+@end iftex
+
+
+
+@node Error codes
+@section Error codes
+
+TODO: The list of error codes have not be added to slibc yet.
+
+
+
+@node Error messages
+@section Error messages
+
+@cpindex Error messages
+@cpindex Printing errors
+@cpindex Errors, printing
+The C standard library provides a several mechanisms
+for reporting errors to the user, spread out over
+a few header files.
+
+@table @code
+@item void perror(const char* prefix)
+@fnindex perror
+@hfindex stdio.h
+The @sc{POSIX}.1-2001 standard
+(@code{_POSIX_C_SOURCE >= 200112L}), the
+@sc{ISO}@tie{}C89 standard, and 4.3 @sc{BSD}
+(@code{_BSD_SOURCE}) added this function
+to the header file @file{<stdio.h>}.
+
+This function prints an error message
+for the current value on @code{errno},
+to stderr. If @code{prefix} is neither
+@code{NULL} or an empty string, @code{prefix}
+followed by a colon and a blank space,
+is prepended to the ouput. The function
+will also (always) add a line feed to
+the end of the message.
+
+This function does not detect or report
+errors. Thus, you should not use this
+function if you want to be able to tell
+whether the messages was actually printed.
+Of course, if it was not, your only option
+is to print it to another file descriptor
+which you normally do not want to do.
+
+This function is subject to race condition
+over @code{stderr}.
+
+Because successful function calls may change
+the value on @code{errno}, its value must
+be saved if there are function calls between
+the failure and the call to @code{perror}.
+
+@lvindex program_invocation_name
+@lvindex program_invocation_short_name
+It is customary to set @code{prefix} to
+a value equivalent to @code{program_invocation_name},
+or alternatively @code{program_invocation_short_name}.
+Sometiems, the name of the called function is
+used, this is to simplify debugging. But the
+standard is that programs shall print there
+them when reporting an error so that the user
+knows that program failed.
+
+TODO: Not implemented.
+
+@item char* strerror(int errnum)
+@fnindex strerror
+@hfindex string.h
+The @sc{POSIX}.1-2001 standard
+(@code{_POSIX_C_SOURCE >= 200112L}) and
+@sc{ISO}@tie{}C89 standard, defines this
+function in the header file @file{<string.h>}.
+
+@vrindex LC_MESSAGES
+This function returns a description of
+the error code whose number is @code{errnum}.
+Description may or may not (it is in @command{slibc})
+be localised using the @env{LC_MESSAGES} part of
+the current locale.
+
+The returned value must not be modified the
+the program, by it may be modified by subsequent
+calls to @code{strerror}-functions. If the error
+code is not recognised some implementations
+will return @code{NULL}, other implementations,
+such as @command{slibc}'s, will return a message
+that states to number of the error code.
+
+According to @sc{POSIX}, @code{errno} must not
+be modified if the call is successful. It may
+however set @code{errno} on failure. However,
+the @command{slibc} implementation cannot fail.
+
+@command{slibc}'s implementation of this function
+is threadsafe, this is however not true for
+all implementions.
+
+@item int strerror_r(int errnum, char* buffer, size_t size)
+@fnindex strerror_r
+@hfindex string.h
+The @sc{POSIX}.1-2001 standard added this function
+to the header file @file{<string.h>}. It is a
+reenterant variant fo @code{strerror}. Instead of
+returning the error message, it saves it to
+@code{buffer}. The allocation size of @code{buffer}
+is pass to the function via the argument @code{size}.
+If it is too small, @code{ERANGE} is returned.
+
+The function returns a positive value, that is
+appropriate for @code{errno}, on error, rather than
+setting the value of @code{errno}. Upon successful
+completion, @code{0} is returned.
+
+This function is not available if @code{_PORTABLE_SOURCE}
+or @code{_LIBRARY_HEADER} is defined, because it is
+conflicting with the @sc{GNU}-version. Without knowning
+which version that is used, it is impossible to
+check for errors.
+
+This function is also non-portable even if the
+@sc{GNU}-version is not used, that is, if
+@code{_GNU_SOURCE} is not defined and
+@code{(_POSIX_C_SOURCE >= 200112L) || (_XOPEN_SOURCE >= 600)}.
+Old versions of @sc{GNU} C Library, returned @code{-1}
+on failure and set @code{errno}, instead of returned
+a value for @code{errno}.
+
+Whilst @code{strerror_r} is not portable, the most
+portable use of @code{strerror_r} is
+@example
+int r;
+r = strerror_r(errnum, buffer, size);
+if (r > 0 ? (errno = r) : r)
+  goto fail;
+@end example
+
+Note that, unlike @code{strerror}, there is no
+restriction against @code{strerror_r} to set
+@code{errno} on success.
+
+@item char* strerror_r(int errnum, char* buffer, size_t size)
+@fnindex strerror_r
+@hfindex string.h
+This is a @sc{GNU} extension, defined in the header file
+@file{<string.h>} and is available, instead of the
+@sc{XSI}-compliant version, if @code{_GNU_SOURCE} is
+defined or if
+@code{(_POSIX_C_SOURCE < 200112L) && (_XOPEN_SOURCE < 600)}.
+It is identical to the @sc{XSI}-compliant version,
+except, rather than returning an error code, it
+will set @code{errno} and return @code{NULL} on
+failure. On successful completion, @code{buffer}
+is returned.
+
+This function is not available if @code{_PORTABLE_SOURCE}
+or @code{_LIBRARY_HEADER} is defined, because it is
+conflicting with the @sc{XSI}-compliant version. Without
+knowning which version that is used, it is impossible
+to check for errors.
+
+@item char* strerror_l(int errnum, locale_t locale)
+@fnindex strerror_l
+@hfindex string.h
+The @sc{POSIX}.1-2008 standard
+(@code{_POSIX_C_SOURCE >= 200809L}),
+defines this function in the header file
+@file{<string.h>}. It is identical to
+@code{strerror_l} with two exceptions:
+it is thread save, and it uses a specified
+locale.
+
+@lvindex LC_GLOBAL_LOCALE
+The behaviour of this function is undefined
+if @code{locale} is @code{LC_GLOBAL_LOCALE}@.
+
+@item const char* const sys_errlist[]
+This variable is defined in the header files
+@file{<errno.h>} (derived from @sc{BSD}
+@code{libc}) and @file{<stdio.h>} (derived
+from @sc{GNU} @code{libc}) if @code{_BSD_SOURCE}
+is defined.
+
+This is a list, index by error codes, of
+error messages.
+
+This list is deprecated, and all error codes
+may not have been added in all @code{libc}
+implementations.
+
+TODO: Not implemented.
+
+@item int sys_nerr
+This variable is defined in the header files
+@file{<errno.h>} (derived from @sc{BSD}
+@code{libc}) and @file{<stdio.h>} (derived
+from @sc{GNU} @code{libc}) if @code{_BSD_SOURCE}
+is defined.
+
+This is the number of error codes that are
+defined, including @code{0} (successful completion.)
+That is, the value of the error code with
+highest value, plus 1.
+
+TODO: Not implemented.
+
+@item char* program_invocation_name
+@lvindex program_invocation_name
+@hfindex errno.h
+@cpindex Process name
+This variable is defined in the header file
+@file{<errno.h>}, if @code{_GNU_SOURCE} or
+@code{_SLIBC_SOURCE} is defined.
+
+This is the name that was used to invoke the
+program running in the current process. This
+is the value @code{argv[0]} from the @code{main}
+function (where @code{argv} is the second parameter.)
+If @code{argc} (the first parameter) is zero, this
+variable will have the value @code{NULL}@. This is
+not necessarily a proper command name. For example,
+login shells are usually prefixes with a dash,
+for example @code{-bash}, despite that there is
+no such command. Often, but not always, this will
+not contain directory.
+
+It is recommended for portable programs
+to saved the value of @code{argv[0]} from
+@code{main} to a global variable (often
+named @code{argv0}) instead of using this
+variable.
+
+@item char* program_invocation_short_name
+@lvindex program_invocation_short_name
+@hfindex errno.h
+@cpindex Process name
+This variable is defined in the header file
+@file{<errno.h>}, if @code{_GNU_SOURCE} is
+defined. It is similar to @code{program_invocation_name},
+but it only contains the basename, that is,
+the part after the last slash.
+
+If @code{program_invocation_name} is edited,
+@code{program_invocation_short_name} may be
+modified too. However, if @code{error_print_progname}
+from @file{<error.h>} is not @code{NULL},
+it will be used to pritn the process name.
+
+@item void warn(const char* format, ...)
+@fnindex warn
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is similar
+to @code{printf} except it prints the message
+to stderr, and a description of the error
+specified by the current value on @code{errno}
+is also printed.
+
+It is specified that the last component of
+the process name shall be printed, however,
+the @command{slibc}'s implementation will
+print the full process name, or more precisely,
+it prints @code{program_invocation_name}.
+
+@ifnottex
+Etymology: Print (warn)ing!
+@end ifnottex
+@iftex
+Etymology: Print @b{warn}ing!
+@end iftex
+
+@item void vwarn(const char* format, va_list args)
+@fnindex vwarn
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{warn} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (`warn`).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{warn}.
+@end iftex
+
+@item void warnx(const char* format, ...)
+@fnindex warnx
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{warn} except it does not print a
+description of the value of @code{errno}.
+
+@ifnottex
+Etymology: (`warn`), [x=](lesser variant).
+@end ifnottex
+@iftex
+Etymology: @b{warn}, [x=]@b{lesser variant}.
+@end iftex
+
+@item void vwarnx(const char* format, va_list args)
+@fnindex vwarnx
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{warnx} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (`warnx`).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{warnx}.
+@end iftex
+
+@item noreturn void err(int status, const char* format, ...)
+@fnindex err
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{warn} except will return with the
+exit value @code{status & 255}.
+
+@ifnottex
+Etymology: Report (err)or!
+@end ifnottex
+@iftex
+Etymology: Report @b{err}or!
+@end iftex
+
+@item noreturn void verr(int status, const char* format, va_list args)
+@fnindex verr
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{err} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (`err`).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{err}.
+@end iftex
+
+@item noreturn void errx(int status, const char* format, ...)
+@fnindex errx
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{err} except it does not print a
+description of the value of @code{errno}.
+
+@ifnottex
+Etymology: (`err`), [x=](lesser variant).
+@end ifnottex
+@iftex
+Etymology: @b{err}, [x=]@b{lesser variant}.
+@end iftex
+
+@item noreturn void verrx(int status, const char* format, va_list args)
+@fnindex verrx
+@hfindex err.h
+This function is a non-standard @sc{BSD}
+extension, and requires that @code{_BSD_SOURCE}
+is defined. It is made available by including
+the header file @file{<err.h>}. It is identical
+to @code{errx} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (`errx`).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{errx}.
+@end iftex
+
+@item void error(int status, int errnum, const char* format, ...)
+@fnindex error
+@hfindex error.h
+This function is a @sc{GNU}-extension (@code{_GNU_SOURCE})
+that is made available by including the header
+file @file{<error.h>}.
+
+This function flushes stdout and prints an
+error message to stderr. The message begins
+with the process name (more precisely:
+@code{program_invocation_name}), a colon,
+and a blank space. The message, continues with
+a desciption of the @code{errno}-value pass
+via the argument @code{errnum}. However, if
+@code{errnum} is @code{0}, the string described
+by @code{format} and the following arguments
+are printed --- using @code{fprintf} --- instead
+of the description of @code{errnum}.
+
+Unless @code{status} is @code{0}, the process
+will exit with the exit value @code{status & 255}.
+
+@ifnottex
+Etymology: Report (error)!
+@end ifnottex
+@iftex
+Etymology: Report @b{error}!
+@end iftex
+
+@item void verror(int status, int errnum, const char* format, va_list args)
+@fnindex verror
+@hfindex error.h
+This function is made available, if both
+@code{_GNU_SOURCE} and @code{_SLIBC_SOURCE} are
+defined, by including the header file
+@file{<error.h>}. It is identical to
+@code{error} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (@code{error}).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{error}.
+@end iftex
+
+@item void error_at_line(int status, int errnum, const char* filename, unsigned int linenum, const char* format, ...)
+@fnindex error_at_line
+@hfindex error.h
+This function is a @sc{GNU}-extension (@code{_GNU_SOURCE})
+that is made available by including the header
+file @file{<error.h>}. It is a variant of @code{error}.
+It will also print the filename and the line where
+there error occured.
+
+A way to use this function is to utilise the
+C preprocessor.
+@example
+#include <error.h>
+#include <errno.h>
+#define if(...)  if (error_line = __LINE__, __VA_ARGS__)
+
+int main(void)
+@{
+  int error_line;
+
+  if (something_that_may_fail())
+    goto fail;
+
+  return 0;
+ fail:
+  error_at_line(1, errno, __FILE__, error_line, NULL);
+@}
+@end example
+
+@ifnottex
+Etymology: Report (error at line) in source code!
+@end ifnottex
+@iftex
+Etymology: Report @b{error at line} in source code!
+@end iftex
+
+@item void verror_at_line(int status, int errnum, const char* filename, unsigned int linenum, const char* format, va_list args)
+@fnindex verror_at_line
+@hfindex error.h
+This function is made available, if both
+@code{_GNU_SOURCE} and @code{_SLIBC_SOURCE} are
+defined, by including the header file
+@file{<error.h>}. It is identical to
+@code{error_at_line} except it uses @code{va_list}
+instead of being a variadic function.
+
+@ifnottex
+Etymology: (V)ariadic version of (@code{error_at_line}).
+@end ifnottex
+@iftex
+Etymology: @b{V}ariadic version of @b{error_at_line}.
+@end iftex
+
+@item volatile unsigned int error_message_count
+@lvindex error_message_count
+@hfindex error.h
+This variable is a @sc{GNU}-extension (@code{_GNU_SOURCE})
+that is made available by including the header
+file @file{<error.h>}. Counts the number of times
+@code{error} (or @code{verror}) and @code{error_at_line}
+(@code{verror_at_line}) has returned. This variable
+is global and shared by all threads.
+
+@ifnottex
+Etymology: (@code{error})-subsystem: (message count).
+@end ifnottex
+@iftex
+Etymology: @b{error}-subsystem: @b{message count}.
+@end iftex
+
+@item volatile int error_one_per_line
+@lvindex error_message_count
+@hfindex error.h
+This variable is a @sc{GNU}-extension (@code{_GNU_SOURCE})
+that is made available by including the header
+file @file{<error.h>}.
+
+If set to non-zero (the default), @code{error_at_line}
+and @code{verror_at_line} restrict themself to only
+print an error the first time it appears. This is
+determined by the uniqueness of the combination of
+the values on @code{filename} and @code{linenum}.
+However it will forget the line the next time the
+function is called from a different line. This
+variable is global and shared by all threads. As a
+@code{slibc} modification, @code{errnum} is also
+remembered, meaning if the error code is different
+(zero is considered an error code), the error is
+printed even if it occurred on the same line as the
+last time.
+
+@ifnottex
+Etymology: (@code{error})-subsystem: print (one) time (per line).
+@end ifnottex
+@iftex
+Etymology: @b{error}-subsystem: print @b{one} time @b{per line}.
+@end iftex
+
+@item void (*volatile error_print_progname)(void)
+@lvindex error_message_count
+@hfindex error.h
+This variable is a @sc{GNU}-extension (@code{_GNU_SOURCE})
+that is made available by including the header
+file @file{<error.h>}.
+
+If not @code{NULL}, this function is used instead
+of flushing stdout and printing the process name to
+stderr, by @code{error} (@code{verror}) and
+@code{verror_at_line} (@code{verror_at_line}). This
+variable is global and shared by all threads.
+
+@ifnottex
+Etymology: (@code{error})-subsystem function: (print) the (prog)ram's (name).
+@end ifnottex
+@iftex
+Etymology: @b{error}-subsystem function: @b{print} the @b{prog}ram's @b{name}.
+@end iftex
+@end table
+
+In @code{slibc}, functions defined in @file{<err.h>}
+use functions defined in @file{<error.h>}.
+
+@hfindex slibc-error.h
+@code{slibc} adds the header file @file{<slibc-error.h>}.
+It includes @file{<errno.h>}. It does not require
+the @code{_SLIBC_SOURCE} is defined, but it does
+require that neither @code{_PORTABLE_SOURCE} nor
+@code{_LIBRARY_HEADER}@. @file{<slibc-error.h>} also
+uses C preprocessors directives added by the
+@sc{ISO}@tie{}C99 standard. Additionally, the
+C language extensions @code{(@{ @})} and @code{typeof}.
+These extensions are available in @sc{GCC}@.
+
+@table @code
+@item FAILABLE_CALL(expression)
+@fnindex FAILABLE_CALL
+Store the current line, so we know which line
+failed, when @code{PRINT_CUSTOM_FAILURE},
+@code{PRINT_FAILURE} or @code{slibc_perror} is
+called. @code{expression} will be evaluated
+exaclty once, and is returned without casting.
+
+Currently, the expression is not stored. However,
+if it is found in the future that it is preferable
+to have the expression printed on failure, this may
+change in the future. Therefore, it is advisable
+to only include the function call (and perhaps a
+variable assigment) in @code{expression}, and not
+the failure check.
+
+Example usage:
+@example
+int my_function(void)
+@{
+  size_t n;
+  void* array;
+  /* ... */
+  if (FAILABLE_CALL(array = malloc(n)) == NULL)
+    goto fail;
+  /* ... */
+  return 0;
+
+ fail:
+  PRINT_FAILURE(NULL);
+  /* ... */
+  return errno = 0, -1;
+@}
+@end example
+
+A more scalable example:
+@example
+#define fail_if (call_and_check)  \
+  do @{ \
+    if (FAILABLE_CALL(call_and_check)) \
+      goto fail; \
+  @} while (0)
+/* @w{@xrm{}`@xtt{}try@xrm{}` or simply `@xtt{}t@xrm{}` may be even better.@xtt{}} */
+
+#define fail_unless (call_and_check)  \
+  fail_if(!(call_and_check))
+/* @w{@xrm{}`@xtt{}f@xrm{}` may be even better.@xtt{}} */
+
+int my_function(void)
+@{
+  size_t n;
+  void* array;
+  /* ... */
+  fail_if (!(array = malloc(n)));
+  /* @w{@xrm{}or perhaps, `@xtt{}fail_unless (array = malloc(n));@xrm{}`@xtt{}} */
+  /* ... */
+  return 0;
+
+ fail:
+  PRINT_FAILURE(NULL);
+  /* ... */
+  return errno = 0, -1;
+@}
+@end example
+
+@item FAILURE_CHECK(condition, offset)
+@fnindex FAILURE_CHECK
+Check whether an error occurred. If an
+error occurred, stored the line, for
+@code{PRINT_CUSTOM_FAILURE} or
+@code{PRINT_FAILURE}, where the error occurred.
+
+@code{condition} should evaluate to non-zero
+on and only on error. @code{offset} is the
+number of lines above the current line
+that was the line that failed, if @code{condition}
+evaluates to non-zero. @code{!!condition} is returned.
+
+Example usage:
+@example
+int my_function(void)
+@{
+  char* buf;
+  size_t bufsize;
+  ssize_t r;
+  int fd;
+  /* ... */
+  for (;;)
+    @{
+      r = read(fd, buf, bufsize);
+      if (FAILURE_CHECK(r < 0, 1))
+        @{
+          if (errno != EINTR)
+            /* @w{@xrm{}Or `@xtt{}FAILURE_CHECK(errno != EINTR, 3)@xrm{}`.@xtt{}} */
+            goto fail;
+          continue;
+        @}
+      /* ... */
+    @}
+  /* ... */
+  return 0;
+
+ fail:
+  PRINT_FAILURE(NULL);
+  /* ... */
+  return errno = 0, -1;
+@}
+@end example
+
+@item PRINT_FAILURE(...)
+@fnindex PRINT_FAILURE
+This macro print an error message describing the
+error, and where the error happened. Optionally
+with detailed description of the action that failed.
+
+This function must be called in the same file and
+function as the the expansion of @code{FAILABLE_CALL},
+@code{FAILURE_CHECK}, or @code{slibc_perror}. It is
+recommended that this is done all the way down the
+call-stack to @code{main}. This is however problematic
+(although it is possible) if you do not want the
+process to exit.
+
+Example of recursion:
+@example
+static int b(void)
+@{
+  if (FAILABLE_CALL(some_function()) < 0)
+    goto fail;
+  return 0;
+ fail:
+  return PRINT_FAILURE(NULL), -1;
+@}
+static int a(void)
+@{
+  if (FAILABLE_CALL(b()) < 0)
+    goto fail;
+  return 0;
+ fail:
+  return PRINT_FAILURE(NULL), -1;
+@}
+int main(void)
+@{
+  if (FAILABLE_CALL(a()) < 0)
+    goto fail;
+  return 0;
+ fail:
+  return PRINT_FAILURE(NULL), 1;
+@}
+@end example
+
+This macro will set @code{errno} to zero. If you
+have statements after the call to this function that
+may modify @code{errno}, be sure to set @code{errno}
+to zero before returning. A good way to do this is
+to have the return statement look like
+@code{return errno = 0, -1}.
+
+The arguments for this macro should be a
+@code{printf}-formatting-string followed by
+formatting-arguments used to describe what action
+failed. If the first argument is @code{NULL}, this
+is not printed and only the location of the error
+and @code{errno} is used to describe the error.
+
+@item PRINT_CUSTOM_FAILURE(error_code, error_string, ...)
+@fnindex PRINT_CUSTOM_FAILURE
+This macro is is a generalisation of
+@code{PRINT_FAILURE}@. It is useful if the error
+is not described with @code{errno} and @code{strerror}.
+It adds two parameters at the beginning:
+
+@table @code
+@item error_code
+The error code. This must be a modifiable lvalue,
+as it will be modified to zero to indicate that the
+error string has already been printed. Thus, on the
+original error location this value must not be zero.
+
+@item error_string
+Textual representation of the error. If @code{errno}
+indicates the error, this should usually be
+@code{strerror(errno)}.
+@end table
+
+Usage example:
+@example
+PRINT_CUSTOM_FAILURE(r, gai_strerror(r), 
+  _("fail to connect to server: %s"), host)
+@end example
+
+@item void slibc_perror(const char* progname, const char* filename, int linenum, const char* function, int* error_code, const char* error_string, const char* format, ...)
+@fnindex slibc_perror
+This function print a description of an error, and
+where the error occurred. This function is capable
+of printed the full call-stack.
+
+It is not recommended to used this function directly.
+Use the macros in @file{<slibc-error.h>} instead.
+
+This function has a number of argument:
+@table @code
+@item progname
+The name of the program. @code{`NULL} or an empty
+string to use @code{program_invocation_name}.
+
+@item filename
+The source code file where the error occurred.
+
+@item linenum
+The line in the source code where the error occurred.
+
+@item function
+The function in the source code where the
+error occurred.
+
+@item error_code
+Pointer the variable that stores the error
+code, will zeroed.
+
+@item error_string
+Textual description of the error code. @code{NULL}
+if @code{strerror} should be used. This parameter
+is unused if @code{error_code} is zero.
+
+@item format
+Formatting-string for a description of the action
+that failed. @code{NULL} if no description other
+than the location and @code{error_string} should
+be printed. It is followed by the formatting-arguments.
+@end table
+
+@ifnottex
+Etymology: (@command{slibc})-enhancement of (@code{perror}).
+@end ifnottex
+@iftex
+Etymology: @b{slibc}-enhancement of @b{perror}.
+@end iftex
+@end table
+

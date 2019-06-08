@@ -1,0 +1,81 @@
+functions to lock and unlock pages  (3.4.3 p76)
+character class determination for wide characters  (4.3 p82)
+collation functions  (5.6 p109)
+encode binary data  (5.11 p125)
+argz and envz vectors  (5.12 p127)
+characer-set handling  (6 p133)
+locales and internationalisation  (7 p181)
+mathematics  (8 p243)
+arithmetic functions  (9 p243)
+date and time  (10 p277)
+message translation  (11 p315)
+searching and sorting  (12 p343)
+pattern matching  (13 p355)
+the basic program–system interface  (14 p379)
+input/output overview  (15 p429)
+input/output on streams  (17 p439)
+
+It should be possible to configure malloc, calloc, and
+realloc to allocate some extra space. This is usable
+for single-threaded allocations; they do not need to
+realloc strings returned by functions with
+__attribute__((malloc)), to append a string or character.
+
+
+LOW PRIORITY:
+  debugging support  (16 p435)
+    _GNU_SOURCE, system-dependant
+  void* extalloca(void* p, size_t extent) :: extend alloca-allocation
+    requires that nothing has been allocated to the stack since p.
+    difficult to implement as a function.
+    as a macro:
+      ({ void* q = alloca(extent); (long int)q < (long int)p ? q : p; })
+  void* dealloca(size_t amount)
+    deallocate the last amount bytes allocated to the stack
+  void* zalloca(size_t size)
+    difficult to implement as a function.
+    as a macro:
+      ({ void* p = alloca(size); memset(p, 0, size); })
+
+
+crt0 with cpu cycle count printing
+BUFSIZ configurable by environment variable
+Rate limitation of I/O-functions configured by environment variables
+configuration: unlink = shred if st_nlink=1
+
+The width of intptr_t  should be determined by sizeof(void*),
+the width of size_t    should be determined by sizeof(sizeof(0)), and
+the width of ptrdiff_t should be determined by sizeof(NULL - NULL);
+
+libslibc
+  library with all slibc-extension. <slibc.h>
+
+Extensions:
+  mkdir -p
+  Variable argument max and min
+  base64
+  base64 -d
+  base16
+  base16 -d
+  variable argument string concat
+  string manipulation
+  procinit(int skip)
+    perform stuff that all programs should when they start
+    (but don't actually do in the real world)
+
+POSIX specifies that *printf shall fail with EOVERFLOW is the
+length of the constructed string is greater than INT_MAX.
+We shall follow this, but it should optional to truncate the
+value to INT_MAX. Programs should not have to limit the
+resulting string to 32765 bytes!
+
+Can we implement any of these:
+  http://www.gnu.org/fun/jokes/errno.2
+
+Macros that are used but not defined:
+  _LINUX_
+
+It is implementation-defined what happens in realloc if the
+size is zero. This should be reflected in the documentation.
+
+The printf-functions shall have a %-code for dumping a memory segment.

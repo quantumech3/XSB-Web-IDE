@@ -1,0 +1,14 @@
+Emscripten allows you to create pointers to JS functions as if they were native C methods!
+Emscripten does this by creating a hash table that associates hashes with functions such that when a C function pointer with a certain hash is derefrenced and called, JS will call the function associated with the C pointer.
+
+In order to create a pointer to a JS function in C, you need to register the JS function in Emscriptens function table. To do this, you use the 'addFunction(func, llvmTypes)' method. Since you are building to WASM, you must specify the llvmTypes param. 
+addFunction() returns the the address of the function in memory and in Emscriptens function pointer table.
+
+	The llvmTypes param specifys the return type and the types of each arguement for the function in order.
+	Here is how you specify the llvmTypes param in 'addFunction(func, llvmTypes)':
+		'<LLVM_return_type><LLVMarg1Type><LLVMarg2Type><etc>'
+
+	The first character represents the return type, the rest of them represent arguement types.
+	Notice that you need to specify LLVM primative types rather then just specifying something like 'string' or 'object'. There are 5 llvm types that you can specify for this parameter. They are documented here: https://emscripten.org/docs/porting/connecting_cpp_and_javascript/Interacting-with-code.html#calling-javascript-functions-as-function-pointers-from-c
+
+Once you have registered the JS method to become referencable by C, then you can pass the address of the function you got from addFunction() to C somehow and cast it into an appropriate function pointer normally.

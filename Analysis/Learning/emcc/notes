@@ -1,0 +1,43 @@
+You can invoke JS from C/C++ using 'emscripten_run_script("command")'
+NOTE: You are NOT able to set or declare globals in JS through C or C++ for some reason
+
+You can also create a C/C++ method that invokes JS with the following:
+EM_JS(returnType, funcName, (type param1, type param2) {
+	// Insert JS code here
+});
+The advantage to the second way is that you can pass parameters from C/C++ into JS. You cannot directly invoke this method in JS but you can make a C method that calls the function and IS exposed.
+
+EM_ASM(
+	// Insert JS code here
+);
+ is basically emscripten_run_script() except you dont need to encapsulate the JS in quotes as a string.
+
+EM_ASM_ is like EM_ASM except you are able to pass values from C/C++ into it
+ EM_ASM_(
+	 {
+		 // Insert JS code here
+
+		 // Print arg0 (first arg) => 25
+		 console.log($0)
+
+		 // Print arg1 (second arg) => 64
+		 console.log($1)
+
+		 // You can have as many args as you want, the terms would be $2, $3, etc
+	 },
+	 25, 64
+ );
+
+You can also GET ints and doubles that computed by Javascript with 
+	EM_ASM_INT and EM_ASM_DOUBLE respectively
+
+Example:
+	// You can still pass params
+	
+	int a = 4;
+	int b = 3;
+
+	// Prints '7'
+	printf("%d\n", EM_ASM_INT({
+		return $0 + $1;
+	}, a, b));

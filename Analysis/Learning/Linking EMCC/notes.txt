@@ -1,0 +1,35 @@
+Emscripten has the ability to link with WASM Bitcode at runtime via its form of 'dynamic linking'. 'Modules' in Emscripten are JS objects that contain imported C/C++ constructs as well as Emscripten's standard library and runtime. There are 2 types of Modules
+
+* 'Main' modules: Meant to be imported and ran directly. Contains the standard library. Exported as a .wasm and .js
+* 'Side' modules: Meant to be imported **by the main module**. Exported as a .wasm. Does not contain the standard library **unless explicitly specified otherwise**
+
+In Emscripten, you are able to import dynamic libraries in 2 ways:
+* At load-time
+* At runtime
+
+The following shows how to link with DLLs at load-time/runtime as well as how to build a DLL
+---------------------------------------------------------
+
+###How to build a DLL
+1. If you need **standard libraries that are not imported in the main module**, execute the `set EMCC_FORCE_STDLIBS=1` prior to the compilation of the main module
+2. Compile your main module (what will be ran) with `emcc <source.c> -s MAIN_MODULE=1 -o <outputFile>`
+3. Compile the rest of your code (the DLL) with `emcc <source.c> -s SIDE_MODULE=1`. 
+
+###How to link with DLLs at load-time
+1. Import your main module.
+2. Execute `Module.dynamicLibraries = ['library.wasm']` **before initialization of the Emscripten runtime**
+
+###How to link with DLLs at runtime
+1. Import the dynamic library into the Emscripten File System.
+2. During runtime in **JS**, execute `loadDynamicLibrary('lib.js')`
+
+Please note that
+----------------------
+* **Runtime DLL loading is only supported by asm.js**, not WASM
+* Emscripten is **not** able to import OS specific DLLs, meaning that DLLs **not** built to LLVM Bitcode **will not work with Emscripten**.
+* Emscripten **will delete symbols in side modules** if you do not specify that the symbols are **not** dead code. This means that you will get **unresolved symbol errors** unless handled properly. 
+* If you want to **export everything**, use the `-s EXPORT_ALL=1` flag during compilation
+* **Side modules that use standard libraries not included by the main module** will not work unless `set EMCC_FORCE_STDLIBS=1` command is executed **prior to compilation**
+* DLLs can be loaded at runtime in C/C++ as well. The DLL being loaded just needs to be built to LLVM and imported into Emscripten's File System.
+
+https://github.com/emscripten-core/emscripten/wiki/Linking

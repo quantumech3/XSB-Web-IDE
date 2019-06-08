@@ -1,0 +1,87 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Windows - 10.0.17134 - AMD64
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_0442f/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_0442f.dir\build.make CMakeFiles/cmTC_0442f.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0442f.dir/CheckIncludeFile.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat   -s WASM=0   -o CMakeFiles\cmTC_0442f.dir\CheckIncludeFile.c.o   -c "C:\Users\Scott Burgert\Downloads\Documents\Actual Projects\XSB Web IDE\Analysis\zlib\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+Linking C executable cmTC_0442f.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_0442f.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -s WASM=0    @CMakeFiles\cmTC_0442f.dir\objects1.rsp  -o cmTC_0442f.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_58bc5/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_58bc5.dir\build.make CMakeFiles/cmTC_58bc5.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_58bc5.dir/CheckIncludeFile.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat   -s WASM=0   -o CMakeFiles\cmTC_58bc5.dir\CheckIncludeFile.c.o   -c "C:\Users\Scott Burgert\Downloads\Documents\Actual Projects\XSB Web IDE\Analysis\zlib\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+Linking C executable cmTC_58bc5.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_58bc5.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -s WASM=0    @CMakeFiles\cmTC_58bc5.dir\objects1.rsp  -o cmTC_58bc5.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file stddef.h exists passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_64171/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_64171.dir\build.make CMakeFiles/cmTC_64171.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_64171.dir/CheckIncludeFile.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat   -s WASM=0   -o CMakeFiles\cmTC_64171.dir\CheckIncludeFile.c.o   -c "C:\Users\Scott Burgert\Downloads\Documents\Actual Projects\XSB Web IDE\Analysis\zlib\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+Linking C executable cmTC_64171.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_64171.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -s WASM=0    @CMakeFiles\cmTC_64171.dir\objects1.rsp  -o cmTC_64171.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
+Determining size of off64_t passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_26452/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_26452.dir\build.make CMakeFiles/cmTC_26452.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_26452.dir/OFF64_T.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat -DHAVE_STDDEF_H -DHAVE_STDINT_H -DHAVE_SYS_TYPES_H -D_LARGEFILE64_SOURCE=1  -s WASM=0   -o CMakeFiles\cmTC_26452.dir\OFF64_T.c.o   -c "C:\Users\Scott Burgert\Downloads\Documents\Actual Projects\XSB Web IDE\Analysis\zlib\CMakeFiles\CheckTypeSize\OFF64_T.c"
+Linking C executable cmTC_26452.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_26452.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -s WASM=0    @CMakeFiles\cmTC_26452.dir\objects1.rsp  -o cmTC_26452.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
+Determining if the function fseeko exists passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_1317d/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_1317d.dir\build.make CMakeFiles/cmTC_1317d.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1317d.dir/CheckFunctionExists.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat   -DCHECK_FUNCTION_EXISTS=fseeko -s WASM=0   -o CMakeFiles\cmTC_1317d.dir\CheckFunctionExists.c.o   -c "C:\Program Files\CMake\share\cmake-3.9\Modules\CheckFunctionExists.c"
+Linking C executable cmTC_1317d.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_1317d.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -DCHECK_FUNCTION_EXISTS=fseeko -s WASM=0    @CMakeFiles\cmTC_1317d.dir\objects1.rsp  -o cmTC_1317d.js 
+warning: unexpected number of arguments 0 in call to '__fseeko', should be 3
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
+Determining if the include file unistd.h exists passed with the following output:
+Change Dir: C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/TDM-GCC-64/bin/mingw32-make.exe" "cmTC_54d25/fast"
+C:/TDM-GCC-64/bin/mingw32-make.exe -f CMakeFiles\cmTC_54d25.dir\build.make CMakeFiles/cmTC_54d25.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54d25.dir/CheckIncludeFile.c.o
+C:\emsdk\emscripten\1.38.30\emcc.bat   -s WASM=0   -o CMakeFiles\cmTC_54d25.dir\CheckIncludeFile.c.o   -c "C:\Users\Scott Burgert\Downloads\Documents\Actual Projects\XSB Web IDE\Analysis\zlib\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+Linking C executable cmTC_54d25.js
+"C:\Program Files\CMake\bin\cmake.exe" -E cmake_link_script CMakeFiles\cmTC_54d25.dir\link.txt --verbose=1
+C:\emsdk\emscripten\1.38.30\emcc.bat  -s WASM=0    @CMakeFiles\cmTC_54d25.dir\objects1.rsp  -o cmTC_54d25.js 
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Scott Burgert/Downloads/Documents/Actual Projects/XSB Web IDE/Analysis/zlib/CMakeFiles/CMakeTmp'
+
+
