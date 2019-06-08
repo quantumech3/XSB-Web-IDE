@@ -1,0 +1,124 @@
+Script started on 2019-06-08 15:14:09-0700
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ [K]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd Too\ Many\ Locals\ error/
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ emcc test.ll -o exec
+/usr/include/emsdk/clang/e1.38.30_64bit/llvm-as: test.ll:1:1: error: expected top-level entity
+i32.const 123
+^
+Traceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emcc.py", line 3276, in <module>
+    sys.exit(run(sys.argv))
+  File "/usr/include/emsdk/emscripten/1.38.30/emcc.py", line 1659, in run
+    shared.Building.llvm_as(input_file, temp_file)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/shared.py", line 2191, in llvm_as
+    output = run_process([LLVM_AS, input_filename, '-o', output_filename], stdout=PIPE).stdout
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/shared.py", line 174, in run_process
+    result.check_returncode()
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/shared.py", line 154, in check_returncode
+    raise Py2CalledProcessError(returncode=self.returncode, cmd=self.args, output=self.stdout, stderr=self.stderr)
+tools.shared.Py2CalledProcessError: Command '['/usr/include/emsdk/clang/e1.38.30_64bit/llvm-as', 'test.ll', '-o', '/tmp/emscripten_temp_Mcdx11/test_0.o']' returned non-zero exit status 1
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc-7
+llc-7: command not found
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc
+sss
+s
+s
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ clear
+[3J[H[2J]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -m,[Ktriple=wasn32-unknown-unknown -O3 -filetype=obj test.ll -o test.o
+llc: test.ll:1:1: error: expected top-level entity
+i32.const 123
+^
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -mtriple=wasn32-unknown-unknown -O3 -filetype=obj test.ll -o test.o
+llc: test.ll:2:2: error: expected instruction opcode
+        i32.const 123
+        ^
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -mtriple=wasn32-unknown-unknown -O3 -filetype=obj test.ll -o test.o
+llc: : error: unable to get target for 'wasn32-unknown-unknown', see --version and --triple.
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -mtriple=wasn32-unknown-unknown -O3 -filetype=obj test.ll -o test.o[C[1P[1@m
+llc: : error: unable to get target for 'wasm32-unknown-unknown', see --version and --triple.
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -mtriple=wasm32-unknown-unknown -O3 -filetype=obj test.ll -o test.o[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[22@wasm32-unknown-unknown
+llc: : error: unable to get target for 'wasm32-unknown-unknown', see --version and --triple.
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ llc -mtriple=wasm32-unknown-unknown -O3 -filetype=obj test.ll -o test.o[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ wasm-ld test.o -i test.wasm[1P[C[1P test.wasm- test.wasmo test.wasm
+wasm-ld: command not found
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ wasm-ld test.o -o test.wasm[Kwasm-ld test.o -o test.wasm[1@-[1@7
+wasm-ld-7: command not found
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ emcc test.o -o inde.[Kx.html
+emcc:WARNING: [33mtest.o is not a valid input file[0m
+shared:ERROR: [31mno input files
+note that input files without a known suffix are ignored, make sure your input files end with one of: ('.c', '.C', '.i', '.cpp', '.cxx', '.cc', '.c++', '.CPP', '.CXX', '.CC', '.C++', '.ii', '.m', '.mi', '.mm', '.mii', '/dev/null', '.bc', '.o', '.obj', '.lo', '.dylib', '.so', '.a', '.ll', '.h', '.hxx', '.hpp', '.hh', '.H', '.HXX', '.HPP', '.HH')[0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/Too Many Locals error[00m$ emcc test.o -o index.html[K[K[K[Kwasm-ld-7 test.o -o test.wasm[C[Kemcc main.c -o main.[K[K[K[K[Kindex.t[Kjht[K[K[Kt[Khtml
+main.c:3:15: error: expected ';' at end of declaration
+        int a8987=234
+                     ^
+                     ;
+main.c:4:14: error: expected ';' at end of declaration
+int a8988=234
+             ^
+             ;
+main.c:5:14: error: expected ';' at end of declaration
+int a8989=234
+             ^
+             ;
+main.c:6:14: error: expected ';' at end of declaration
+int a8990=234
+             ^
+             ;
+main.c:7:14: error: expected ';' at end of declaration
+int a8991=234
+             ^
+             ;
+main.c:8:14: error: expected ';' at end of declaration
+int a8992=234
+             ^
+             ;
+main.c:9:14: error: expected ';' at end of declaration
+int a8993=234
+             ^
+             ;
+main.c:10:14: error: expected ';' at end of declaration
+int a8994=234
+             ^
+             ;
+main.c:11:14: error: expected ';' at end of declaration
+int a8995=234
+             ^
+             ;
+main.c:12:14: error: expected ';' at end of declaration
+int a8996=234
+             ^
+             ;
+main.c:13:14: error: expected ';' at end of declaration
+int a8997=234
+             ^
+             ;
+main.c:14:14: error: expected ';' at end of declaration
+int a8998=234
+             ^
+             ;
+main.c:15:14: error: expected ';' at end of declaration
+int a8999=234
+             ^
+             ;
+main.c:16:14: error: expected ';' at end of declaration
+int a9000=234
+             ^
+             ;
+main.c:17:14: error: expected ';' at end of declaration
+int a9001=234
+             ^
+             ;
+main.c:18:14: error: expected ';' at end of declaration
+int a9002=234
+             ^
+             ;
+main.c:19:14: error: expected ';' at end of declaration
+int a9003=234
+             ^
+             ;
+main.c:20:14: error: expected ';' at end of declaration
+int a9004=234
+             ^
+             ;
+main.c:21:14: error: expected ';' at end of declaration
+int a
