@@ -265,4 +265,41 @@ make: *** [xsbmod] Error 2
 ]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ cd ../..
 ]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd configu/[K[K/x[K[K[K[K[K[K[K[K[K[K[Kcd XSB
 ]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd config/x86_64-unknown-linux-ggnu/saved.o/
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mqua
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ s[Kemcc * -o index.hjt[K[Ktml -s ASSET[KRTS[KIONS=0[K[K[K[K[K
+shared:ERROR: [31mindex.html: Input file has an unknown suffix, don't know what to do with it![0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ emcc * -o index.html[C[C[C[1@.[1@c
+shared:ERROR: [31m*.c: No such file or directory ("*.c" was expected to be an input file, based on the commandline arguments provided)[0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ ls
+auxlry.o          hashtable.o        random_xsb.o      timer_xsb.o
+biassert.o        hashtable_xsb.o    remove_unf.o      token_xsb.o
+builtin.o         hash_xsb.o         residual.o        trace_xsb.o
+call_graph_xsb.o  heap_xsb.o         rw_lock.o         trie_lookup.o
+call_xsb.o        incr_xsb.o         scc_xsb.o         trie_search.o
+cinterf.o         index.html         sha1.o            tries.o
+conc_compl.o      index.js           slgdelay.o        tr_utils.o
+deadlock.o        index.wasm         socket_xsb.o      tst_insert.o
+debug_xsb.o       init_xsb.o         storage_xsb.o     tst_retrv.o
+dis.o             inst_xsb.o         string_xsb.o      tst_unify.o
+dynamic_stack.o   io_builtins_xsb.o  struct_intern.o   tst_utils.o
+dynload.o         loader_xsb.o       struct_manager.o  ubi_BinTree.o
+emuloop.o         main_xsb.o         sub_delete.o      ubi_SplayTree.o
+error_xsb.o       md5.o              subp.o            url_encode.o
+findall.o         memory_xsb.o       system_xsb.o      varstring.o
+function.o        orient_xsb.o       tables.o
+getMemorySize.o   pathname_xsb.o     table_stats.o
+hashtable_itr.o   psc_xsb.o          thread_xsb.o
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ lsemcc *.c -o index.html[1P[1@o
+error: undefined symbol: extend_enc_dec_as_nec
+warning: To disable errors for undefined symbols use `-s ERROR_ON_UNDEFINED_SYMBOLS=0`
+error: undefined symbol: pthread_setschedparam
+error: undefined symbol: sched_get_priority_max
+Error: Aborting compilation due to previous errors
+shared:ERROR: [31m'/usr/include/emsdk/node/8.9.1_64bit/bin/node /usr/include/emsdk/emscripten/1.38.30/src/compiler.js /tmp/tmplamfPx.txt /usr/include/emsdk/emscripten/1.38.30/src/library_pthread_stub.js' failed (1)[0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ emcc *.o -o index.html[C[C[C[C[C[C[C[C[C[C -s ERROR_ON_UNDEFINED_SYMBOLS=0
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ exit
+exit
+
+Script done on 2019-06-08 14:20:24-0700
