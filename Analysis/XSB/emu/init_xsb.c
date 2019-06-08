@@ -522,7 +522,7 @@ FILE * input_write_stream = NULL;
 int pipe_input_stream() {
   /* create a pipe for the input. Pass XSB the read-end of this pipe, and
      place the write-end into stream_input_write  */
-  int fileDescriptors[2] = {0,0};
+  /*int fileDescriptors[2] = {0,0};
 #ifdef WIN_NT
   if (_pipe(fileDescriptors, 256, _O_TEXT) == 0) { 
 #else
@@ -534,7 +534,7 @@ int pipe_input_stream() {
     
     input_write_stream = fdopen(fileDescriptors[1], "w");
     return 0;
-  }
+  }*/
   return 1;
 }
 

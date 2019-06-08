@@ -51,3 +51,127 @@ Installation date: Wed May 29 17:00:02 PDT 2019
   PCRE support (Perl pattern matching):           no
 
 
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+               ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+               ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] inst_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] io_builtins_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] loader_xsb.c using 
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] memory_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] pathname_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] psc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] random_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] remove_unf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] residual.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] rw_lock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] scc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] slgdelay.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] socket_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] string_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] storage_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_manager.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_intern.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] sub_delete.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] subp.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] system_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] table_stats.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tables.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] thread_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+thread_xsb.c:1936:59: error: use of undeclared identifier 'PTHREAD_MUTEX_ERRORCHECK_NP'
+  status = pthread_mutexattr_settype( &attr_errorcheck_gl,PTHREAD_MUTEX_ERRORCHECK_NP );
+                                                          ^
+thread_xsb.c:1992:74: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+      if (status) printf("Error queue initialization: queue %"Intfmt"\n",xsb_mq-mq_table);
+                                                            ~~           ^~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:274: recipe for target 'thread_xsb.o' failed
+make[1]: *** [thread_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'

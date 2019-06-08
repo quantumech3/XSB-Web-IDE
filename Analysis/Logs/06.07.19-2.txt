@@ -1,0 +1,232 @@
+Script started on 2019-06-07 20:22:31-0700
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd XSB
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd build
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+               ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+               ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb -h
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile   -h
+
+Usage: make [options] [target] ...
+Options:
+  -b, -m                      Ignored for compatibility.
+  -B, --always-make           Unconditionally make all targets.
+  -C DIRECTORY, --directory=DIRECTORY
+                              Change to DIRECTORY before doing anything.
+  -d                          Print lots of debugging information.
+  --debug[=FLAGS]             Print various types of debugging information.
+  -e, --environment-overrides
+                              Environment variables override makefiles.
+  --eval=STRING               Evaluate STRING as a makefile statement.
+  -f FILE, --file=FILE, --makefile=FILE
+                              Read FILE as a makefile.
+  -h, --help                  Print this message and exit.
+  -i, --ignore-errors         Ignore errors from recipes.
+  -I DIRECTORY, --include-dir=DIRECTORY
+                              Search DIRECTORY for included makefiles.
+  -j [N], --jobs[=N]          Allow N jobs at once; infinite jobs with no arg.
+  -k, --keep-going            Keep going when some targets can't be made.
+  -l [N], --load-average[=N], --max-load[=N]
+                              Don't start multiple jobs unless load is below N.
+  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+  -n, --just-print, --dry-run, --recon
+                              Don't actually run any recipe; just print them.
+  -o FILE, --old-file=FILE, --assume-old=FILE
+                              Consider FILE to be very old and don't remake it.
+  -O[TYPE], --output-sync[=TYPE]
+                              Synchronize output of parallel jobs by TYPE.
+  -p, --print-data-base       Print make's internal database.
+  -q, --question              Run no recipe; exit status says if up to date.
+  -r, --no-builtin-rules      Disable the built-in implicit rules.
+  -R, --no-builtin-variables  Disable the built-in variable settings.
+  -s, --silent, --quiet       Don't echo recipes.
+  -S, --no-keep-going, --stop
+                              Turns off -k.
+  -t, --touch                 Touch targets instead of remaking them.
+  --trace                     Print tracing information.
+  -v, --version               Print the version number of make and exit.
+  -w, --print-directory       Print the current directory.
+  --no-print-directory        Turn off -w, even if it was turned on implicitly.
+  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+                              Consider FILE to be infinitely new.
+  --warn-undefined-variables  Warn when an undefined variable is referenced.
+
+This program built for x86_64-pc-linux-gnu
+Report bugs to <bug-make@gnu.org>
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ 
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb -h[K
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] inst_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] io_builtins_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] loader_xsb.c using 
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] memory_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] pathname_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] psc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] random_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] remove_unf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] residual.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] rw_lock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] scc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] slgdelay.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] socket_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] string_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] storage_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_manager.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_intern.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] sub_delete.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] subp.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] system_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] table_stats.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscrip
