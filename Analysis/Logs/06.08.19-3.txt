@@ -1,0 +1,603 @@
+Script started on 2019-06-08 18:04:18-0700
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd saved.o/
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ cd saved.o/[7Pexitls -l ../../../[8Pemrun .cc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../../../@/"[1P../@/"[C[1P/@/"[C[1P/@/"[1P../@/"[C[1P/@/"[C[1P/@/"[C[C[CX@/"S@/"D@/"V@/"+@/"+@/"[1P@/"[1P@/"[1P@/"[1P@/"B@/"
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd saved.o/[K[7Pexitls -l ../../../[8Pemrun .cc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../../../@/"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun .[K
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 22629, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 22364, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 22211, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .cc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/" -s EXTRA_EXPORTED_RUNTIME_METHODS=""["]"']"']"extend_encc_dec_as_nec']"
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/" -s EXTRA_EXPORTED_RUNTIME_METHODS="['extend_encc_dec_as_nec']"[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[Krun .[Kcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun .[Kcc *.o -o index.html [Kemcc *.o -o index.html run .[Kcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd saved.o/[K[7Pexitcd saved.o/emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[K]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc *.o -o index.html -s ERRROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[K[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[K[K[K[K[K[K[K[K[Kcd ,,
+bash: cd: ,,: No such file or directory
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ cd ..
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd XSB
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd Bu[K[Kb
+bash: cd: b: No such file or directory
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd build/
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emconfigure ./configure CFLAGS=""-"D" "PTHREAD_MUTEX_ERRORCHECK_NP"
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+creating cache /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/config.cache
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: updating cache /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/config.cache
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+
+
+            INSTALLATION SUMMARY
+            --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Sat Jun  8 18:16:29 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc  -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  loader_xsb.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:                                 no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:                                  /usr/bin/javac
+  Support for InterProlog's native engine:   	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:                yes
+  POSIX wildcard matching libraries:              yes
+
+  Curl support (HTTP protocol library):           no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching):           no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***          Install one of these to speed up compilation of XSB in Windows
+***          Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ ./makexsbe./makexsbm./makexsbm./makexsba./makexsbk./makexsbe./makexsb ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] main_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] auxlry.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] biassert.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] builtin.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] call_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] cinterf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] conc_compl.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] debug_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] dis.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] dynload.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] dynamic_stack.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] deadlock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] emuloop.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:703:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+            cell(--tbreg) = makeint(HASH_IS_FREE);
+                            ^~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:705:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+            cell(--tbreg) = makeint(HASH_IS_NOT_FREE);
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:714:20: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+          cell(--tbreg) = makeint(FIRST_HASH_NODE);
+                          ^~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+3 warnings generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] error_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] findall.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] function.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+function.c:315:7: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+      bld_int(regaddr,-1);
+      ^~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:200:41: note: expanded from macro 'bld_int'
+#define bld_int(addr, val) cell(addr) = makeint(val)
+                                        ^~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+1 warning generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] hash_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] hashtable_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] heap_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+In file included from heap_xsb.c:378:
+./gc_print.h:314:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trreg,%" Intfmt ").\n",((CPtr)trreg-tr_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~~~~~
+./gc_print.h:315:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(breg,%" Intfmt ").\n",(cp_bot-breg)) ;
+                              ~~~              ^~~~~~~~~~~~~
+./gc_print.h:316:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hreg,%" Intfmt ").\n",(hreg-heap_bot)) ;
+                              ~~~              ^~~~~~~~~~~~~~~
+./gc_print.h:317:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ereg,%" Intfmt ").\n",(ls_bot-ereg)) ;
+                              ~~~              ^~~~~~~~~~~~~
+./gc_print.h:319:50: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trfreg,%" Intfmt ").\n",((CPtr)trfreg-tr_bot)) ;
+                                ~~~              ^~~~~~~~~~~~~~~~~~~~~
+./gc_print.h:320:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(bfreg,%" Intfmt ").\n",(cp_bot-bfreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:321:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hfreg,%" Intfmt ").\n",(hfreg-heap_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~
+./gc_print.h:322:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(efreg,%" Intfmt ").\n",(ls_bot-efreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:326:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ebreg,%" Intfmt ").\n",(ls_bot-ebreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:327:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hbreg,%" Intfmt ").\n",(hbreg-heap_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~
+10 warnings generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+               ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] inst_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] io_builtins_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] loader_xsb.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] memory_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] pathname_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] psc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] random_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] remove_unf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] residual.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] rw_lock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] scc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] slgdelay.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] socket_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] string_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] storage_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_manager.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] struct_intern.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] sub_delete.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] subp.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] system_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] table_stats.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tables.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] thread_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+thread_xsb.c:1992:74: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+      if (status) printf("Error queue initialization: queue %"Intfmt"\n",xsb_mq-mq_table);
+                                                            ~~           ^~~~~~~~~~~~~~~
+1 warning generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] timer_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] token_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tr_utils.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] trace_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] trie_lookup.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] trie_search.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tries.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tst_insert.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tst_retrv.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tst_unify.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] tst_utils.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] varstring.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] ubi_BinTree.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] ubi_SplayTree.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] hashtable.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] hashtable_itr.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] sha1.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] md5.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] url_encode.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] getMemorySize.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] incr_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdep
