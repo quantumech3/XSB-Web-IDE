@@ -740,4 +740,101 @@ Making XSB module...
 make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
 
 Making a C-callable XSB module
-ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o
+ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o slgdelay.o socket_xsb.o string_xsb.o storage_xsb.o struct_manager.o struct_intern.o sub_delete.o subp.o system_xsb.o table_stats.o tables.o thread_xsb.o timer_xsb.o token_xsb.o tr_utils.o trace_xsb.o trie_lookup.o trie_search.o tries.o tst_insert.o tst_retrv.o tst_unify.o tst_utils.o varstring.o ubi_BinTree.o ubi_SplayTree.o hashtable.o hashtable_itr.o sha1.o md5.o url_encode.o getMemorySize.o incr_xsb.o call_graph_xsb.o    
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making DLL... (if Cygwin)
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Nothing to be done for 'dll'.
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making gpp
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o gpp
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB'
+
+cd cmplib; make
+make[2]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib'
+rm -f 'cmd...'
+rm -f '../build/.xsb_cmplib_warn.tmp'
+/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb -e "segfault_handler(warn)." < 'cmd...'
+/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb: 
+       file doesn't exist or is not executable
+
+XSB might not have have been compiled for the following machine configuration:
+              x86_64-unknown-linux-gnu
+***This installation seems to have the following configurations available:
+***configuration list end
+
+One other frequent problem: you might be over your disk quota,
+and your XSB executable might have been deleted by the system
+immediately after it was created.
+
+Please contact your system administrator, if you can't rebuild XSB.
+Makefile:71: recipe for target 'all' failed
+make[2]: *** [all] Error 1
+make[2]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib'
+Makefile:48: recipe for target 'cmplib' failed
+make[1]: *** [cmplib] Error 2
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB'
+../config/x86_64-unknown-linux-gnu/topMakefile:426: recipe for target 'remake_dot_O_files' failed
+make: *** [remake_dot_O_files] Error 2
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ cd ../..
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd saved.o/
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ cd saved.o/[3P../..emmake ./makexsbconfigure ./configure CFLAGS="-D PTHREAD_MUTEX_ERRORCHECK_NP"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccd build/[K[KXSB[1P..,,emcc *.o -o index.html run .[Kcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"
+error: Linking globals named 'main': symbol multiply defined!
+shared:ERROR: [31mFailed to run llvm optimizations: [0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"[1P[1@x[1@s[1@b
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+^X^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 30390, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 30127, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 29966, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+emrun .cc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB@/"_@/"D@/"i@/"r@/"
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crun .[K
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to l
