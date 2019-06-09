@@ -600,4 +600,144 @@ emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
 clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
 -e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] incr_xsb.c
 emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
-clang: warning: -O4 is equivalent to -O3 [-Wdep
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] call_graph_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making XSB module...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making a C-callable XSB module
+ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o slgdelay.o socket_xsb.o string_xsb.o storage_xsb.o struct_manager.o struct_intern.o sub_delete.o subp.o system_xsb.o table_stats.o tables.o thread_xsb.o timer_xsb.o token_xsb.o tr_utils.o trace_xsb.o trie_lookup.o trie_search.o tries.o tst_insert.o tst_retrv.o tst_unify.o tst_utils.o varstring.o ubi_BinTree.o ubi_SplayTree.o hashtable.o hashtable_itr.o sha1.o md5.o url_encode.o getMemorySize.o incr_xsb.o call_graph_xsb.o    
+
+auxlry.o: file not recognized: File format not recognized
+Makefile:179: recipe for target 'xsbmod' failed
+make[1]: *** [xsbmod] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:228: recipe for target 'xsbmod' failed
+make: *** [xsbmod] Error 2
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making XSB module...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making a C-callable XSB module
+ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o slgdelay.o socket_xsb.o string_xsb.o storage_xsb.o struct_manager.o struct_intern.o sub_delete.o subp.o system_xsb.o table_stats.o tables.o thread_xsb.o timer_xsb.o token_xsb.o tr_utils.o trace_xsb.o trie_lookup.o trie_search.o tries.o tst_insert.o tst_retrv.o tst_unify.o tst_utils.o varstring.o ubi_BinTree.o ubi_SplayTree.o hashtable.o hashtable_itr.o sha1.o md5.o url_encode.o getMemorySize.o incr_xsb.o call_graph_xsb.o    
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making DLL... (if Cygwin)
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Nothing to be done for 'dll'.
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making gpp
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] gpp.c using  
+gpp.c:1303:25: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+      fprintf(C->out->f,endseq);
+                        ^~~~~~
+gpp.c:1303:25: note: treat the string as an argument to avoid this
+      fprintf(C->out->f,endseq);
+                        ^
+                        "%s", 
+1 warning generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o gpp
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB'
+
+cd cmplib; make
+make[2]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib'
+rm -f 'cmd...'
+rm -f '../build/.xsb_cmplib_warn.tmp'
+/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb -e "segfault_handler(warn)." < 'cmd...'
+/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb: 
+       file doesn't exist or is not executable
+
+XSB might not have have been compiled for the following machine configuration:
+              x86_64-unknown-linux-gnu
+***This installation seems to have the following configurations available:
+***configuration list end
+
+One other frequent problem: you might be over your disk quota,
+and your XSB executable might have been deleted by the system
+immediately after it was created.
+
+Please contact your system administrator, if you can't rebuild XSB.
+Makefile:71: recipe for target 'all' failed
+make[2]: *** [all] Error 1
+make[2]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib'
+Makefile:48: recipe for target 'cmplib' failed
+make[1]: *** [cmplib] Error 2
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB'
+../config/x86_64-unknown-linux-gnu/topMakefile:426: recipe for target 'remake_dot_O_files' failed
+make: *** [remake_dot_O_files] Error 2
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ emmake ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+  
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making XSB module...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+
+Making a C-callable XSB module
+ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o

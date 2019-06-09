@@ -348,3 +348,39 @@ Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x
 
 -e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
 make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] gpp.c using  
+gpp.c:1303:25: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+      fprintf(C->out->f,endseq);
+                        ^~~~~~
+gpp.c:1303:25: note: treat the string as an argument to avoid this
+      fprintf(C->out->f,endseq);
+                        ^
+                        "%s", 
+1 warning generated.
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o gpp
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o gpp
+
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/gpp'

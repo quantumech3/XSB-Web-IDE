@@ -180,7 +180,7 @@ xsbmod:: $(OBJS) ${ODBCOBJ} ${INTERPROLOGOBJ}
 	   echo "Making a C-callable XSB module"; \
 	   echo "ld  -o $(LIB_OBJECTS) $(XSBMOD_LDFLAGS) -r $(OBJS) ${ODBCOBJ} ${INTERPROLOGOBJ} ${OTHEROBJS}" ; \
 	   echo ""
-	@ld  -o $(LIB_OBJECTS) $(XSBMOD_LDFLAGS) -r $(OBJS) ${ODBCOBJ} ${INTERPROLOGOBJ} ${OTHEROBJS}
+	@emcc  -o $(LIB_OBJECTS) $(XSBMOD_LDFLAGS) -r $(OBJS) ${ODBCOBJ} ${INTERPROLOGOBJ} ${OTHEROBJS}
 	@cp $(LIB_OBJECTS) $(arch_config_objlibdir) 2> /dev/null || echo ""
 
 xsbdynmod::
