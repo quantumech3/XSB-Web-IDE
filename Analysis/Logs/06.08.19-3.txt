@@ -837,4 +837,217 @@ Gtk-Message: Failed to load module "canberra-gtk-module"
 Gtk-Message: Failed to load module "canberra-gtk-module"
 Gtk-Message: Failed to load module "canberra-gtk-module"
 Gtk-Message: Failed to load module "canberra-gtk-module"
-Gtk-Message: Failed to l
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 31154, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 30896, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 30698, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .cc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "[C"."."/"X"S"B"/"e"m"u"[C -I ""."."/"X"S"B"/"c"
+cmplib/ config/ 
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/c"o"n"fig/"x86_64--unknown-linux-gnu/"
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64--unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[Crun .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 32127, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 31864, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 31713, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+emrun .^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .cc xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64--unknown-linux-gnu/"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cmxsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[Caxsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[Cixsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[Cnxsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C.xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[Ccxsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C
+
+main.c:8:9: error: implicitly declaring library function 'printf' with type 'int (const char *, ...)' [-Werror,-Wimplicit-function-declaration]
+        printf("++XSB failed to initialize with error: %s\n", xsb_get_init_error_message());
+        ^
+main.c:8:9: note: include the header <stdio.h> or explicitly provide a declaration for 'printf'
+1 error generated.
+shared:ERROR: [31mcompiler frontend failed to generate LLVM bitcode, halting[0m
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/"
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/"[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[Crun .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 32893, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 32754, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 32453, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [Aemrun .cc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynami
+clang: warning: argument unused during compilation: '-e xport-dynami' [-Wunused-command-line-argument]
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynami[Arun .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 33669, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 33421, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 33230, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .cc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic
+clang: warning: argument unused during compilation: '-e xport-dynamic' [-Wunused-command-line-argument]
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic[C[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x8[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C--preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+
+clang: warning: argument unused during compilation: '-e xport-dynamic' [-Wunused-command-line-argument]
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86__64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[COz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/[4@x86_[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C i[K0-s[K[K-[K[K-s EXPORT_ALL=1
+clang: warning: argument unused during compilation: '-e xport-dynamic' [-Wunused-command-line-argument]
+warning: undefined symbol: extend_enc_dec_as_nec
+warning: undefined symbol: pthread_setschedparam
+warning: undefined symbol: sched_get_priority_max
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emcc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic -s EXPORT_ALL=1[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_[20P64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[COz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/[4@x86_[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Arun .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Executing /usr/bin/xdg-open http://localhost:6931/.
+/snap/firefox/216/bin/desktop-launch: line 174: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs: No such file or directory
+cp: cannot create regular file '/home/quantumech/snap/firefox/common/.config/': Not a directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.dirs.md5sum: No such file or directory
+/snap/firefox/216/bin/desktop-launch: line 177: /home/quantumech/snap/firefox/common/.config/user-dirs.locale.md5sum: No such file or directory
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+Gtk-Message: Failed to load module "canberra-gtk-module"
+The html page you are running is not emrun-capable. Stdout, stderr and exit(returncode) capture will not work. Recompile the application with the --emrun linker flag to enable this, or pass --no_emrun_detect to emrun to hide this check.
+^CTraceback (most recent call last):
+  File "/usr/include/emsdk/emscripten/1.38.30/emrun", line 9, in <module>
+    python_selector.run(__file__)
+  File "/usr/include/emsdk/emscripten/1.38.30/tools/python_selector.py", line 24, in run
+    sys.exit(subprocess.call([python, os.path.realpath(filename) + '.py'] + sys.argv[1:]))
+  File "/usr/lib/python2.7/subprocess.py", line 172, in call
+    return Popen(*popenargs, **kwargs).wait()
+  File "/usr/lib/python2.7/subprocess.py", line 1099, in wait
+    pid, sts = _eintr_retry_call(os.waitpid, self.pid, 0)
+  File "/usr/lib/python2.7/subprocess.py", line 125, in _eintr_retry_call
+    return func(*args)
+KeyboardInterrupt
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 34567, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 34424, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 34117, Chrome_ChildThread] WARNING: pipe error (3): Connection reset by peer: file /builds/worker/workspace/build/src/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 357
+Exiting due to channel error.
+^C
+]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ emrun .cc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic -s EXPORT_ALL=1[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C-preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kl[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[COz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config/x86_64-unknown-linux-gnu/" -lpthread -lm -ldl -export-dynamic[Arun .[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[
