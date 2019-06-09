@@ -60,3 +60,48 @@ Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x
 
 -e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
 make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+orient_xsb.c:223:13: error: use of undeclared identifier 'true'
+    found = true; // CHANGED from comment above
+            ^
+orient_xsb.c:224:24: error: array type 'char [1024]' is not assignable
+    executable_path_gl = "/config/x86_64-unknown-linux-gnu/bin/xsb"; // CHANGED
+    ~~~~~~~~~~~~~~~~~~ ^
+2 errors generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:274: recipe for target 'orient_xsb.o' failed
+make[1]: *** [orient_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+orient_xsb.c:223:13: error: use of undeclared identifier 'true'
+    found = true; // CHANGED from comment above
+            ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:274: recipe for target 'orient_xsb.o' failed
+make[1]: *** [orient_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+
+Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'

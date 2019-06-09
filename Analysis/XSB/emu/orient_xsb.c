@@ -210,7 +210,7 @@ DllExport char *xsb_executable_full_path(char *myname)
     /* Now `len' holds the length of the PATH component 
        we are currently looking at.
        `pathcounter' points to the end of this component. */
-    snprintf(executable_path_gl, MAXPATHLEN, "%s%c%s", pathcounter - len, SLASH, myname_augmented);
+    snprintf(executable_path_gl, MAXPATHLEN, "/config/x86_64-unknown-linux-gnu/bin/xsb"); // CHANGED
 
     /* restore the separator and addvance the pathcounter */
     *pathcounter = save;
@@ -219,7 +219,8 @@ DllExport char *xsb_executable_full_path(char *myname)
 #ifdef WIN_NT
     found = (0 == access(executable_path_gl, 02));	/* readable */
 #else
-    found = (0 == access(executable_path_gl, 01));	/* executable */
+    //found = (0 == access(executable_path_gl, 01));	/* executable */
+    found = 1; // CHANGED from comment above
 #endif
     if (found) return executable_path_gl;
   }
