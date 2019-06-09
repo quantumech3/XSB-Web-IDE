@@ -68,7 +68,7 @@
 #include "trace_xsb.h"
 #include "cinterf.h"
 
-#if defined(GENERAL_TAGGING)
+//#if defined(GENERAL_TAGGING) CHANGED
 
 #if BITS64
 #define _SHIFT_VALUE 60
@@ -79,7 +79,7 @@
 extern Integer next_free_code;
 extern unsigned long enc[], dec[];
 
-void inline extend_enc_dec_as_nec(void *lptr, void *hptr) {
+void /*inline*/ extend_enc_dec_as_nec(void *lptr, void *hptr) {
     UInteger nibble;
     UInteger lnibble = (UInteger) lptr >> _SHIFT_VALUE;
     UInteger hnibble = (UInteger) hptr >> _SHIFT_VALUE;
@@ -103,7 +103,7 @@ void inline extend_enc_dec_as_nec(void *lptr, void *hptr) {
       }
     }
 }
-#endif
+// #endif CHANGED
 
 /* Statistics on number of mem_allocs (maintained for NON_OPT_COMPILE)
    -------------------------------------------------------------------- */
