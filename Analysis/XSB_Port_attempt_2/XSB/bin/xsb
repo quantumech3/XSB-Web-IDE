@@ -1,6 +1,6 @@
 #! /bin/sh
 
-# /Users/theresa/tempxsb/xsb-src/XSB/bin/xsb.  Generated from xsb.in by configure.
+# /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB_Port_attempt_2/XSB/bin/xsb.  Generated from xsb.in by configure.
 
 ## File:      xsb.in
 ## Author(s): kifer
@@ -75,7 +75,7 @@ thisfile=`echo "$thisfile" | sed 's,//*\.//*,/,g'`
 scriptdir=`dirname "$thisfile"`
 topdir=`dirname "$scriptdir"`
 
-# NOT using i386-apple-darwin14.5.0 so that the same physical install
+# NOT using x86_64-unknown-linux-gnu so that the same physical install
 # would work for different architectures
 config=`"$topdir/build/config.guess"`
 canonical=`"$topdir/build/config.sub" $config`

@@ -1,0 +1,2018 @@
+Script started on 2019-05-29 16:19:51-0700
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis00m$ cd XSB/
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB00m$ cd build
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ ls
+acconfig.h     0m01;32mconfig.guess0m  01;32mcopysubdirs.sh0m	   emuMakefile.in  makexsb64.bat   MSVC.dep	  private_builtin.in  sendlog.msg     01;32mtouch.sh0m	  01;32mxmc-gui.in0m
+banner.in      01;32mconfig.sub0m    def_config.in	 gppMakefile.in  makexsb.bat	 MSVC.sed	README		    smoMakefile.in  01;32mversion.sh0m	xmc.in
+chr_pp.in      01;32mconfigure0m     def_config_mnoc.in  01;32minstall-sh0m	 makexsb.in	 01;32mMSVC.sh0m	01;32mregister.sh0m	    01;32mstrip.sh0m	    01;34mwindows0m	xsb_configuration.in
+01;32mclean_pkgs.sh0m  configure.in  def_debug.in	 makedef.sh.in	 modMakefile.in  01;32mpkg_config.sh0m	registration.msg    topMakefile.in  01;34mwindows640m	xsb.in
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ K./configure K-h
+`configure' configures this package to adapt to many kinds of systems.
+
+Usage: ./configure [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
+  -h, --help		  display this help and exit
+      --help=short	  display options specific to this package
+      --help=recursive	  display the short help of all the included packages
+  -V, --version 	  display version information and exit
+  -q, --quiet, --silent   do not print `checking ...' messages
+      --cache-file=FILE   cache test results in FILE [disabled]
+  -C, --config-cache	  alias for `--cache-file=config.cache'
+  -n, --no-create	  do not create output files
+      --srcdir=DIR	  find the sources in DIR [configure dir or `..']
+
+Installation directories:
+  --prefix=PREFIX	  install architecture-independent files in PREFIX
+			  [/usr/local]
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+			  [PREFIX]
+
+By default, `make install' will install all the files in
+`/usr/local/bin', `/usr/local/lib' etc.  You can specify
+an installation prefix other than `/usr/local' using `--prefix',
+for instance `--prefix=$HOME'.
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir=DIR		  user executables [EPREFIX/bin]
+  --sbindir=DIR 	  system admin executables [EPREFIX/sbin]
+  --libexecdir=DIR	  program executables [EPREFIX/libexec]
+  --sysconfdir=DIR	  read-only single-machine data [PREFIX/etc]
+  --sharedstatedir=DIR	  modifiable architecture-independent data [PREFIX/com]
+  --localstatedir=DIR	  modifiable single-machine data [PREFIX/var]
+  --libdir=DIR		  object code libraries [EPREFIX/lib]
+  --includedir=DIR	  C header files [PREFIX/include]
+  --oldincludedir=DIR	  C header files for non-gcc [/usr/include]
+  --datarootdir=DIR	  read-only arch.-independent data root [PREFIX/share]
+  --datadir=DIR 	  read-only architecture-independent data [DATAROOTDIR]
+  --infodir=DIR 	  info documentation [DATAROOTDIR/info]
+  --localedir=DIR	  locale-dependent data [DATAROOTDIR/locale]
+  --mandir=DIR		  man documentation [DATAROOTDIR/man]
+  --docdir=DIR		  documentation root [DATAROOTDIR/doc/PACKAGE]
+  --htmldir=DIR 	  html documentation [DOCDIR]
+  --dvidir=DIR		  dvi documentation [DOCDIR]
+  --pdfdir=DIR		  pdf documentation [DOCDIR]
+  --psdir=DIR		  ps documentation [DOCDIR]
+
+System types:
+  --build=BUILD     configure for building on BUILD [guessed]
+  --host=HOST	    cross-compile to build programs to run on HOST [BUILD]
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE	  do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-no-cygwin	       Compile with the gss option -mno-cygwin (default: disabled)
+				The latest Cygwins don't support this flag
+  --enable-general-tagging     When this option is enabled XSB will determine
+			       which bits in the address to tag during
+			       runtime. This option is the last resort, if
+			       XSB cannot figure out the appropriate tagging
+			       schema for your architecture
+  --enable-debug	       compile with debugging turned on
+  --enable-debug-verbose       compile with verbose messages
+  --enable-debug-vm	       compile with VM-level debugging
+  --enable-debug-assertions    compile with debug assertions
+  --enable-dwarf-debug	       compile with extra (macro) debugging turned on
+  --enable-oracle-debug        compile with Oracle debugging turned on
+  --enable-profile	       compile with profiling turned on
+  --disable-optimization       compile with no optimization (default: enabled)
+  --enable-batched-scheduling  compile using the batched scheduling strategy;
+				default is the local strategy
+  --enable-gc-test	       stress-test the garbage collector (for developers)
+  --enable-demand	       compile with demand support
+  --disable-jumptable	       disables the jumptable-based emulator loop
+  --enable-mt		       compile multithreaded engine
+  --enable-fast-floats	       compile with one-word floats (including tag)
+  --enable-ccmpl	       compile mt engine with concurrent completion
+  --enable-profiling	       force gcc to generate information for profiling
+  --enable-electric-fence      link with the electric fence malloc debugger (currently unsupported)
+
+Optional Packages:
+  --with-PACKAGE[=ARG]	  use PACKAGE [ARG=yes]
+  --without-PACKAGE	  do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-gcc		       use GCC to compile XSB
+  --with-cc		       use CC to compile XSB
+  --with-acc		       use ACC to compile XSB
+  --with-cilk		     force a cilk compiled version of XSB
+  --with-bits64 	       force a 64-bit version of XSB
+  --with-bits32 	       force a 32-bit version of XSB
+  --with-aout		       build XSB for a Unix system with .aout binary format
+  --with-optimization=Ox       build XSB with compiler optimization level O, O1, ..., O4
+  --with-config-tag=TAG        Makes the configuration directory name look like
+				CONFIG_PREFIX/configuration-TAG. If TAG is missing
+				the directory is CONFIG_PREFIX/configuration
+				TAG is used for debugging, so one can have
+				different builds under the same architecture
+  --with-site-prefix=DIR       Site-specific XSB libraries are found in DIR
+  --with-includes=DIR	       These might be needed if it is necessary to tell
+				the compiler about additional header files to
+				include with the -I option. This need arises if
+				your standard header files are in odd places or
+				if XSB is compiled with ODBC support.
+				You can specify a list of libraries by
+				enclosing them in quotes
+  --with-static-libraries=DIR  These might be needed, if compiling with support
+				for statically linked packages (such as Oracle)
+				or if your standard C libraries are in
+				odd places. These libraries are added as
+				-L options during XSB compilation. One can
+				specify a list of libraries by enclosing them
+				in quotes. This list is automatically added to
+				loader flags to ensure that the packages will
+				be linked in
+  --with-dynamic-libraries=DIR This specifies the list of libraries used by
+				packages linked dynamically with XSB. These
+				libraries are automatically added to the XSB
+				library search path, so they could be loaded at
+				run time
+  --with-xpath-dir=DIR	       the location of the libxml2 library is at DIR
+  --with-curl-libdir=DIR       the location of the libcurl.so is at DIR
+  --with-curl-incdir=DIR       the location of the include files for the Curl library is at DIR
+  --with-pcre-libdir=DIR       the location of the libpcre.so is at DIR
+  --with-pcre-incdir=DIR       the location of the include files for the PCRE library is at DIR
+  --with-dbdrivers	       configure dbdrivers package
+  --with-odbc-libdir=DIR       provide info on where the ODBC libraries are
+  --with-odbc-incdir=DIR       provide info on where the ODBC include files are
+  --with-mysql-libdir=DIR	provide info on where the MySQL libraries are
+  --with-mysql-incdir=DIR	provide info on where the MySQL include files are
+  --with-mysqlembedded-libdir=DIR	provide info on where the MySQL Embedded Server libraries are
+  --with-mysqlembedded-incdir=DIR	provide info on where the MySQL Embedded Server include files are
+  --with-oracle 	       compile with support of Oracle
+  --with-odbc		       compile with support for ODBC
+  --with-iodbc		       use iODBC driver manager
+  --with-smodels=path	       use SMODELS for the XNMR module.
+				path is the path where smodels has
+				been installed and compiled
+  --with-itkwish=DIR		DIR where the itkwish shell is located
+  --with-pita=DIR	compile XSB with PITA, with CUDD in directory DIR
+
+Some influential environment variables:
+  CC	      C compiler command
+  CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+	      nonstandard directory <lib dir>
+  LIBS	      libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+	      you have headers in a nonstandard directory <include dir>
+  CPP	      C preprocessor
+  CXX	      C++ compiler command
+  CXXFLAGS    C++ compiler flags
+
+Use these variables to override the choices made by `configure' or to help
+it to find libraries and programs with nonstandard names/locations.
+
+Report bugs to the package provider.
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ ./configure -h | less
+`configure'0configures this package to adapt to many kinds of systems.
+
+Usage: ./configure [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
+  -h, --help		  display this help and exit
+      --help=short	  display options specific to this package
+      --help=recursive	  display the short help of all the included packages
+  -V, --version 	  display version information and exit
+  -q, --quiet, --silent   do not print `checking ...' messages
+K1;1H`configure'Kconfigures this package to adapt to many kinds of systems.
+2;1H
+3;1HUsage: ./configure [OPTION]... [VAR=VALUE]...
+4;1H
+5;1HTo assign environment variables (e.g., CC, CFLAGS...), specify them as
+6;1HVAR=VALUE.	See below for descriptions of some of the useful variables.
+7;1H
+8;1HDefaults for the options are specified in brackets.
+9;1H
+10;1HConfiguration:
+11;1H  -h, --help	       display this help and exit
+12;1H	   --help=short        display options specific to this package
+13;1H	   --help=recursive    display the short help of all the included packages
+14;1H  -V, --version	       display version information and exit
+15;1H  -q, --quiet, --silent   do not print `checking ...' messages
+16;1H1;1H`configure' configures this package to adapt to many kinds of systems.
+2;1H
+3;1HUsage: ./configure [OPTION]... [VAR=VALUE]...
+4;1H
+5;1HTo assign environment variables (e.g., CC, CFLAGS...), specify them as
+6;1HVAR=VALUE.	See below for descriptions of some of the useful variables.
+7;1H
+8;1HDefaults for the options are specified in brackets.
+9;1H
+10;1HConfiguration:
+11;1H  -h, --help	       display this help and exit
+12;1H	   --help=short        display options specific to this package
+13;1H	   --help=recursive    display the short help of all the included packages
+14;1H  -V, --version	       display version information and exit
+15;1H  -q, --quiet, --silent   do not print `checking ...' messages
+16;1H...skipping...
+  --host=HOST	    cross-7mcompile27m to build programs to run on HOST [BUILD]
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE	  do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-no-cygwin	       Compile with the gss option -mno-cygwin (default: disabled)
+				The latest Cygwins don't support this flag
+  --enable-general-tagging     When this option is enabled XSB will determine
+			       which bits in the address to tag during
+			       runtime. This option is the last resort, if
+			       XSB cannot figure out the appropriate tagging
+			       schema for your architecture
+  --enable-debug	       7mcompile27m with debugging turned on
+  --enable-debug-verbose       7mcompile27m with verbose messages
+KKK--enable-debug-vm		7mcompile27m with VM-level debugging
+KKK--enable-debug-assertions	7mcompile27m with debug assertions
+KKK--enable-dwarf-debug 	7mcompile27m with extra (macro) debugging turned on
+KHOptional Features:
+KHKESCKOKA
+KHKE--host=HOST       cross-7mcompile27m to build programs to run on HOST [BUILD]
+KHKE--build=BUILD     configure for building on BUILD [guessed]
+KHSystemKtypes:
+KHKESCKOKA
+KHKE--psdir=DIR 	    ps documentation [DOCDIR]
+KHKE--pdfdir=DIR	    pdf documentation [DOCDIR]
+KHKE--dvidir=DIR	    dvi documentation [DOCDIR]
+K:KESCKOKB			which bits in the address to tag during
+KKKESCKOKB			runtime. This option is the last resort, if
+KKKESCKOKB			XSB cannot figure out the appropriate tagging
+KKKESCKOKB			schema for your architecture
+KKK--enable-debug		7mcompile27m with debugging turned on
+KKK--enable-debug-verbose	7mcompile27m with verbose messages
+KKK--enable-debug-vm		7mcompile27m with VM-level debugging
+KKK--enable-debug-assertions	7mcompile27m with debug assertions
+KKK--enable-dwarf-debug 	7mcompile27m with extra (macro) debugging turned on
+KKK--enable-oracle-debug	7mcompile27m with Oracle debugging turned on
+KKK--enable-profile		7mcompile27m with profiling turned on
+KKK--disable-optimization	7mcompile27m with no optimization (default: enabled)
+KKK--enable-batched-scheduling	7mcompile27m using the batched scheduling strategy;
+KKKESCKOKB			 default is the local strategy
+KKK--enable-gc-test		stress-test the garbage collector (for developers)
+KKK--enable-demand		7mcompile27m with demand support
+KKK--disable-jumptable		disables the jumptable-based emulator loop
+KKK--enable-mt			7mcompile27m multithreaded engine
+KKK--enable-fast-floats 	7mcompile27m with one-word floats (including tag)
+KKK--enable-ccmpl		7mcompile27m mt engine with concurrent completion
+KKK--enable-profiling		force gcc to generate information for profiling
+KKK--enable-electric-fence	link with the electric fence malloc debugger (currently unsupported)
+KKKESCKOKB
+KOptionalBPackages:
+KKK--with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+KKK--without-PACKAGE	   do not use PACKAGE (same as --with-PACKAGE=no)
+KKK--with-gcc			use GCC to 7mcompile27m XSB
+KKK--with-cc			use CC to 7mcompile27m XSB
+KKK--with-acc			use ACC to 7mcompile27m XSB
+KHKESCKOKA			  default is the local strategy
+KHKE--enable-batched-scheduling  7mcompile27m using the batched scheduling strategy;
+KHKE--disable-optimization	 7mcompile27m with no optimization (default: enabled)
+KHKE--enable-profile		 7mcompile27m with profiling turned on
+KHKE--enable-oracle-debug	 7mcompile27m with Oracle debugging turned on
+KHKE--enable-dwarf-debug	 7mcompile27m with extra (macro) debugging turned on
+KHKE--enable-debug-assertions	 7mcompile27m with debug assertions
+KHKE--enable-debug-vm		 7mcompile27m with VM-level debugging
+KHKE--enable-debug-verbose	 7mcompile27m with verbose messages
+KHKE--enable-debug		 7mcompile27m with debugging turned on
+KHKESCKOKA			 schema for your architecture
+KHKESCKOKA			 XSB cannot figure out the appropriate tagging
+KHKESCKOKA			 runtime. This option is the last resort, if
+KHKESCKOKA			 which bits in the address to tag during
+KHKE--enable-general-tagging	 When this option is enabled XSB will determine
+KHKESCKOKA			  The latest Cygwins don't support this flag
+KHKE--enable-no-cygwin		 Compile with the gss option -mno-cygwin (default: disabled)
+KHKE--enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+KHKE--disable-FEATURE	    do not include FEATURE (same as --enable-FEATURE=no)
+KHKE--disable-option-checking  ignore unrecognized --enable/--with options
+KHOptional Features:
+KHKESCKOKA
+KHKE--host=HOST       cross-7mcompile27m to build programs to run on HOST [BUILD]
+KHKE--build=BUILD     configure for building on BUILD [guessed]
+KHSystemKtypes:
+KHKESCKOKA
+K:KESCKOKB			schema for your architecture
+KKK--enable-debug		7mcompile27m with debugging turned on
+KKK--enable-debug-verbose	7mcompile27m with verbose messages
+KKK--enable-debug-vm		7mcompile27m with VM-level debugging
+KKK--enable-debug-assertions	7mcompile27m with debug assertions
+KKK--enable-dwarf-debug 	7mcompile27m with extra (macro) debugging turned on
+KKK--enable-oracle-debug	7mcompile27m with Oracle debugging turned on
+KKK--enable-profile		7mcompile27m with profiling turned on
+KKK--disable-optimization	7mcompile27m with no optimization (default: enabled)
+KKK--enable-batched-scheduling	7mcompile27m using the batched scheduling strategy;
+KKKESCKOKB			 default is the local strategy
+KKK--enable-gc-test		stress-test the garbage collector (for developers)
+KKK--enable-demand		7mcompile27m with demand support
+KKK--disable-jumptable		disables the jumptable-based emulator loop
+KKK--enable-mt			7mcompile27m multithreaded engine
+KKK--enable-fast-floats 	7mcompile27m with one-word floats (including tag)
+KKK--enable-ccmpl		7mcompile27m mt engine with concurrent completion
+KKK--enable-profiling		force gcc to generate information for profiling
+KKK--enable-electric-fence	link with the electric fence malloc debugger (currently unsupported)
+KKKESCKOKB
+KOptionalBPackages:
+KKK--with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+KKK--without-PACKAGE	   do not use PACKAGE (same as --with-PACKAGE=no)
+KKK--with-gcc			use GCC to 7mcompile27m XSB
+KKK--with-cc			use CC to 7mcompile27m XSB
+KKK--with-acc			use ACC to 7mcompile27m XSB
+KKK--with-cilk		      force a cilk 7mcompile27md version of XSB
+KKK--with-bits64		force a 64-bit version of XSB
+KKK--with-bits32		force a 32-bit version of XSB
+KKK--with-aout			build XSB for a Unix system with .aout binary format
+KKK--with-optimization=Ox	build XSB with 7mcompile27mr optimization level O, O1, ..., O4
+KKK--with-config-tag=TAG	Makes the configuration directory name look like
+KKKESCKOKB			 CONFIG_PREFIX/configuration-TAG. If TAG is missing
+KKKESCKOKB			 the directory is CONFIG_PREFIX/configuration
+KKKESCKOKB			 TAG is used for debugging, so one can have
+KKKESCKOKB			 different builds under the same architecture
+KKK--with-site-prefix=DIR	Site-specific XSB libraries are found in DIR
+KKK--with-includes=DIR		These might be needed if it is necessary to tell
+KKKESCKOKB			 the 7mcompile27mr about additional header files to
+KKKESCKOKB			 include with the -I option. This need arises if
+KKKESCKOKB			 your standard header files are in odd places or
+KKKESCKOKB			 if XSB is 7mcompile27md with ODBC support.
+KKKESCKOKB			 You can specify a list of libraries by
+KKKESCKOKB			 enclosing them in quotes
+KKK--with-static-libraries=DIR	These might be needed, if compiling with support
+KKKESCKOKB			 for statically linked packages (such as Oracle)
+KKKESCKOKB			 or if your standard C libraries are in
+KKKESCKOKB			 odd places. These libraries are added as
+KKKESCKOKB			 -L options during XSB compilation. One can
+KKKESCKOKB			 specify a list of libraries by enclosing them
+KKKESCKOKB			 in quotes. This list is automatically added to
+KKKESCKOKB			 loader flags to ensure that the packages will
+KKKESCKOKB			 be linked in
+KKK--with-dynamic-libraries=DIR This specifies the list of libraries used by
+KKKESCKOKB			 packages linked dynamically with XSB. These
+KKKESCKOKB			 libraries are automatically added to the XSB
+KKKESCKOKB			 library search path, so they could be loaded at
+KKKESCKOKB			 run time
+KKK--with-xpath-dir=DIR 	the location of the libxml2 library is at DIR
+KKK--with-curl-libdir=DIR	the location of the libcurl.so is at DIR
+KKK--with-curl-incdir=DIR	the location of the include files for the Curl library is at DIR
+KKK--with-pcre-libdir=DIR	the location of the libpcre.so is at DIR
+KKK--with-pcre-incdir=DIR	the location of the include files for the PCRE library is at DIR
+KKK--with-dbdrivers		configure dbdrivers package
+KKK--with-odbc-libdir=DIR	provide info on where the ODBC libraries are
+KKK--with-odbc-incdir=DIR	provide info on where the ODBC include files are
+KKK--with-mysql-libdir=DIR	 provide info on where the MySQL libraries are
+KKK--with-mysql-incdir=DIR	 provide info on where the MySQL include files are
+KKK--with-mysqlembedded-libdir=DIR	 provide info on where the MySQL Embedded Server libraries are
+KKK--with-mysqlembedded-incdir=DIR	 provide info on where the MySQL Embedded Server include files are
+KKK--with-oracle		7mcompile27m with support of Oracle
+KKK--with-odbc			7mcompile27m with support for ODBC
+KKK--with-iodbc 		use iODBC driver manager
+KKK--with-smodels=path		use SMODELS for the XNMR module.
+KKKESCKOKB			 path is the path where smodels has
+KKKESCKOKB			 been installed and 7mcompile27md
+KKK--with-itkwish=DIR		 DIR where the itkwish shell is located
+KKK--with-pita=DIR	 7mcompile27m XSB with PITA, with CUDD in directory DIR
+KKKESCKOKB
+KSomeCinfluential environment variables:
+KKKCCCKOKB     C 7mcompile27mr command
+KKKCFLAGSB     C 7mcompile27mr flags
+KKKLDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+KKKESCKOKB     nonstandard directory <lib dir>
+KKKLIBSOKB     libraries to pass to the linker, e.g. -l<library>
+KKKCPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+KKKESCKOKB     you have headers in a nonstandard directory <include dir>
+KKKCPPKOKB     C preprocessor
+KKKCXXKOKB     C++ 7mcompile27mr command
+KKKCXXFLAGS    C++ 7mcompile27mr flags
+KKKESCKOKB
+KUseSthese variables to override the choices made by `configure' or to help
+KitEtoKfind libraries and programs with nonstandard names/locations.
+KKKESCKOKB
+KReportObugs to the package provider.
+K?1l?1049l23;0;0t0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ clear
+3JH2J0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emcofKnfigure ./configure
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+creating cache /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/config.cache
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: updating cache /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/config.cache
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+
+
+	    INSTALLATION SUMMARY
+	    --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Wed May 29 16:48:34 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc  -O4
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  loader_xsb.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:				  no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:				  /usr/bin/javac
+  Support for InterProlog's native engine:	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:		  yes
+  POSIX wildcard matching libraries:		  yes
+
+  Curl support (HTTP protocol library): 	  no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching): 	  no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***	     Install one of these to speed up compilation of XSB in Windows
+***	     Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emmakeKe makK ./makexsb
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4
+
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] main_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] auxlry.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] biassert.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] builtin.c using
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] call_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] cinterf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] conc_compl.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] debug_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] dis.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] dynload.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] dynamic_stack.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] deadlock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] emuloop.c using
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:703:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+	    cell(--tbreg) = makeint(HASH_IS_FREE);
+			    ^~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+			     ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+			~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:705:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+	    cell(--tbreg) = makeint(HASH_IS_NOT_FREE);
+			    ^~~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+			     ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+			~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:714:20: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+	  cell(--tbreg) = makeint(FIRST_HASH_NODE);
+			  ^~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+			     ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+			~~~~~~~~~~~~~~ ^
+3 warnings generated.
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] error_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] findall.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] function.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+function.c:315:7: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+      bld_int(regaddr,-1);
+      ^~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:200:41: note: expanded from macro 'bld_int'
+#define bld_int(addr, val) cell(addr) = makeint(val)
+					^~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+			     ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+			~~~~~~~~~~~~~~ ^
+1 warning generated.
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] hash_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] hashtable_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] heap_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+In file included from heap_xsb.c:378:
+./gc_print.h:314:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trreg,%" Intfmt ").\n",((CPtr)trreg-tr_bot)) ;
+			       ~~~		^~~~~~~~~~~~~~~~~~~~
+./gc_print.h:315:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(breg,%" Intfmt ").\n",(cp_bot-breg)) ;
+			      ~~~	       ^~~~~~~~~~~~~
+./gc_print.h:316:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hreg,%" Intfmt ").\n",(hreg-heap_bot)) ;
+			      ~~~	       ^~~~~~~~~~~~~~~
+./gc_print.h:317:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ereg,%" Intfmt ").\n",(ls_bot-ereg)) ;
+			      ~~~	       ^~~~~~~~~~~~~
+./gc_print.h:319:50: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trfreg,%" Intfmt ").\n",((CPtr)trfreg-tr_bot)) ;
+				~~~		 ^~~~~~~~~~~~~~~~~~~~~
+./gc_print.h:320:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(bfreg,%" Intfmt ").\n",(cp_bot-bfreg)) ;
+			       ~~~		^~~~~~~~~~~~~~
+./gc_print.h:321:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hfreg,%" Intfmt ").\n",(hfreg-heap_bot)) ;
+			       ~~~		^~~~~~~~~~~~~~~~
+./gc_print.h:322:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(efreg,%" Intfmt ").\n",(ls_bot-efreg)) ;
+			       ~~~		^~~~~~~~~~~~~~
+./gc_print.h:326:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ebreg,%" Intfmt ").\n",(ls_bot-ebreg)) ;
+			       ~~~		^~~~~~~~~~~~~~
+./gc_print.h:327:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hbreg,%" Intfmt ").\n",(hbreg-heap_bot)) ;
+			       ~~~		^~~~~~~~~~~~~~~~
+10 warnings generated.
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+	       ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emmake ./makexsb -h
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile	 -h
+
+Usage: make [options] [target] ...
+Options:
+  -b, -m		      Ignored for compatibility.
+  -B, --always-make	      Unconditionally make all targets.
+  -C DIRECTORY, --directory=DIRECTORY
+			      Change to DIRECTORY before doing anything.
+  -d			      Print lots of debugging information.
+  --debug[=FLAGS]	      Print various types of debugging information.
+  -e, --environment-overrides
+			      Environment variables override makefiles.
+  --eval=STRING 	      Evaluate STRING as a makefile statement.
+  -f FILE, --file=FILE, --makefile=FILE
+			      Read FILE as a makefile.
+  -h, --help		      Print this message and exit.
+  -i, --ignore-errors	      Ignore errors from recipes.
+  -I DIRECTORY, --include-dir=DIRECTORY
+			      Search DIRECTORY for included makefiles.
+  -j [N], --jobs[=N]	      Allow N jobs at once; infinite jobs with no arg.
+  -k, --keep-going	      Keep going when some targets can't be made.
+  -l [N], --load-average[=N], --max-load[=N]
+			      Don't start multiple jobs unless load is below N.
+  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+  -n, --just-print, --dry-run, --recon
+			      Don't actually run any recipe; just print them.
+  -o FILE, --old-file=FILE, --assume-old=FILE
+			      Consider FILE to be very old and don't remake it.
+  -O[TYPE], --output-sync[=TYPE]
+			      Synchronize output of parallel jobs by TYPE.
+  -p, --print-data-base       Print make's internal database.
+  -q, --question	      Run no recipe; exit status says if up to date.
+  -r, --no-builtin-rules      Disable the built-in implicit rules.
+  -R, --no-builtin-variables  Disable the built-in variable settings.
+  -s, --silent, --quiet       Don't echo recipes.
+  -S, --no-keep-going, --stop
+			      Turns off -k.
+  -t, --touch		      Touch targets instead of remaking them.
+  --trace		      Print tracing information.
+  -v, --version 	      Print the version number of make and exit.
+  -w, --print-directory       Print the current directory.
+  --no-print-directory	      Turn off -w, even if it was turned on implicitly.
+  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+			      Consider FILE to be infinitely new.
+  --warn-undefined-variables  Warn when an undefined variable is referenced.
+
+This program built for x86_64-pc-linux-gnu
+Report bugs to <bug-make@gnu.org>
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ ./configure	K0K-h
+`configure' configures this package to adapt to many kinds of systems.
+
+Usage: ./configure [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
+  -h, --help		  display this help and exit
+      --help=short	  display options specific to this package
+      --help=recursive	  display the short help of all the included packages
+  -V, --version 	  display version information and exit
+  -q, --quiet, --silent   do not print `checking ...' messages
+      --cache-file=FILE   cache test results in FILE [disabled]
+  -C, --config-cache	  alias for `--cache-file=config.cache'
+  -n, --no-create	  do not create output files
+      --srcdir=DIR	  find the sources in DIR [configure dir or `..']
+
+Installation directories:
+  --prefix=PREFIX	  install architecture-independent files in PREFIX
+			  [/usr/local]
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+			  [PREFIX]
+
+By default, `make install' will install all the files in
+`/usr/local/bin', `/usr/local/lib' etc.  You can specify
+an installation prefix other than `/usr/local' using `--prefix',
+for instance `--prefix=$HOME'.
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir=DIR		  user executables [EPREFIX/bin]
+  --sbindir=DIR 	  system admin executables [EPREFIX/sbin]
+  --libexecdir=DIR	  program executables [EPREFIX/libexec]
+  --sysconfdir=DIR	  read-only single-machine data [PREFIX/etc]
+  --sharedstatedir=DIR	  modifiable architecture-independent data [PREFIX/com]
+  --localstatedir=DIR	  modifiable single-machine data [PREFIX/var]
+  --libdir=DIR		  object code libraries [EPREFIX/lib]
+  --includedir=DIR	  C header files [PREFIX/include]
+  --oldincludedir=DIR	  C header files for non-gcc [/usr/include]
+  --datarootdir=DIR	  read-only arch.-independent data root [PREFIX/share]
+  --datadir=DIR 	  read-only architecture-independent data [DATAROOTDIR]
+  --infodir=DIR 	  info documentation [DATAROOTDIR/info]
+  --localedir=DIR	  locale-dependent data [DATAROOTDIR/locale]
+  --mandir=DIR		  man documentation [DATAROOTDIR/man]
+  --docdir=DIR		  documentation root [DATAROOTDIR/doc/PACKAGE]
+  --htmldir=DIR 	  html documentation [DOCDIR]
+  --dvidir=DIR		  dvi documentation [DOCDIR]
+  --pdfdir=DIR		  pdf documentation [DOCDIR]
+  --psdir=DIR		  ps documentation [DOCDIR]
+
+System types:
+  --build=BUILD     configure for building on BUILD [guessed]
+  --host=HOST	    cross-compile to build programs to run on HOST [BUILD]
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE	  do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-no-cygwin	       Compile with the gss option -mno-cygwin (default: disabled)
+				The latest Cygwins don't support this flag
+  --enable-general-tagging     When this option is enabled XSB will determine
+			       which bits in the address to tag during
+			       runtime. This option is the last resort, if
+			       XSB cannot figure out the appropriate tagging
+			       schema for your architecture
+  --enable-debug	       compile with debugging turned on
+  --enable-debug-verbose       compile with verbose messages
+  --enable-debug-vm	       compile with VM-level debugging
+  --enable-debug-assertions    compile with debug assertions
+  --enable-dwarf-debug	       compile with extra (macro) debugging turned on
+  --enable-oracle-debug        compile with Oracle debugging turned on
+  --enable-profile	       compile with profiling turned on
+  --disable-optimization       compile with no optimization (default: enabled)
+  --enable-batched-scheduling  compile using the batched scheduling strategy;
+				default is the local strategy
+  --enable-gc-test	       stress-test the garbage collector (for developers)
+  --enable-demand	       compile with demand support
+  --disable-jumptable	       disables the jumptable-based emulator loop
+  --enable-mt		       compile multithreaded engine
+  --enable-fast-floats	       compile with one-word floats (including tag)
+  --enable-ccmpl	       compile mt engine with concurrent completion
+  --enable-profiling	       force gcc to generate information for profiling
+  --enable-electric-fence      link with the electric fence malloc debugger (currently unsupported)
+
+Optional Packages:
+  --with-PACKAGE[=ARG]	  use PACKAGE [ARG=yes]
+  --without-PACKAGE	  do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-gcc		       use GCC to compile XSB
+  --with-cc		       use CC to compile XSB
+  --with-acc		       use ACC to compile XSB
+  --with-cilk		     force a cilk compiled version of XSB
+  --with-bits64 	       force a 64-bit version of XSB
+  --with-bits32 	       force a 32-bit version of XSB
+  --with-aout		       build XSB for a Unix system with .aout binary format
+  --with-optimization=Ox       build XSB with compiler optimization level O, O1, ..., O4
+  --with-config-tag=TAG        Makes the configuration directory name look like
+				CONFIG_PREFIX/configuration-TAG. If TAG is missing
+				the directory is CONFIG_PREFIX/configuration
+				TAG is used for debugging, so one can have
+				different builds under the same architecture
+  --with-site-prefix=DIR       Site-specific XSB libraries are found in DIR
+  --with-includes=DIR	       These might be needed if it is necessary to tell
+				the compiler about additional header files to
+				include with the -I option. This need arises if
+				your standard header files are in odd places or
+				if XSB is compiled with ODBC support.
+				You can specify a list of libraries by
+				enclosing them in quotes
+  --with-static-libraries=DIR  These might be needed, if compiling with support
+				for statically linked packages (such as Oracle)
+				or if your standard C libraries are in
+				odd places. These libraries are added as
+				-L options during XSB compilation. One can
+				specify a list of libraries by enclosing them
+				in quotes. This list is automatically added to
+				loader flags to ensure that the packages will
+				be linked in
+  --with-dynamic-libraries=DIR This specifies the list of libraries used by
+				packages linked dynamically with XSB. These
+				libraries are automatically added to the XSB
+				library search path, so they could be loaded at
+				run time
+  --with-xpath-dir=DIR	       the location of the libxml2 library is at DIR
+  --with-curl-libdir=DIR       the location of the libcurl.so is at DIR
+  --with-curl-incdir=DIR       the location of the include files for the Curl library is at DIR
+  --with-pcre-libdir=DIR       the location of the libpcre.so is at DIR
+  --with-pcre-incdir=DIR       the location of the include files for the PCRE library is at DIR
+  --with-dbdrivers	       configure dbdrivers package
+  --with-odbc-libdir=DIR       provide info on where the ODBC libraries are
+  --with-odbc-incdir=DIR       provide info on where the ODBC include files are
+  --with-mysql-libdir=DIR	provide info on where the MySQL libraries are
+  --with-mysql-incdir=DIR	provide info on where the MySQL include files are
+  --with-mysqlembedded-libdir=DIR	provide info on where the MySQL Embedded Server libraries are
+  --with-mysqlembedded-incdir=DIR	provide info on where the MySQL Embedded Server include files are
+  --with-oracle 	       compile with support of Oracle
+  --with-odbc		       compile with support for ODBC
+  --with-iodbc		       use iODBC driver manager
+  --with-smodels=path	       use SMODELS for the XNMR module.
+				path is the path where smodels has
+				been installed and compiled
+  --with-itkwish=DIR		DIR where the itkwish shell is located
+  --with-pita=DIR	compile XSB with PITA, with CUDD in directory DIR
+
+Some influential environment variables:
+  CC	      C compiler command
+  CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+	      nonstandard directory <lib dir>
+  LIBS	      libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+	      you have headers in a nonstandard directory <include dir>
+  CPP	      C preprocessor
+  CXX	      C++ compiler command
+  CXXFLAGS    C++ compiler flags
+
+Use these variables to override the choices made by `configure' or to help
+it to find libraries and programs with nonstandard names/locations.
+
+Report bugs to the package provider.
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emKconfigure ./configure --disavKble-optimization
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h is unchanged
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h is unchanged
+
+
+	    INSTALLATION SUMMARY
+	    --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Wed May 29 16:55:06 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  loader_xsb.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  normal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:				  no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:				  /usr/bin/javac
+  Support for InterProlog's native engine:	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:		  yes
+  POSIX wildcard matching libraries:		  yes
+
+  Curl support (HTTP protocol library): 	  no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching): 	  no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***	     Install one of these to speed up compilation of XSB in Windows
+***	     Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ .5@emmaker./makexsbCCKe --disable-optimization
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using
+
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+	       ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ .5@emmconfiguree./configureisable-optimization
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h is unchanged
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h is unchanged
+
+
+	    INSTALLATION SUMMARY
+	    --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Wed May 29 16:57:04 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc  -O4
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  loader_xsb.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:				  no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:				  /usr/bin/javac
+  Support for InterProlog's native engine:	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:		  yes
+  POSIX wildcard matching libraries:		  yes
+
+  Curl support (HTTP protocol library): 	  no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching): 	  no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***	     Install one of these to speed up compilation of XSB in Windows
+***	     Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ em7Pmakeu./makexsbigure
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile
+
+
+Preparing...
+
+Making emulator...
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+-e
+Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4
+
+-e	[/usr/include/emsdk/emscripten/1.38.30/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+init_xsb.c:533:12: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
+    *stdin = *input_read_stream;
+    ~~~~~~ ^
+/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: forward declaration of 'struct _IO_FILE'
+typedef struct _IO_FILE FILE;
+	       ^
+1 error generated.
+shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
+Makefile:238: recipe for target 'init_xsb.o' failed
+make[1]: *** [init_xsb.o] Error 1
+make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
+../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
+make: *** [emulator] Error 1
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emconfigurek./configure
+
+Building XSB Version 3.7. (Clan MacGregor) of 2016-07-06
+
+checking build system type... x86_64-unknown-linux-gnu
+checking host system type... x86_64-unknown-linux-gnu
+configure: checking host system type... x86_64-unknown-linux-gnu
+Checking installation directories...
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/syslib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/cmplib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/build... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/etc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/examples... OK
+checking /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/prolog_includes... OK
+Checking installation directories ... Done
+checking for gcc... /usr/include/emsdk/emscripten/1.38.30/emcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /usr/include/emsdk/emscripten/1.38.30/emcc accepts -g... yes
+checking for /usr/include/emsdk/emscripten/1.38.30/emcc option to accept ISO C89... none needed
+checking how to run the C preprocessor... /usr/include/emsdk/emscripten/1.38.30/emcc -E
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for gcc... yes
+checking whether we are using SunPro C... no
+***Configuring Curl (WWW protocol library)
+configure: WARNING:  ****Your system is missing curl/curl.h, which is required
+    for Curl to function.
+****Curl support will be disabled. To use Curl, please install the packages
+    libcurl and libcurl-dev.
+***Configuring XPath support
+***Configuring PCRE (Perl pattern matching library)
+configure: WARNING:  ****Your system is missing pcre.h, which is required
+    for PCRE (Perl pattern matching library) to function.
+****PCRE support will be disabled. To use PCRE, please install the packages
+    libpcre and libpcre-dev.
+checking whether make sets $(MAKE)... yes
+checking size of long int... 4
+checking for main in -lm... yes
+checking for main in -ldl... yes
+checking for main in -lnsl... yes
+checking for main in -lpthread... yes
+checking for main in -lsocket... yes
+checking for readline in -lreadline... no
+checking for sched_get_priority_max... no
+checking for sched_get_priority_max in -lrt... no
+checking stdarg.h usability... yes
+checking stdarg.h presence... yes
+checking for stdarg.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking whether time.h and sys/time.h may both be included... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for malloc... yes
+checking for unistd.h... (cached) yes
+checking for string.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for an ANSI C-conforming const... yes
+checking return type of signal handlers... void
+checking for strdup... yes
+checking for mkdir... yes
+checking for gethostbyname... yes
+checking for gettimeofday... yes
+checking for socket... yes
+checking for snprintf... yes
+checking for regexec... yes
+checking for regerror... yes
+checking for regcomp... yes
+checking for fnmatch... yes
+checking for glob... yes
+checking for globfree... yes
+checking for execvp... yes
+checking for itkwish... no
+XMC GUI not supported due to failure to find Incr Tcl/Tk
+checking whether loader understands -Wl,-export-dynamic... yes
+checking for inline... inline
+    Not using SMODELS
+checking for javac... /usr/bin/javac
+ls: cannot access '/usr/include/*/jni_md.h': No such file or directory
+ls: cannot access '/usr/include/jni_md.h': No such file or directory
+checking jni.h usability... no
+checking jni.h presence... no
+checking for jni.h... no
+checking jni_md.h usability... no
+checking jni_md.h presence... no
+checking for jni_md.h... no
+configure: creating ./config.status
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/topMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/emuMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/modMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/gppMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/smoMakefile
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/makedef.sh
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib/xsb_configuration.P
+config.status: creating windows/xsb_configuration.P
+config.status: creating windows64/xsb_configuration.P
+config.status: creating makexsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/chr_pp
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/bin/xsb
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/banner.msg
+config.status: creating windows/banner.msg
+config.status: creating windows64/banner.msg
+config.status: creating windows/MSVC_mkfile.mak
+config.status: creating windows64/MSVC_mkfile.mak
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/packages/xmc/xmc-gui
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_config.h is unchanged
+config.status: creating windows/xsb_config.h
+config.status: windows/xsb_config.h is unchanged
+config.status: creating windows/xsb_debug.h
+config.status: windows/xsb_debug.h is unchanged
+config.status: creating windows64/xsb_config.h
+config.status: windows64/xsb_config.h is unchanged
+config.status: creating windows64/xsb_debug.h
+config.status: windows64/xsb_debug.h is unchanged
+config.status: creating /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h
+config.status: /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/xsb_debug.h is unchanged
+
+
+	    INSTALLATION SUMMARY
+	    --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Wed May 29 17:00:02 PDT 2019
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/emscripten/1.38.30/emcc  -O4
+  builtin.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  loader_xsb.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  emuloop.c will be built with: 		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  tr_utils.c will be built with:		  /usr/include/emsdk/emscripten/1.38.30/emcc
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:				  no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:				  /usr/bin/javac
+  Support for InterProlog's native engine:	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:		  yes
+  POSIX wildcard matching libraries:		  yes
+
+  Curl support (HTTP protocol library): 	  no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching): 	  no
+
+
+*** Warning: The commands 'todos' and 'unix2dos' are not installed.
+***	     Install one of these to speed up compilation of XSB in Windows
+***	     Due to this, always run 'makexsb clean' before every 'makexsb'
+
+XSB is configured for installation in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB
+Site libraries are to be found in /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/site
+Configuration report is saved in ./Installation_summary
+
+***Now compile XSB with:   `./makexsb'
+
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ emmake ./makexsb --disable-optioKmizations
+
+  emmake is a helper for make, setting various environment
+  variables so that emcc etc. are used. Typical usage:
+
+    emmake make [FLAGS]
+
+  (but you can run any command instead of make)
+
+
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile	 --disable-optimizations
+
+make: unrecognized option '--disable-optimizations'
+Usage: make [options] [target] ...
+Options:
+  -b, -m		      Ignored for compatibility.
+  -B, --always-make	      Unconditionally make all targets.
+  -C DIRECTORY, --directory=DIRECTORY
+			      Change to DIRECTORY before doing anything.
+  -d			      Print lots of debugging information.
+  --debug[=FLAGS]	      Print various types of debugging information.
+  -e, --environment-overrides
+			      Environment variables override makefiles.
+  --eval=STRING 	      Evaluate STRING as a makefile statement.
+  -f FILE, --file=FILE, --makefile=FILE
+			      Read FILE as a makefile.
+  -h, --help		      Print this message and exit.
+  -i, --ignore-errors	      Ignore errors from recipes.
+  -I DIRECTORY, --include-dir=DIRECTORY
+			      Search DIRECTORY for included makefiles.
+  -j [N], --jobs[=N]	      Allow N jobs at once; infinite jobs with no arg.
+  -k, --keep-going	      Keep going when some targets can't be made.
+  -l [N], --load-average[=N], --max-load[=N]
+			      Don't start multiple jobs unless load is below N.
+  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+  -n, --just-print, --dry-run, --recon
+			      Don't actually run any recipe; just print them.
+  -o FILE, --old-file=FILE, --assume-old=FILE
+			      Consider FILE to be very old and don't remake it.
+  -O[TYPE], --output-sync[=TYPE]
+			      Synchronize output of parallel jobs by TYPE.
+  -p, --print-data-base       Print make's internal database.
+  -q, --question	      Run no recipe; exit status says if up to date.
+  -r, --no-builtin-rules      Disable the built-in implicit rules.
+  -R, --no-builtin-variables  Disable the built-in variable settings.
+  -s, --silent, --quiet       Don't echo recipes.
+  -S, --no-keep-going, --stop
+			      Turns off -k.
+  -t, --touch		      Touch targets instead of remaking them.
+  --trace		      Print tracing information.
+  -v, --version 	      Print the version number of make and exit.
+  -w, --print-directory       Print the current directory.
+  --no-print-directory	      Turn off -w, even if it was turned on implicitly.
+  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+			      Consider FILE to be infinitely new.
+  --warn-undefined-variables  Warn when an undefined variable is referenced.
+
+This program built for x86_64-pc-linux-gnu
+Report bugs to <bug-make@gnu.org>
+K0;quantumech@ubuntu:~~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$e./makeKxsbk-hsb --disable-optimizationK
+
+make -f ../config/x86_64-unknown-linux-gnu/topMakefile	 -h
+
+Usage: make [options] [target] ...
+Options:
+  -b, -m		      Ignored for compatibility.
+  -B, --always-make	      Unconditionally make all targets.
+  -C DIRECTORY, --directory=DIRECTORY
+			      Change to DIRECTORY before doing anything.
+  -d			      Print lots of debugging information.
+  --debug[=FLAGS]	      Print various types of debugging information.
+  -e, --environment-overrides
+			      Environment variables override makefiles.
+  --eval=STRING 	      Evaluate STRING as a makefile statement.
+  -f FILE, --file=FILE, --makefile=FILE
+			      Read FILE as a makefile.
+  -h, --help		      Print this message and exit.
+  -i, --ignore-errors	      Ignore errors from recipes.
+  -I DIRECTORY, --include-dir=DIRECTORY
+			      Search DIRECTORY for included makefiles.
+  -j [N], --jobs[=N]	      Allow N jobs at once; infinite jobs with no arg.
+  -k, --keep-going	      Keep going when some targets can't be made.
+  -l [N], --load-average[=N], --max-load[=N]
+			      Don't start multiple jobs unless load is below N.
+  -L, --check-symlink-times   Use the latest mtime between symlinks and target.
+  -n, --just-print, --dry-run, --recon
+			      Don't actually run any recipe; just print them.
+  -o FILE, --old-file=FILE, --assume-old=FILE
+			      Consider FILE to be very old and don't remake it.
+  -O[TYPE], --output-sync[=TYPE]
+			      Synchronize output of parallel jobs by TYPE.
+  -p, --print-data-base       Print make's internal database.
+  -q, --question	      Run no recipe; exit status says if up to date.
+  -r, --no-builtin-rules      Disable the built-in implicit rules.
+  -R, --no-builtin-variables  Disable the built-in variable settings.
+  -s, --silent, --quiet       Don't echo recipes.
+  -S, --no-keep-going, --stop
+			      Turns off -k.
+  -t, --touch		      Touch targets instead of remaking them.
+  --trace		      Print tracing information.
+  -v, --version 	      Print the version number of make and exit.
+  -w, --print-directory       Print the current directory.
+  --no-print-directory	      Turn off -w, even if it was turned on implicitly.
+  -W FILE, --what-if=FILE, --new-file=FILE, --assume-new=FILE
+			      Consider FILE to be infinitely new.
+  --warn-undefined-variables  Warn when an undefined variable is referenced.
+
+This program built for x86_64-pc-linux-gnu
+Report bugs to <bug-make@gnu.org>
+0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ ./comnKnfigure -h
+`configure' configures this package to adapt to many kinds of systems.
+
+Usage: ./configure [OPTION]... [VAR=VALUE]...
+
+To assign environment variables (e.g., CC, CFLAGS...), specify them as
+VAR=VALUE.  See below for descriptions of some of the useful variables.
+
+Defaults for the options are specified in brackets.
+
+Configuration:
+  -h, --help		  display this help and exit
+      --help=short	  display options specific to this package
+      --help=recursive	  display the short help of all the included packages
+  -V, --version 	  display version information and exit
+  -q, --quiet, --silent   do not print `checking ...' messages
+      --cache-file=FILE   cache test results in FILE [disabled]
+  -C, --config-cache	  alias for `--cache-file=config.cache'
+  -n, --no-create	  do not create output files
+      --srcdir=DIR	  find the sources in DIR [configure dir or `..']
+
+Installation directories:
+  --prefix=PREFIX	  install architecture-independent files in PREFIX
+			  [/usr/local]
+  --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+			  [PREFIX]
+
+By default, `make install' will install all the files in
+`/usr/local/bin', `/usr/local/lib' etc.  You can specify
+an installation prefix other than `/usr/local' using `--prefix',
+for instance `--prefix=$HOME'.
+
+For better control, use the options below.
+
+Fine tuning of the installation directories:
+  --bindir=DIR		  user executables [EPREFIX/bin]
+  --sbindir=DIR 	  system admin executables [EPREFIX/sbin]
+  --libexecdir=DIR	  program executables [EPREFIX/libexec]
+  --sysconfdir=DIR	  read-only single-machine data [PREFIX/etc]
+  --sharedstatedir=DIR	  modifiable architecture-independent data [PREFIX/com]
+  --localstatedir=DIR	  modifiable single-machine data [PREFIX/var]
+  --libdir=DIR		  object code libraries [EPREFIX/lib]
+  --includedir=DIR	  C header files [PREFIX/include]
+  --oldincludedir=DIR	  C header files for non-gcc [/usr/include]
+  --datarootdir=DIR	  read-only arch.-independent data root [PREFIX/share]
+  --datadir=DIR 	  read-only architecture-independent data [DATAROOTDIR]
+  --infodir=DIR 	  info documentation [DATAROOTDIR/info]
+  --localedir=DIR	  locale-dependent data [DATAROOTDIR/locale]
+  --mandir=DIR		  man documentation [DATAROOTDIR/man]
+  --docdir=DIR		  documentation root [DATAROOTDIR/doc/PACKAGE]
+  --htmldir=DIR 	  html documentation [DOCDIR]
+  --dvidir=DIR		  dvi documentation [DOCDIR]
+  --pdfdir=DIR		  pdf documentation [DOCDIR]
+  --psdir=DIR		  ps documentation [DOCDIR]
+
+System types:
+  --build=BUILD     configure for building on BUILD [guessed]
+  --host=HOST	    cross-compile to build programs to run on HOST [BUILD]
+
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE	  do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --enable-no-cygwin	       Compile with the gss option -mno-cygwin (default: disabled)
+				The latest Cygwins don't support this flag
+  --enable-general-tagging     When this option is enabled XSB will determine
+			       which bits in the address to tag during
+			       runtime. This option is the last resort, if
+			       XSB cannot figure out the appropriate tagging
+			       schema for your architecture
+  --enable-debug	       compile with debugging turned on
+  --enable-debug-verbose       compile with verbose messages
+  --enable-debug-vm	       compile with VM-level debugging
+  --enable-debug-assertions    compile with debug assertions
+  --enable-dwarf-debug	       compile with extra (macro) debugging turned on
+  --enable-oracle-debug        compile with Oracle debugging turned on
+  --enable-profile	       compile with profiling turned on
+  --disable-optimization       compile with no optimization (default: enabled)
+  --enable-batched-scheduling  compile using the batched scheduling strategy;
+				default is the local strategy
+  --enable-gc-test	       stress-test the garbage collector (for developers)
+  --enable-demand	       compile with demand support
+  --disable-jumptable	       disables the jumptable-based emulator loop
+  --enable-mt		       compile multithreaded engine
+  --enable-fast-floats	       compile with one-word floats (including tag)
+  --enable-ccmpl	       compile mt engine with concurrent completion
+  --enable-profiling	       force gcc to generate information for profiling
+  --enable-electric-fence      link with the electric fence malloc debugger (currently unsupported)
+
+Optional Packages:
+  --with-PACKAGE[=ARG]	  use PACKAGE [ARG=yes]
+  --without-PACKAGE	  do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-gcc		       use GCC to compile XSB
+  --with-cc		       use CC to compile XSB
+  --with-acc		       use ACC to compile XSB
+  --with-cilk		     force a cilk compiled version of XSB
+  --with-bits64 	       force a 64-bit version of XSB
+  --with-bits32 	       force a 32-bit version of XSB
+  --with-aout		       build XSB for a Unix system with .aout binary format
+  --with-optimization=Ox       build XSB with compiler optimization level O, O1, ..., O4
+  --with-config-tag=TAG        Makes the configuration directory name look like
+				CONFIG_PREFIX/configuration-TAG. If TAG is missing
+				the directory is CONFIG_PREFIX/configuration
+				TAG is used for debugging, so one can have
+				different builds under the same architecture
+  --with-site-prefix=DIR       Site-specific XSB libraries are found in DIR
+  --with-includes=DIR	       These might be needed if it is necessary to tell
+				the compiler about additional header files to
+				include with the -I option. This need arises if
+				your standard header files are in odd places or
+				if XSB is compiled with ODBC support.
+				You can specify a list of libraries by
+				enclosing them in quotes
+  --with-static-libraries=DIR  These might be needed, if compiling with support
+				for statically linked packages (such as Oracle)
+				or if your standard C libraries are in
+				odd places. These libraries are added as
+				-L options during XSB compilation. One can
+				specify a list of libraries by enclosing them
+				in quotes. This list is automatically added to
+				loader flags to ensure that the packages will
+				be linked in
+  --with-dynamic-libraries=DIR This specifies the list of libraries used by
+				packages linked dynamically with XSB. These
+				libraries are automatically added to the XSB
+				library search path, so they could be loaded at
+				run time
+  --with-xpath-dir=DIR	       the location of the libxml2 library is at DIR
+  --with-curl-libdir=DIR       the location of the libcurl.so is at DIR
+  --with-curl-incdir=DIR       the location of the include files for the Curl library is at DIR
+  --with-pcre-libdir=DIR       the location of the libpcre.so is at DIR
+  --with-pcre-incdir=DIR       the location of the include files for the PCRE library is at DIR
+  --with-dbdrivers	       configure dbdrivers package
+  --with-odbc-libdir=DIR       provide info on where the ODBC libraries are
+  --with-odbc-incdir=DIR       provide info on where the ODBC include files are
+  --with-mysql-libdir=DIR	provide info on where the MySQL libraries are
+  --with-mysql-incdir=DIR	provide info on where the MySQL include files are
+  --with-mysqlembedded-libdir=DIR	provide info on where the MySQL Embedded Server libraries are
+  --with-mysqlembedded-incdir=DIR	provide info on where the MySQL Embedded Server include files are
+  --with-oracle 	       compile with support of Oracle
+  --with-odbc		       compile with support for ODBC
+  --with-iodbc		       use iODBC driver manager
+  --with-smodels=path	       use SMODELS for the XNMR module.
+				path is the path where smodels has
+				been installed and compiled
+  --with-itkwish=DIR		DIR where the itkwish shell is located
+  --with-pita=DIR	compile XSB with PITA, with CUDD in directory DIR
+
+Some influential environment variables:
+  CC	      C compiler command
+  CFLAGS      C compiler flags
+  LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+	      nonstandard directory <lib dir>
+  LIBS	      libraries to pass to the linker, e.g. -l<library>
+  CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+	      you have headers in a nonstandard directory <include dir>
+  CPP	      C preprocessor
+  CXX	      C++ compiler command
+  CXXFLAGS    C++ compiler flags
+
+Use these variables to override the choices made by `configure' or to help
+it to find libraries and programs with nonstandard names/locations.
+
+Report bugs to the package provider.
+K0;quantumech@ubuntu:~~/Desktop/XSB-Web-IDE/Analysis/XSB/build01;32mquantumech@ubuntu00m:01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build00m$ exit
+exit
+
+Script done on 2019-06-07 20:20:32-0700
