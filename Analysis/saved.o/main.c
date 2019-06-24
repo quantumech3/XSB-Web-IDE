@@ -14,6 +14,10 @@ int main()
         // Print 'XSB successfully initialized'
         printf("XSB successfully initialized!\n");
  
+        // Load 'Hello world' script
+
+        xsb_command_string("consult('hello.P').");
+
         // Terminate XSB
         xsb_close();
     }
