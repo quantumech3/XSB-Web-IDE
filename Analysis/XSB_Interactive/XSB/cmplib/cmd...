@@ -6,4 +6,45 @@ file_flush(3,_).
 import xpp_include_dir/1 from parse.
 assert(xpp_include_dir('../emu')).
 assert(xpp_include_dir('../prolog_includes')).
+mc(asm, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(asm_inst, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(asm_opt, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(asmpass2, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(auxlry, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(builtin, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(ciao_directives, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(compile, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(config, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(cp_opt, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(cutcheck, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(flatten, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(inprog, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(listutil, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(makemode, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(modeinf, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(modes, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(parse, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(peephole, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(pre_cond, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(preproc, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(printres, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(prof_sbp, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(sanity, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(singlton, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(spec, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(suppltab, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(symtab, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tabdef, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(ti_mod, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_comp, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_cond, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_eval, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_goal, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_index, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tp_var, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tpinline, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(tprog, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(useinfer, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(varproc, [sysmod,optimize,spec_repr,quit_on_error]).
+mc(writeasm, [sysmod,optimize,spec_repr,quit_on_error]).
 file_write(3,'-------------------- End --------------------------'), file_nl(3).
