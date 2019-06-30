@@ -10,14 +10,33 @@ struct Color
 	int r, g, b;
 };
 
-void render(void* data)
+/**
+ * Main loop for main.c
+ * When the user holds the 'a' key: Image becomes more red
+ * When the user holds the 'd' key: Image becomes less red
+ */
+void render(struct Color* bgColor)
 {
-	struct Color* bgColor = data;
-
 	SDL_SetRenderDrawColor(renderer, bgColor->r, bgColor->g, bgColor->b, 255);
 	SDL_RenderClear(renderer);
 
-	bgColor->r++;
+	SDL_Event event;
+
+	if(SDL_PollEvent(&event))
+	{
+		// Test to see if the 'a' or 'd' keys were pressed
+		switch(event.key.keysym.sym)
+		{
+			// In the case that the 'a' key is pressed
+			case SDLK_a:
+				bgColor->r++;
+				break;
+			// In the case that the 'd' key is pressed
+			case SDLK_d:
+				bgColor->r--;
+				break;
+		}
+	}
 }
 
 int main()
