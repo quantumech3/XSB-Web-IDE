@@ -1,0 +1,7 @@
+LLVM_ROOT = '/usr/include/emsdk/upstream/bin'
+BINARYEN_ROOT = '/usr/include/emsdk/upstream'
+EMSCRIPTEN_ROOT = '/usr/include/emsdk/upstream/emscripten'
+NODE_JS = '/usr/include/emsdk/node/12.9.1_64bit/bin/node'
+TEMP_DIR = '/tmp'
+COMPILER_ENGINE = NODE_JS
+JS_ENGINES = [NODE_JS]

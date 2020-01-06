@@ -1,0 +1,354 @@
+
+
+            INSTALLATION SUMMARY
+            --------------------
+
+XSB Version:	   3.7.
+Code name:	   Clan MacGregor
+Release date:	   2016-07-06
+Configuration:	   x86_64-unknown-linux-gnu
+Installation date: Sun Jan  5 15:40:10 PST 2020
+
+  Build process is looking for XSB sources in:	  /home/quantumech/Desktop/Port/XSB
+  XSB should be installed in:			  /home/quantumech/Desktop/Port/XSB
+  Configuration-specific executables go in:	  /home/quantumech/Desktop/Port/XSB/config/x86_64-unknown-linux-gnu/bin
+  Configuration-specific libraries go in:	  /home/quantumech/Desktop/Port/XSB/config/x86_64-unknown-linux-gnu/lib
+  Object code goes in:				  /home/quantumech/Desktop/Port/XSB/config/x86_64-unknown-linux-gnu/saved.o
+  Site-specific code goes in:			  /home/quantumech/Desktop/Port/XSB/site
+  Site configuration-specific code goes in:	  /home/quantumech/Desktop/Port/XSB/site/config/x86_64-unknown-linux-gnu
+  XSB will be built with:			  /usr/include/emsdk/fastcomp/emscripten/emcc  -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+  builtin.c will be built with: 		  /usr/include/emsdk/fastcomp/emscripten/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  loader_xsb.c will be built with: 		  /usr/include/emsdk/fastcomp/emscripten/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  emuloop.c will be built with: 		  /usr/include/emsdk/fastcomp/emscripten/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  tr_utils.c will be built with:		  /usr/include/emsdk/fastcomp/emscripten/emcc    -D PTHREAD_MUTEX_ERRORCHECK_NP
+  Loader flags: 				  -lm -ldl -Wl,-export-dynamic -lpthread
+  Compilation mode:				  optimal
+  XSB abstract machine: 			  slg-wam
+  XSB scheduling strategy:			  local
+  Garbage Collection Stress-Test:		  no
+  Jumptable-based emulator loop:		  no
+  Demand support:                                 no
+
+  Support for modular database drivers: 	  no
+  -- These drivers can also be configured later.
+  Native support for Oracle:			  no
+  Support for the old ODBC driver:		  no
+
+  Java compiler:                                  /usr/bin/javac
+  Support for InterProlog's native engine:   	  no
+  -- JDK may not have been installed or
+  -- JAVA_HOME not set. You will still be able
+  -- to use InterProlog's subprocess engine.
+
+  POSIX regexp matching libraries:                yes
+  POSIX wildcard matching libraries:              yes
+
+  Curl support (HTTP protocol library):           no
+  XPath support:				  yes
+  XPath C flags:				  -I/usr/include/libxml2
+  XPath loader flags:				  -L/usr/lib -lxml2
+
+  PCRE support (Perl pattern matching):           no
+
+
+make[1]: Entering directory '/home/quantumech/Desktop/Port/XSB/emu'
+-e 
+Compiling XSB with /usr/include/emsdk/fastcomp/emscripten/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
+
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] main_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] auxlry.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] biassert.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] builtin.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] call_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] cinterf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] conc_compl.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] debug_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] dis.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] dynload.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] dynamic_stack.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] deadlock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] emuloop.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:703:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+            cell(--tbreg) = makeint(HASH_IS_FREE);
+                            ^~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:705:22: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+            cell(--tbreg) = makeint(HASH_IS_NOT_FREE);
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+In file included from emuloop.c:1694:
+./tc_insts_xsb_i.h:714:20: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+          cell(--tbreg) = makeint(FIRST_HASH_NODE);
+                          ^~~~~~~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+3 warnings generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] error_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] findall.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] function.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+function.c:315:7: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+      bld_int(regaddr,-1);
+      ^~~~~~~~~~~~~~~~~~~
+./cell_xsb.h:200:41: note: expanded from macro 'bld_int'
+#define bld_int(addr, val) cell(addr) = makeint(val)
+                                        ^~~~~~~~~~~~
+./cell_xsb.h:162:30: note: expanded from macro 'makeint'
+#define makeint(val) (Cell)((enc_int(val)) | XSB_INT)
+                             ^~~~~~~~~~~~
+./cell_xsb.h:139:40: note: expanded from macro 'enc_int'
+#define enc_int(val)  (((Integer)(val) << 3))
+                        ~~~~~~~~~~~~~~ ^
+1 warning generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] hash_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] hashtable_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] heap_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+In file included from heap_xsb.c:378:
+./gc_print.h:314:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trreg,%" Intfmt ").\n",((CPtr)trreg-tr_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~~~~~
+./gc_print.h:315:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(breg,%" Intfmt ").\n",(cp_bot-breg)) ;
+                              ~~~              ^~~~~~~~~~~~~
+./gc_print.h:316:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hreg,%" Intfmt ").\n",(hreg-heap_bot)) ;
+                              ~~~              ^~~~~~~~~~~~~~~
+./gc_print.h:317:48: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ereg,%" Intfmt ").\n",(ls_bot-ereg)) ;
+                              ~~~              ^~~~~~~~~~~~~
+./gc_print.h:319:50: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(trfreg,%" Intfmt ").\n",((CPtr)trfreg-tr_bot)) ;
+                                ~~~              ^~~~~~~~~~~~~~~~~~~~~
+./gc_print.h:320:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(bfreg,%" Intfmt ").\n",(cp_bot-bfreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:321:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hfreg,%" Intfmt ").\n",(hfreg-heap_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~
+./gc_print.h:322:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(efreg,%" Intfmt ").\n",(ls_bot-efreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:326:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(ebreg,%" Intfmt ").\n",(ls_bot-ebreg)) ;
+                               ~~~              ^~~~~~~~~~~~~~
+./gc_print.h:327:49: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+  fprintf(where,"wam_reg(hbreg,%" Intfmt ").\n",(hbreg-heap_bot)) ;
+                               ~~~              ^~~~~~~~~~~~~~~~
+10 warnings generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] init_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] inst_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] io_builtins_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] loader_xsb.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] memory_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] orient_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+orient_xsb.c:213:50: warning: more '%' conversions than data arguments [-Wformat]
+    snprintf(executable_path_gl, MAXPATHLEN, "%s%c%s", "/config/x86_64-unknown-linux-gnu/bin/xsb");
+                                                ~^
+1 warning generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] pathname_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] psc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] random_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] remove_unf.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] residual.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] rw_lock.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] scc_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] slgdelay.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] socket_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] string_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] storage_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] struct_manager.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] struct_intern.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] sub_delete.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] subp.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] system_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] table_stats.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tables.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] thread_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+thread_xsb.c:1992:74: warning: format specifies type 'int' but the argument has type 'long' [-Wformat]
+      if (status) printf("Error queue initialization: queue %"Intfmt"\n",xsb_mq-mq_table);
+                                                            ~~           ^~~~~~~~~~~~~~~
+1 warning generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] timer_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] token_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tr_utils.c using -D PTHREAD_MUTEX_ERRORCHECK_NP
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] trace_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] trie_lookup.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] trie_search.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tries.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tst_insert.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tst_retrv.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tst_unify.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] tst_utils.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] varstring.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] ubi_BinTree.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] ubi_SplayTree.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] hashtable.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] hashtable_itr.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] sha1.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] md5.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] url_encode.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] getMemorySize.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] incr_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] call_graph_xsb.c
+emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
+clang-6.0: warning: -O4 is equivalent to -O3 [-Wdeprecated]
+
+Making XSB executable /home/quantumech/Desktop/Port/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
+
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] -o /home/quantumech/Desktop/Port/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+shared:WARNING: ignoring unsupported linker flag: `-export-dynamic`
+make[1]: Leaving directory '/home/quantumech/Desktop/Port/XSB/emu'
+make[1]: Entering directory '/home/quantumech/Desktop/Port/XSB/gpp'
+
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] gpp.c using  
+gpp.c:1303:25: warning: format string is not a string literal (potentially insecure) [-Wformat-security]
+      fprintf(C->out->f,endseq);
+                        ^~~~~~
+gpp.c:1303:25: note: treat the string as an argument to avoid this
+      fprintf(C->out->f,endseq);
+                        ^
+                        "%s", 
+1 warning generated.
+-e 	[/usr/include/emsdk/fastcomp/emscripten/emcc] -o gpp
+shared:WARNING: Assuming object file output in the absence of `-c`, based on output filename. Please add with `-c` or `-r` to avoid this warning
+shared:WARNING: ignoring unsupported linker flag: `-export-dynamic`
+
+make[1]: Leaving directory '/home/quantumech/Desktop/Port/XSB/gpp'
