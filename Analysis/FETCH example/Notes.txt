@@ -1,0 +1,1 @@
+Working compile command: emcc -o terminal.js -s FETCH=1 -s NO_EXIT_RUNTIME=0 main.c
