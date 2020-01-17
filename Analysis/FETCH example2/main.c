@@ -8,11 +8,14 @@ int i = 0;
 void read_async();
 
 void read_success(emscripten_fetch_t *fetch) {
+    char buff[40];
+    strcpy(buff, fetch->data);
     
-    printf("Attempting to execute command");
-    if(xsb_command_string(fetch->data))
+
+    printf("Attempting to execute command: %s\n", buff);
+    if(xsb_command_string(buff))
     {
-        printf("ERROR: XSB failed to execute command: %s", xsb_get_error_message());
+        printf("ERROR: XSB failed to execute command: %s\n", xsb_get_error_message());
     }
 
     emscripten_fetch_close(fetch);
