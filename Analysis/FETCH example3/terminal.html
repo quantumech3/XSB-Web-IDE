@@ -45,7 +45,7 @@
                                    term.read(
                                        payload.length > 2 ? payload[2] : '',
                                        function(text) {
-                                           props.responseText = text;
+                                           props.responseText = String.fromCharCode(text.length) + text;
                                            target.onload();
                                        }
                                    );

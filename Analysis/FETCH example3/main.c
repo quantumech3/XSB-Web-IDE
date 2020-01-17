@@ -16,7 +16,7 @@ void read_success(emscripten_fetch_t *fetch) {
     strcpy(buff, fetch->data);
     
 
-    printf("Attempting to execute command: %s\n", buff);
+    printf("Attempting to execute command of length %i: %s\n", (int)buff[0], buff);
     if(xsb_command_string(buff))
     {
         printf("ERROR: XSB failed to execute command: %s\n", xsb_get_error_message());
