@@ -12,7 +12,7 @@ void read_success(emscripten_fetch_t *fetch) {
     printf("Attempting to execute command");
     if(xsb_command_string(fetch->data))
     {
-        printf("ERROR: XSB failed to execute command");
+        printf("ERROR: XSB failed to execute command: %s", xsb_get_error_message());
     }
 
     emscripten_fetch_close(fetch);
