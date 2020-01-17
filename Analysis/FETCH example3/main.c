@@ -22,11 +22,11 @@ void read_success(emscripten_fetch_t *fetch) {
     printf("Attempting to execute command of length %i: %s\n", (int)INPUT_LENGTH, buff);
     if(xsb_command_string(buff))
     {
-        printf("no.");
+        printf("\nno.\n");
     }
     else
     {
-        printf("yes.");
+        printf("\nyes.\n");
     }
     
 
