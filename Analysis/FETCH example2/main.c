@@ -9,6 +9,10 @@ void read_async();
 
 void read_success(emscripten_fetch_t *fetch) {
     char buff[40];
+
+    for(int i = 0; i < 40; i++)
+        buff[i] = ' ';
+
     strcpy(buff, fetch->data);
     
 
