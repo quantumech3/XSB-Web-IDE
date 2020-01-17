@@ -9,14 +9,15 @@ void read_async();
 
 void read_success(emscripten_fetch_t *fetch) {
     char buff[40];
+    int INPUT_LENGTH = (int)fetch->data[0];
 
     for(int i = 0; i < 40; i++)
         buff[i] = ' ';
-
-    strcpy(buff, fetch->data);
     
+    for(int i = 0; i < INPUT_LENGTH; i++)
+        buff[i] = fetch->data[i + 1];
 
-    printf("Attempting to execute command of length %i: %s\n", (int)buff[0], buff);
+    printf("Attempting to execute command of length %i: %s\n", (int)INPUT_LENGTH, buff);
     if(xsb_command_string(buff))
     {
         printf("ERROR: XSB failed to execute command: %s\n", xsb_get_error_message());
