@@ -17,6 +17,8 @@ void read_success(emscripten_fetch_t *fetch) {
     for(int i = 0; i < INPUT_LENGTH; i++)
         buff[i] = fetch->data[i + 1];
 
+    buff[INPUT_LENGTH] = '\0';
+
     printf("Attempting to execute command of length %i: %s\n", (int)INPUT_LENGTH, buff);
     if(xsb_command_string(buff))
     {
