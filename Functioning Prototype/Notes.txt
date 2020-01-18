@@ -1,0 +1,3 @@
+Working compile command: emcc -o terminal.js -s FETCH=1 -s NO_EXIT_RUNTIME=0 main.c
+
+XSB Compile Command: emcc -o terminal.js -s FETCH=1 -s NO_EXIT_RUNTIME=0 main.c -s TOTAL_MEMORY=1024MB -s USE_PTHREADS=1 -I ./emu -I ./config --preload-file "./XSB_DIR@/" ./config/saved.o/xsb.o -Oz 
