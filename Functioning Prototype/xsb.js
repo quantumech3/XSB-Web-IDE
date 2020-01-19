@@ -35,7 +35,20 @@ window.XMLHttpRequest = (function(xhr) {
 								term.read(
 									payload.length > 2 ? payload[2] : '',
 									function(text) {
-										props.responseText = String.fromCharCode(text.length) + text;
+
+										props.responseText = text
+
+										// Add period at end of responseText if one does not exist (XSB C Interface will shutdown with incomplete commands)
+										if(props.responseText[props.responseText.length - 1] != '.') 
+											props.responseText += '.'
+
+										// If the command contains only periods "...", change the command being queried to a error message (XSB C Interface will shutdown with incomplete commands)
+										if(props.responseText.split('.').length - 1 == props.responseText.length)
+											props.responseText = "writeln('Invalid command')."
+
+										// Append string length to beginning of responseText
+										props.responseText = String.fromCharCode(props.responseText.length) + props.responseText;
+
 										target.onload();
 									}
 								);
