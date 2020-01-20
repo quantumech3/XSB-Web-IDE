@@ -22,7 +22,7 @@ XSB-Terminal-Lib is a library that summons a Terminal running the XSB Interprete
 
 **2**. Add the following code to the top of your project's `<head>` section
 
-```
+```html
 <script src="deps/jquery-3.2.1.min.js"></script>
 <script src="deps/jquery.terminal.min.js"></script>
 <link href="deps/jquery.terminal.min.css" rel="stylesheet"/>
@@ -31,7 +31,7 @@ XSB-Terminal-Lib is a library that summons a Terminal running the XSB Interprete
 
 **3**. Add the following code to the absolute bottom of your project's `<body>` section
 
-```
+```html
 <script>
 XSB_PROPERTIES = 
 {
@@ -43,7 +43,7 @@ XSB_PROPERTIES =
 
 **4**. Add the following code to the absolute bottom of your project's `<body>` section
 
-```
+```html
 <script src="xsbTerminalLib.js"></script>
 <script src="xsbInterpreter.js"></script>
 ```
