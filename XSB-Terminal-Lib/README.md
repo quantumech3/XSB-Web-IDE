@@ -1,13 +1,13 @@
-##Summary
+### Summary
 XSB-Terminal-Lib is a library that summons a Terminal running the XSB Interpreter at a user-specified location in a webpage. 
 
 ------------------------
-##How to build xsbInterpreter.js
+### How to build xsbInterpreter.js
 
 **1**. Run `make build`
 
 ------------------------
-##How to setup XSB-Terminal-Lib
+### How to setup XSB-Terminal-Lib
 
 **1**. Copy the following files/folders into your project directory
 
@@ -49,7 +49,7 @@ XSB_PROPERTIES =
 ```
 
 ------------------------
-##Directory Structure
+### Directory Structure
 
 * deps/: Folder containing JS & CSS dependancies
 * **xsbTerminalLib.js:** The XSB-Terminal-Lib JS library
@@ -67,6 +67,6 @@ XSB_PROPERTIES =
 	
 
 ------------------------
-##Please note that
+### Please note that
 * All files and folders specified in step 1 of 'How to setup XSB-Terminal-Lib' must be in the same directory for XSB-Terminal-Lib to function properly
 * To execute `make build`, you must have Emscripten 1.38.30 installed on a Linux based system.
