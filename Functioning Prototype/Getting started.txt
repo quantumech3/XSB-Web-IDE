@@ -1,6 +1,0 @@
-INSTRUCTIONS
---------------------
-
-1) Write an XSB script in the text area
-2) Press the 'Compile Script' button
-3) Type the following into the XSB Terminal: consult('script').
