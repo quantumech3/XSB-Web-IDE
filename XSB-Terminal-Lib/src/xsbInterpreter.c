@@ -29,8 +29,10 @@ void read_success(emscripten_fetch_t *fetch)
 	// Add null terminator at the end of input buffer so XSB doesnt overrun the users input, read garbage data and crash
 	buff[INPUT_LENGTH] = '\0';
 
-	// Print debug message
+	// Print debug message if this program is compiled using 'debug_build' command
+	#ifdef SHOULD_DEBUG
 	printf("Attempting to execute command of length %i: %s\n", (int)INPUT_LENGTH, buff);
+	#endif
 
 	// Attempt to execute the user's XSB command. Print 'Yes' if the user's command is true, else print 'no'
 	if(xsb_command_string(buff))
