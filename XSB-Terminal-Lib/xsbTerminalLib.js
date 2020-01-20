@@ -67,39 +67,46 @@ window.XMLHttpRequest = (function(xhr) {
 	};
 })(window.XMLHttpRequest);
  // below code modified from emscripten output html
-var Module = {
-	 preRun: [],
-	 postRun: [],
-	 print: function(text) {
-		 console.log(text);
-		 term.echo(text);
-	 },
-	 printErr: function(text) {
-		 if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-		 term.error(text);
-	 },
-	 canvas: (function() {
-	   var canvas = document.createElement('canvas');
-	   // As a default initial behavior, pop up an alert when webgl context is lost. To make your
-	   // application robust, you may want to override this behavior before shipping!
-	   // See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
-	   canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
-	   return canvas;
-	 })(),
-	 setStatus: function(text) {
-	 },
-	 totalDependencies: 0,
-	 monitorRunDependencies: function(left) {
-	   this.totalDependencies = Math.max(this.totalDependencies, left);
-	   Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
-	 }
-   };
-   Module.setStatus('Downloading...');
-   window.onerror = function(event) {
-	 // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
-	 Module.setStatus('Exception thrown, see JavaScript console');
-	 spinnerElement.style.display = 'none';
-	 Module.setStatus = function(text) {
-	   if (text) Module.printErr('[post-exception status] ' + text);
-	 };
-   };
+var Module = 
+{
+	preRun: [],
+	postRun: [],
+	print: function(text) 
+	{
+	 console.log(text);
+	 term.echo(text);
+	},
+	printErr: function(text) 
+	{
+	 if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
+	 term.error(text);
+	},
+	canvas: (function() 
+	{
+		var canvas = document.createElement('canvas');
+		// As a default initial behavior, pop up an alert when webgl context is lost. To make your
+		// application robust, you may want to override this behavior before shipping!
+		// See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
+		canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+		return canvas;
+	})(),
+	setStatus: function(text) 
+	{
+	},
+	totalDependencies: 0,
+	monitorRunDependencies: function(left) 
+	{
+	  this.totalDependencies = Math.max(this.totalDependencies, left);
+	  Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies-left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+	}
+	};
+	Module.setStatus('Downloading...');
+	window.onerror = function(event) {
+	// TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+	Module.setStatus('Exception thrown, see JavaScript console');
+	spinnerElement.style.display = 'none';
+	Module.setStatus = function(text) 
+	{
+		if (text) Module.printErr('[post-exception status] ' + text);
+	};
+};
