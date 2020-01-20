@@ -51,7 +51,7 @@ XSB_PROPERTIES =
 ------------------------
 ### Directory Structure
 
-* deps/: Folder containing JS & CSS dependancies
+* **deps/:** Folder containing JS & CSS dependancies
 * **xsbTerminalLib.js:** The XSB-Terminal-Lib JS library
 * **xsbInterpreter.js**: JS Web Assembly interpreter for XSB Prolog
 * **xsbInterpreter.wasm:** xsbInterpreter.js dependency
