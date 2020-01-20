@@ -64,6 +64,7 @@ var XSB_PROPERTIES =
 	* **config/:** Contains XSB Interpreter object code
 	* **emu/:** Contains XSB C Interface header files
 * **makefile:** Used to rebuild src/xsbInterpreter.c to WASM
+* **debug_page.html:** Used to test modifications to this library
 	
 
 ------------------------
