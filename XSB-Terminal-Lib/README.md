@@ -33,7 +33,7 @@ XSB-Terminal-Lib is a library that summons a Terminal running the XSB Interprete
 
 ```html
 <script>
-XSB_PROPERTIES = 
+var XSB_PROPERTIES = 
 {
 	STARTUP_MESSAGE: "", // Insert what you want your startup message to be here
 	TERMINAL_ELEMENT_ID: "" // Insert the ID of the HTML element you want the terminal to reside in here

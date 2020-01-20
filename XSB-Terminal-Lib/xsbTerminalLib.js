@@ -1,4 +1,5 @@
-var term = $('#terminal').terminal({}, {greetings: "XSB Web IDE Proof of Concept: Written and developed by Paul Fodor and Scott Burgert"});
+// Initialize Terminal object inside the (XSB_PROPERTIES.TERMINAL_ELEMENT_ID) element with custom startup message (XSB_PROPERTIES.STARTUP_MESSAGE)
+var term = $('#' + XSB_PROPERTIES.TERMINAL_ELEMENT_ID).terminal({}, {greetings: XSB_PROPERTIES.STARTUP_MESSAGE});
 var re = /^___terminal::/;
 
 // XHR proxy that handle methods from fetch in C
@@ -35,7 +36,8 @@ window.XMLHttpRequest = (function(xhr) {
 								term.read(
 									payload.length > 2 ? payload[2] : '',
 									function(text) {
-
+										
+										// Set input buffer to user input
 										props.responseText = text
 
 										// Add period at end of responseText if one does not exist (XSB C Interface will shutdown with incomplete commands)
