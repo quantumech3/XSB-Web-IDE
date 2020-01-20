@@ -69,4 +69,4 @@ XSB_PROPERTIES =
 ------------------------
 ### Please note that
 * All files and folders specified in step 1 of 'How to setup XSB-Terminal-Lib' must be in the same directory for XSB-Terminal-Lib to function properly
-* To execute `make build`, you must have Emscripten 1.38.30 installed on a Linux based system.
+* To execute `make build`, you must have Emscripten 1.38.30 installed.
