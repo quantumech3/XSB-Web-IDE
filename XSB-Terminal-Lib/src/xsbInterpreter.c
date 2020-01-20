@@ -75,6 +75,9 @@ int main()
 		printf("ERROR: XSB failed to initialize");
 	}
 	
+	// Execute initial XSB command (XSB crashes when the first command you type is invalid)
+	xsb_command_string("writeln('XSB successfully initialized!').");
+
 	// Start user input loop
 	read_async();
 }
