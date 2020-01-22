@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.12.0/js/jquery.terminal.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/2.12.0/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+  <textarea id="textbox" style="width: 400px; height: 200px; overflow-y: scroll;"></textarea>
+  <button style="width: auto; height: 20px;" onclick="FS.writeFile('script.P', $('#textbox').val()); xsb_command_string(`consult('script').`)">Compile</button>
+  <div id="terminal" style="width: 400px; height: 200px; overflow-y: scroll;"></div>
+  <script src="index.js"></script>
+
+  <script>
+  
+  function xsb_command_string(command)
+  {
+    if(command[command.length - 1] != '.')
+      command += '.'
+    
+    if(command.length == 1 && command[0] == '.')
+      command = "writeln('Invalid command')."
+
+    Module.HEAPU8.set(new TextEncoder().encode(command + "\0"), Module._getInputBufferPtr());
+    Module._print()
+  }
+
+  /*var Module = 
+  {
+    print: function(text)
+    {
+      term.echo(text)
+    },
+    printErr: function(text)
+    {
+      term.echo(text)
+    }
+  }
+
+  var term = $("#terminal").terminal(function(command)
+  {
+    xsb_command_string(command)
+  }, {prompt: '?-', greetings: "Developed by Scott Burgert & Paul Fodor in 2019"})*/
+
+  </script>
+  
+</body>
+</html>

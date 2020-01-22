@@ -1,11 +1,25 @@
 #include <stdio.h>
 #include <string.h>
 #include <emscripten/fetch.h>
+#include <emscripten.h>
 #include <cinterf.h>
 
+#define TRUE 1
+#define FALSE 0
+#define bool int
+
 int i = 0;
+bool shouldExit = FALSE;
+
+
 
 void read_async();
+
+EMSCRIPTEN_KEEPALIVE
+void exitNow()
+{
+    shouldExit = TRUE;
+}
 
 void read_success(emscripten_fetch_t *fetch) {
     char buff[40];
@@ -23,7 +37,7 @@ void read_success(emscripten_fetch_t *fetch) {
     }
 
     emscripten_fetch_close(fetch);
-    if (strlen(fetch->data) > 0 || i++ == 5) {
+    if ((strlen(fetch->data) > 0 || i++ == 5)) {
         read_async();
     }
 }
@@ -39,7 +53,9 @@ void read_async() {
     attr.attributes = EMSCRIPTEN_FETCH_LOAD_TO_MEMORY;
     attr.onsuccess = read_success;
     attr.onerror = read_fail;
-    emscripten_fetch(&attr, "___terminal::read");
+
+    if(!shouldExit)
+        emscripten_fetch(&attr, "___terminal::read");
 }
 
 int main() {
