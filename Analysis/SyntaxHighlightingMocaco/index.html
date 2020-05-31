@@ -2,15 +2,49 @@
 
 <!DOCTYPE html>
 <html>
-
+<meta charset="utf-8">
 <head>
 	<link rel="stylesheet" data-name="vs/editor/editor.main" href="./min/vs/editor/editor.main.css">
 </head>
 
 <body>
+	<div id="textEditor" style="width: 500px; height: 500px;"></div>
+
 	<script>var require = { paths: { 'vs': './min/vs' } };</script>
 	<script src="./min/vs/loader.js"></script>
 	<script src="./min/vs/editor/editor.main.nls.js"></script>
 	<script src="./min/vs/editor/editor.main.js"></script>
+
+	<script>
+		// Register a language with custom syntax highlighting called "testLang"
+		monaco.languages.register({id: 'testLang'});
+
+		// Register any pattern that matches up with the RegEx expression "test" as the token "testToken"
+		monaco.languages.setMonarchTokensProvider('testLang',
+		{
+			tokenizer: {
+				root: [
+					[/test/, "testToken"],
+					[/\[.*\]/, "complexRegex"] // Register any 1 token encapsulated with square brackets as a complexRegex token: [thisIsAnExample]
+				]
+			}
+		})
+
+		// Define a "theme" called "testTheme" that shows all "testToken" tokens as a red color (aka 'FF0000')
+		// The 'inherit' field specifies whether to inherit the base theme 
+		// You can also specify whether certain tokens are italicized, bold and more by looking at the documentation for defineTheme()
+		monaco.editor.defineTheme('testTheme',
+		{
+			base: 'vs',
+			inherit: 'false',
+			rules: [
+				{token: 'testToken', foreground: 'FF0000'},
+				{token: 'complexRegex', foreground: '008800'} // Register all complexRegex tokens to be dark green
+			]
+		})
+		
+		// Start Monaco editor with your testLang language parser and your "testTheme" theme
+		monaco.editor.create(document.getElementById("textEditor"), {language: "testLang", value: "", theme: "testTheme"})
+	</script>
 </body>
 </html>
