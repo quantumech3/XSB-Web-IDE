@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Autocomplete test</title>
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="./min/vs/editor/editor.main.css">
+</head>
+<body>
+	<script>var require = { paths: { 'vs': './min/vs' } };</script>
+	<script src="./min/vs/loader.js"></script>
+	<script src="./min/vs/editor/editor.main.nls.js"></script>
+	<script src="./min/vs/editor/editor.main.js"></script>
+
+	<div id="editor" style="width: 500px; height: 500px"></div>
+
+	<script>
+
+		// Register a custom language called "TestLang"
+		monaco.languages.register({id: "TestLang"});
+
+		// Register keywords to autocomplete with in the TestLang language
+		// You can also register keywords AFTER the instantiation of the text editor
+		monaco.languages.registerCompletionItemProvider('TestLang', {
+			provideCompletionItems: (model, position, context, token) => {
+				// Return an ItemCompletion[] containing a keyword and what to autocomplete the keyword with when the user presses enter.
+				// See more about the fields of an item completion object here: https://microsoft.github.io/monaco-editor/api/interfaces/monaco.languages.completionitem.html
+				return 
+				{
+					suggestions: [{label: "keyword", insertText: "textToReplaceKeywordWith"}]
+				}
+			}
+		})
+
+		// Instantiate the Monaco editor inside of the "editor" div that supports the language "TestLang"
+		monaco.editor.create(document.getElementById("editor"), {
+			language: "TestLang",
+			value: ""
+		});
+
+	</script>
+
+</body>
+</html>
