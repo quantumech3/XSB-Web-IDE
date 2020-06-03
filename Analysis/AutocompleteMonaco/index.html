@@ -17,28 +17,24 @@
 
 	<script>
 
-		// Register a custom language called "TestLang"
-		monaco.languages.register({id: "TestLang"});
+		// Register a new language called "testLang"
+		monaco.languages.register({id: "testLang"});
 
-		// Register keywords to autocomplete with in the TestLang language
-		// You can also register keywords AFTER the instantiation of the text editor
-		monaco.languages.registerCompletionItemProvider('TestLang', {
-			provideCompletionItems: (model, position, context, token) => {
-				// Return an ItemCompletion[] containing a keyword and what to autocomplete the keyword with when the user presses enter.
-				// See more about the fields of an item completion object here: https://microsoft.github.io/monaco-editor/api/interfaces/monaco.languages.completionitem.html
-				return 
-				{
-					suggestions: [{label: "keyword", insertText: "textToReplaceKeywordWith"}]
-				}
+		// Register a function that provides autocomplete suggestions for Monaco
+		monaco.languages.registerCompletionItemProvider('testLang', {
+			provideCompletionItems: (model, position, context, token) =>
+			{
+				// Return a structure containing a list of autocomplete suggestions in the form of a 
+				// CompletionItem[]. https://microsoft.github.io/monaco-editor/api/interfaces/monaco.languages.completionitem.html
+				return {suggestions: [{label: "testKeyword", insertText: "textToReplaceOnEnter"}]}
 			}
 		})
 
-		// Instantiate the Monaco editor inside of the "editor" div that supports the language "TestLang"
+		// Instantiate text editor
 		monaco.editor.create(document.getElementById("editor"), {
-			language: "TestLang",
-			value: ""
-		});
-
+			language: 'testLang',
+			value: ''
+		})
 	</script>
 
 </body>
