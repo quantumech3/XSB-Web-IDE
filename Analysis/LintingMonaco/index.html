@@ -1,11 +1,46 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Linting Monaco</title>
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="./min/vs/editor/editor.main.css">
 </head>
 <body>
-	
+	<script>var require = { paths: { 'vs': './min/vs' } };</script>
+	<script src="./min/vs/loader.js"></script>
+	<script src="./min/vs/editor/editor.main.nls.js"></script>
+	<script src="./min/vs/editor/editor.main.js"></script>
+
+	<div id="container" style="width: 500px; height: 500px;"></div>
+
+	<script>
+		// Line 1 has 23 characters and line 2 has 22 characters
+		var model = monaco.editor.createModel("There is a warning here\nThere is an error here");
+
+		// Instantiate editor with a model
+		monaco.editor.create(document.getElementById("container"), {model});
+
+		monaco.editor.setModelMarkers(model, "owner",
+		[
+			{ // Underlines "warning" in line 1 with yellow squiggles
+				startLineNumber: 1,
+				startColumn: 12,
+				endLineNumber: 1,
+				endColumn: 19,
+				message: "This is a custom warning message",
+				severity: monaco.MarkerSeverity.Warning
+			},
+			{ // Underlines "errir" in line 2 with red squiggles
+				startLineNumber: 2,
+				startColumn: 13,
+				endLineNumber: 2,
+				endColumn: 18,
+				message: "This is a custom warning message",
+				severity: monaco.MarkerSeverity.Error
+			}
+		]);
+	</script>
 </body>
 </html>

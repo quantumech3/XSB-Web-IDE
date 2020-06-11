@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Insert title here</title>
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="./min/vs/editor/editor.main.css">
+</head>
+<body>
+	<script>var require = { paths: { 'vs': './min/vs' } };</script>
+	<script src="./min/vs/loader.js"></script>
+	<script src="./min/vs/editor/editor.main.nls.js"></script>
+	<script src="./min/vs/editor/editor.main.js"></script>
+	<script src="parser.js"></script>
+
+	<div id="editor" style="width: 500px; height: 500px;"></div>
+
+	<script>
+		monaco.languages.register({id: "xsb"})
+
+		var model = monaco.editor.createModel("", "xsb");
+
+		var editor = monaco.editor.create(document.getElementById("editor"), {model})
+
+		setInterval(() =>
+		{
+			try {
+				// Attempt to parse the XSB code inside of the editor
+				parser.parse(editor.getValue())
+
+				// Set the editor to have no errors if no errors exist
+				monaco.editor.setModelMarkers(model, "owner", {})
+			} catch (error) {
+				// Highlight syntax errors
+				monaco.editor.setModelMarkers(model, "owner",
+				[
+					{
+						startLineNumber: error.location.start.line,
+                		startColumn: error.location.start.column,
+                		endLineNumber: error.location.end.line,
+                		endColumn: error.location.end.column,
+                		message: error.message, // Will show when you hover over where the error is
+                		severity: monaco.MarkerSeverity.Error
+					}
+				])
+			}
+		}, 100)
+	</script>
+</body>
+</html>
