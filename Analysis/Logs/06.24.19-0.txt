@@ -1,26 +1,0 @@
-Script started on 2019-06-24 13:43:56-0700
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ (())1))+))1))
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ ((1+1))$((1+1))
-2: command not found
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ xsv[Kb
-
-Command 'xsb' not found, did you mean:
-
-  command 'xbs' from deb xbs
-  command 'msb' from deb mysql-sandbox
-  command 'xsd' from deb mono-devel
-  command 'xsm' from deb x11-session-utils
-  command 'xcb' from deb xcb
-  command 'xsp' from deb mono-xsp
-  command 'sb' from deb lrzsz
-
-Try: sudo apt install <deb name>
-
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd saved.o/
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ cd saved.o/xsb[K$((1+1))[1P((1+1))less varstring.c_xsb.c[5Pinit_xsb.cgrep "varstring" *.c *.h[2@.h[C[C[C[C[C[C[C[C[C[11@#include <varstring.h>[C[C[C[C[C[C[C[C[C[14Pint main[C[C[C[C[C[C[C[C[Ch[Kc *.h[4P[C[C[C[C[C[C[C[C[C[C[C[C[C*.c *.h "main"code .[K[1@emrun[C[Ccc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -s USE_PTHREADS=1 -s TOTAL_MEMORY=1024MB[Arun .[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -s USE_PTHREADS=1 -s TOTAL_MEMORY=1024MB[Arun .[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccc main.c xsb.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file "../XSB_Dir@/" -I "../XSB/emu" -I "../XSB/config//x86_64-unknown-linux-gnu/" -s USE_PTHREADS=1 -s TOTAL_MEMORY=1024MB
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ [K]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/saved.o[00m$ exit
-exit
-
-Script done on 2019-06-24 13:57:13-0700

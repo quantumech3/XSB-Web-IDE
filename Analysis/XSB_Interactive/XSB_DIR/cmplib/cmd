@@ -1,9 +1,0 @@
-import file_reopen/4, file_flush/2 from file_io.
-file_reopen('../build/.xsb_cmplib_warn.tmp',w,3,_).
-file_write(3,'----------------- Warnings ------------------------'), file_nl(3).
-file_write(3,'While compiling XSB/cmplib:'), file_nl(3).
-file_flush(3,_).
-import xpp_include_dir/1 from parse.
-assert(xpp_include_dir('../emu')).
-assert(xpp_include_dir('../prolog_includes')).
-file_write(3,'-------------------- End --------------------------'), file_nl(3).

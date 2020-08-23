@@ -1,3 +1,0 @@
-You can compile to asm.js instead of Web Assembly with the following flag
-`emcc <source.c> -s WASM=0`
-

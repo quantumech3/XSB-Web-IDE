@@ -1,91 +1,0 @@
-Script started on 2019-06-07 20:20:59-0700
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ clear
-[3J[H[2J]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ ls
-[0m[01;34m'FILE error'[0m   [01;34mLogs[0m   [01;32mlog.sh[0m   [01;34mXSB[0m
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd D[KFILE\ error/
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ emcc [Kgcc main.c -I ../XSB/EMU[K[Ke[K[Kemu -I ../X SB_[K/config/x86_64-unknown-linux-gnu/ 
-[01m[Kmain.c:[m[K In function ‘[01m[Kmain[m[K’:
-[01m[Kmain.c:25:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar *[m[K’, but argument 2 has type ‘[01m[Kint[m[K’ [[01;35m[K-Wformat=[m[K]
-    printf("[01;35m[K%s[m[K\n", [32m[Kfgetc(pipeOutput)[m[K);
-            [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~~~~~~[m[K
-            [32m[K%d[m[K
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o output.[K[K[K[K[K[K[Kexe.exe[K[K[Kelf
-[01m[Kmain.c:[m[K In function ‘[01m[Kmain[m[K’:
-[01m[Kmain.c:25:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar *[m[K’, but argument 2 has type ‘[01m[Kint[m[K’ [[01;35m[K-Wformat=[m[K]
-    printf("[01;35m[K%s[m[K\n", [32m[Kfgetc(pipeOutput)[m[K);
-            [01;35m[K~^[m[K     [32m[K~~~~~~~~~~~~~~~~~[m[K
-            [32m[K%d[m[K
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ cho[K[K[K./exe.elf
-^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-^X^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-csd
-
-swdsd
-sd
-sd
-sds
-ds
-ds
-ds
-ds
-d
-sd
-sd
-sd
-s
-ds
-ds
-^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-[01m[Kmain.c:[m[K In function ‘[01m[Kmain[m[K’:
-[01m[Kmain.c:22:3:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kexit[m[K’ [[01;35m[K-Wimplicit-function-declaration[m[K]
-   [01;35m[Kexit[m[K(0);
-   [01;35m[K^~~~[m[K
-[01m[Kmain.c:22:3:[m[K [01;35m[Kwarning: [m[Kincompatible implicit declaration of built-in function ‘[01m[Kexit[m[K’
-[01m[Kmain.c:22:3:[m[K [01;36m[Knote: [m[Kinclude ‘[01m[K<stdlib.h>[m[K’ or provide a declaration of ‘[01m[Kexit[m[K’
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elfgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[C[C[C[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ccc main.c -I ../XSB/emu -I ../XSB[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ecc main.c -I ../XSB/emu -I ../XS[1@B[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ [Cmcc main.c -I ../XSB/emu -I ../X[1@S[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ [C[C
-
-
-main.c:21:10: error: incomplete type 'FILE' (aka 'struct _IO_FILE') is not assignable
-                *stdin = *pipeInput;
-                ~~~~~~ ^
-/usr/include/emsdk/emscripten/1.38.30/system/include/libc/bits/alltypes.h:374:16: note: 
-      forward declaration of 'struct _IO_FILE'
-typedef struct _IO_FILE FILE;
-               ^
-1 error generated.
-shared:ERROR: [31mcompiler frontend failed to generate LLVM bitcode, halting[0m
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ 
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ emcc main.c -I ../XSB/emu -I ../XXSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf
-[01m[Kmain.c:[m[K In function ‘[01m[Kmain[m[K’:
-[01m[Kmain.c:25:13:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%s[m[K’ expects argument of type ‘[01m[Kchar *[m[K’, but argument 2 has type ‘[01m[Kint[m[K’ [[01;35m[K-Wformat=[m[K]
-    printf("[01;35m[K%s[m[K", [32m[Kfgetc(pipeOutput)[m[K);
-            [01;35m[K~^[m[K   [32m[K~~~~~~~~~~~~~~~~~[m[K
-            [32m[K%d[m[K
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ gcc main.c -I ../XSB/emu -I ../XSSB/config/x86_64-unknown-linux-gnu/ -o exe.elf[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ emcc main.c -I ../XSB/emu -I ../X[1@S[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/FILE error[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/FILE error[00m$ ./exe.elf[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-^C
-]0;quantum

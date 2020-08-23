@@ -1,6 +1,0 @@
-#include <iostream>
-
-void HelloWorld()
-{
-	printf("Hello world");
-}

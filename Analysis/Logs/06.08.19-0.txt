@@ -1,12 +1,0 @@
-Script started on 2019-06-08 16:09:08-0700
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd XSB/config/.[Ksa[K[Kx86_64-unknown-linux-ggnu/.[Ksaved.o/
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ emcc *.o -o index.html -S[Ks ERROR_ON_UNDEFINED_SUMBO[K[K[K[KYMBOLS=0 -Oz 
-warning: undefined symbol: extend_enc_dec_as_nec
-warning: undefined symbol: pthread_setschedparam
-warning: undefined symbol: sched_get_priority_max
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ ^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ ^C
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/ssaved.o[00m$ exit
-exit
-
-Script done on 2019-06-08 16:15:09-0700

@@ -1,6 +1,0 @@
-*.o
-*.js
-*.so
-*.a
-emscripten/*.html
-emscripten/*.html.mem

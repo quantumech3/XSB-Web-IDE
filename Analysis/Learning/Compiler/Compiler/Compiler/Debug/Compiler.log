@@ -1,5 +1,0 @@
-﻿  Main.cpp
-MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
-    Hint on symbols that are defined and could potentially match:
-      "int __cdecl space::main(void)" (?main@space@@YAHXZ)
-C:\Users\Scott Burgert\Documents\Actual Projects\XSB Web IDE\Analysis\Compiler\Compiler\Debug\Compiler.exe : fatal error LNK1120: 1 unresolved externals

@@ -1,1 +1,0 @@
-emcc main.c -o index.js -s TOTAL_MEMORY=1024MB -s USE_PTHREADS=1 -I ./emu -I ./config --preload-file "./XSB_DIR@/" ./config/saved.o/xsb.o -Oz

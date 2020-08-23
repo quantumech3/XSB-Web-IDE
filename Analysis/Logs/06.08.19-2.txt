@@ -1,184 +1,0 @@
-Script started on 2019-06-08 16:27:38-0700
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis[00m$ cd XSB.[K/u[Kemu
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep PANIC!!! Cannot determiine the full name of the XSB executable![K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K* ""PANIC!!! Cannot deteermine the full name of the XSB executable!"
-grep * "PANICcd XSB/emu! Cannot determine the full name of the XSB executable!"
-Binary file auxlry.o matches
-grep: dde: Is a directory
-grep: debugs: Is a directory
-[35m[KMakefile[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-[35m[KMakefile.bak[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-grep: orastuff: Is a directory
-grep: PANICcd XSB/emu! Cannot determine the full name of the XSB executable!: No such file or directory
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep * "PANICcd XSB/emu! Cannnot determine the full name of the XSB executable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C XSB/emu! Cann[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C XSB/emu! Canno[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot [1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot d[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot de[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot det[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot dete[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot deter[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot determ[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot determi[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C! Cannot determin[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[Co! Cannot determi[1@n[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C! Cannot determin[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[CO! Cannot determi[1@n[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[CC! Cannot determ[1@i[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot determi[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C! Cannot determin[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[CI! Cannot determi[1@n[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[CC! Cannot determ[1@i[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot deter[1@m[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot dete[1@r[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "PANIC!!! Cannot deter[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C"PANIC!!! Cannot determ[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C *
-grep "PANICgrep * "PANICcd XSB/emu! Cannot determine the full name of the XSB executable!"! Cannot determine the full name of the XSB executable!" *
-grep: XSB/emu!: No such file or directory
-grep: Cannot: No such file or directory
-grep: determine: No such file or directory
-grep: the: No such file or directory
-grep: full: No such file or directory
-grep: name: No such file or directory
-grep: of: No such file or directory
-grep: the: No such file or directory
-grep: XSB: No such file or directory
-grep: executable!! Cannot determine the full name of the XSB executable!: No such file or directory
-grep: dde: Is a directory
-grep: debugs: Is a directory
-grep: orastuff: Is a directory
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep "PANICgrep * "PANICcd XXSB/emu! Cannot determine the full name of the XSB executable!"! Cannot determine the  full name of the XSB executable!" *[K[K[K"[C[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the f[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the fu[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the ful[C[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full n[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full na[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full nam[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name o[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of t[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of th[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the [1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the X[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XS[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB[1P executable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB [1Pexecutable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB e[1Pxecutable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB ex[1Pecutable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB exe[1Pcutable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB exec[1Putable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB execu[1Ptable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB execut[1Pable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executa[1Pble!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executab[1Ple!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executabl[1Pe!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executable[1P!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executable![1P"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executable!"[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determine the full name of the XSB executable!" [K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[1P[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"![1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! [1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! C[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Ca[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Can[C[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cann[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Canno[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C! Cannot [1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot d[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot de[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot det[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot dete[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot deter[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determ[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C"! Cannot determi[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C"! Cannot determin[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C"! Cannot determine[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C"! Cannot determine [1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C"! Cannot determine t[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C"! Cannot determine th[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C! Cannot determine the[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C*"! Cannot determine th[1@e[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C "! Cannot determine t[1@h[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C
-
-Binary file auxlry.o matches
-grep: dde: Is a directory
-grep: debugs: Is a directory
-[35m[KMakefile[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-[35m[KMakefile.bak[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-grep: orastuff: Is a directory
-grep: ! Cannot determine the full name of the XSB executable!: No such file or directory
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep * "! Cannot determine tthe full name of the XSB executable!"[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CCannot determine th[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[CCannot determine the[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C"Cannot determine the [1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C"Cannot determine the f[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C"Cannot determine the fu[1P[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C "Cannot determine the f[1@u[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C *
-grep: dde: Is a directory
-grep: debugs: Is a directory
-grep: orastuff: Is a directory
-[35m[Korient_xsb.c[m[K[36m[K:[m[K	  "PANIC!!! [01;31m[KCannot determine the full name of the XSB executable![m[K\n");
-[35m[Korient_xsb.c[m[K[36m[K:[m[K    xsb_initialization_exit("[01;31m[KCannot determine the full name of the XSB executable![m[K\n"
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep "Cannot determine the ffull name of the XSB executable!" *[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C "Cannot determine the [1@f[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C- "Cannot determine the[1@ [A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[Cn "Cannot determine th[1@e[A]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [C[C[C[C[C[C[C
-
-grep: dde: Is a directory
-grep: debugs: Is a directory
-grep: orastuff: Is a directory
-[35m[Korient_xsb.c[m[K[36m[K:[m[K[32m[K232[m[K[36m[K:[m[K	  "PANIC!!! [01;31m[KCannot determine the full name of the XSB executable![m[K\n");
-[35m[Korient_xsb.c[m[K[36m[K:[m[K[32m[K241[m[K[36m[K:[m[K    xsb_initialization_exit("[01;31m[KCannot determine the full name of the XSB executable![m[K\n"
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ [K]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ clear
-[3J[H[2J]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep ""x"s"b")"e"x"e"c"[1P"[1P"[1P"[1P"[1P"_"e"x"e"c"u"t"a"b"l"e"_"f"u"l"l"_"o"a"t"h"[1P"[1P"[1P"[1P"p"a"t"h"[C*"xsb_executable_full_path" "xsb_executable_full_path"
-Binary file auxlry.o matches
-grep: dde: Is a directory
-grep: debugs: Is a directory
-[35m[KMakefile[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-[35m[KMakefile.bak[m[K[36m[K:[m[KSRCS =	[01;31m[Kauxlry.c[m[K biassert.c builtin.c call_xsb.c cinterf.c conc_compl.c \
-grep: orastuff: Is a directory
-grep: xsb_executable_full_path: No such file or directory
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep * "xsb_executable_full_path"[1P "xsb_executable_full_path"[C[1P"xsb_executable_full_path"[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C *
-grep: dde: Is a directory
-grep: debugs: Is a directory
-[35m[Kemuloop.c[m[K[36m[K:[m[K	  [01;31m[Kxsb_executable_full_path[m[K(argv[0]);
-Binary file emuloop.o matches
-grep: orastuff: Is a directory
-[35m[Korient_xsb.c[m[K[36m[K:[m[KDllExport char *[01;31m[Kxsb_executable_full_path[m[K(char *myname)
-[35m[Korient_xsb.h[m[K[36m[K:[m[Kextern char *[01;31m[Kxsb_executable_full_path[m[K(char *);
-Binary file orient_xsb.o matches
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ grep "xsb_executable_full_path" *[1@-[1@n[1@m[1P[1@ 
-grep: dde: Is a directory
-grep: debugs: Is a directory
-[35m[Kemuloop.c[m[K[36m[K:[m[K[32m[K3070[m[K[36m[K:[m[K	  [01;31m[Kxsb_executable_full_path[m[K(argv[0]);
-Binary file emuloop.o matches
-grep: orastuff: Is a directory
-[35m[Korient_xsb.c[m[K[36m[K:[m[K[32m[K135[m[K[36m[K:[m[KDllExport char *[01;31m[Kxsb_executable_full_path[m[K(char *myname)
-[35m[Korient_xsb.h[m[K[36m[K:[m[K[32m[K32[m[K[36m[K:[m[Kextern char *[01;31m[Kxsb_executable_full_path[m[K(char *);
-Binary file orient_xsb.o matches
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/emu[00m$ cd ..
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd build
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ ./makebx[K[Kxsb
-
-make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
-
-
-Preparing...
-
-Making emulator...
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
--e 
-Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
-
--e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
-emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
-clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
-orient_xsb.c:223:13: error: use of undeclared identifier 'true'
-    found = true; // CHANGED from comment above
-            ^
-orient_xsb.c:224:24: error: array type 'char [1024]' is not assignable
-    executable_path_gl = "/config/x86_64-unknown-linux-gnu/bin/xsb"; // CHANGED
-    ~~~~~~~~~~~~~~~~~~ ^
-2 errors generated.
-shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
-Makefile:274: recipe for target 'orient_xsb.o' failed
-make[1]: *** [orient_xsb.o] Error 1
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
-make: *** [emulator] Error 1
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ ./makexsb
-
-make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
-
-
-Preparing...
-
-Making emulator...
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
--e 
-Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
-
--e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
-emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
-clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
-orient_xsb.c:223:13: error: use of undeclared identifier 'true'
-    found = true; // CHANGED from comment above
-            ^
-1 error generated.
-shared:ERROR: compiler frontend failed to generate LLVM bitcode, halting
-Makefile:274: recipe for target 'orient_xsb.o' failed
-make[1]: *** [orient_xsb.o] Error 1
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-../config/x86_64-unknown-linux-gnu/topMakefile:194: recipe for target 'emulator' failed
-make: *** [emulator] Error 1
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ ./makexsb
-
-make -f ../config/x86_64-unknown-linux-gnu/topMakefile  
-
-
-Preparing...
-
-Making emulator...
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
--e 
-Compiling XSB with /usr/include/emsdk/emscripten/1.38.30/emcc using -O4  -D PTHREAD_MUTEX_ERRORCHECK_NP
-
--e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] orient_xsb.c
-emcc:WARNING: optimization level '-O4' is not supported; using '-O3' instead
-clang: warning: -O4 is equivalent to -O3 [-Wdeprecated]
-
-Making XSB executable /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb 
-
--e 	[/usr/include/emsdk/emscripten/1.38.30/emcc] -o /home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/bin/xsb -lm -ldl -Wl,-export-dynamic -lpthread 
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-
-Making XSB module...
-make[1]: Entering directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-
-Making a C-callable XSB module
-ld  -o xsb.o  -r auxlry.o biassert.o builtin.o call_xsb.o cinterf.o conc_compl.o debug_xsb.o dis.o dynload.o dynamic_stack.o deadlock.o emuloop.o error_xsb.o findall.o function.o hash_xsb.o  hashtable_xsb.o heap_xsb.o init_xsb.o inst_xsb.o io_builtins_xsb.o loader_xsb.o memory_xsb.o orient_xsb.o pathname_xsb.o psc_xsb.o random_xsb.o remove_unf.o residual.o rw_lock.o scc_xsb.o slgdelay.o socket_xsb.o string_xsb.o storage_xsb.o struct_manager.o struct_intern.o sub_delete.o subp.o system_xsb.o table_stats.o tables.o thread_xsb.o timer_xsb.o token_xsb.o tr_utils.o trace_xsb.o trie_lookup.o trie_search.o tries.o tst_insert.o tst_retrv.o tst_unify.o tst_utils.o varstring.o ubi_BinTree.o ubi_SplayTree.o hashtable.o hashtable_itr.o sha1.o md5.o url_encode.o getMemorySize.o incr_xsb.o call_graph_xsb.o    
-
-auxlry.o: file not recognized: File format not recognized
-Makefile:179: recipe for target 'xsbmod' failed
-make[1]: *** [xsbmod] Error 1
-make[1]: Leaving directory '/home/quantumech/Desktop/XSB-Web-IDE/Analysis/XSB/emu'
-../config/x86_64-unknown-linux-gnu/topMakefile:228: recipe for target 'xsbmod' failed
-make: *** [xsbmod] Error 2
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/build[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/build[00m$ cd [K[K[Kcd ..
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB[00m$ cd config/x86_64-unknown-linux-gnu/saved.o/
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[00m$ emcc *.o -o index.html -s ERROR_ON_UNDEFINED_SYMBOLS=0 -Oz --preload-file ""."."/"."."/"."."/"@"/"
-warning: undefined symbol: extend_enc_dec_as_nec
-warning: undefined symbol: pthread_setschedparam
-warning: undefined symbol: sched_get_priority_max
-]0;quantumech@ubuntu: ~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[01;32mquantumech@ubuntu[00m:[01;34m~/Desktop/XSB-Web-IDE/Analysis/XSB/config/x86_64-unknown-linux-gnu/saved.o[00m$ exit
-exit
-
-Script done on 2019-06-08 17:15:19-0700

@@ -1,8 +1,0 @@
-PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:/usr/include/emsdk/upstream/emscripten:/usr/include/emsdk/node/12.9.1_64bit/bin"
-EMSDK="/usr/include/emsdk"
-EM_CONFIG="/home/quantumech/.emscripten"
-LLVM_ROOT="/usr/include/emsdk/clang/e1.38.30_64bit"
-EMSCRIPTEN_NATIVE_OPTIMIZER="/usr/include/emsdk/clang/e1.38.30_64bit/optimizer"
-BINARYEN_ROOT="/usr/include/emsdk/clang/e1.38.30_64bit/binaryen"
-EMSDK_NODE="/usr/include/emsdk/node/8.9.1_64bit/bin/node"
-EMSCRIPTEN="/usr/include/emsdk/emscripten/1.38.30"
