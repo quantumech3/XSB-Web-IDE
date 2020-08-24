@@ -1,47 +1,93 @@
-// Handles XSB commands that are typed into the console
-let handleXSBCommand = function(command)
+var xsbWorker = new Worker("");
+var xsbTerm = 
 {
-	
+	executeXSBCommand: function(command=""){}, // Invoked by JQuery terminal after the user inputs an XSB command
+	handleXSBOutput: function(results){}, // Invoked by XSB web worker when query results are returned from a command
+	startXSB: function(){},
+	stopXSB: function(){},
+	writeFile: function(fileName="", fileData=""){} // Create a file in the Emscripten Virtual File system
+}
+
+// When the XSB web worker returns query results resulting from an XSB command, pass results and standard output to executeXSBCommand() and handleXSBOutput()
+var handleWorkerMessage = function(message)
+{
+	// Print standard output from XSB interpreter
+	if(message.data.stdout)
+		term.echo(message.data.stdout);
+
+	// Print results from XSB query
+	if(message.data.results)
+		xsbTerm.handleXSBOutput(message.data.results);
+}
+
+// Invoked by JQuery terminal after the user inputs an XSB command
+xsbTerm.executeXSBCommand = function(command="")
+{
 	// If either the user-inputted command lacks a period at the end, only contains a period, or is an empty string, throw error
 	// These user-errors must be handled because the XSB C Interface will crash on user input if they aren't handled
 	if(command[command.length - 1] != '.' || command.length == 1 || command.length == 0)
 	{
-		XSB.execute("writeln('Invalid command').")
+		xsbWorker.postMessage("writeln('Invalid command').");
 		return;
 	}
 
-	// Invoke XSB-JS-Interface to execute the command 'command' and gets results of the command (See XSB-JS-Interface source code comments for more info on XSB.execute())
-	let results = XSB.execute(command)
+	// Else if the command is valid, execute the XSB command via a web worker
+	term.set_prompt(""); 
+	xsbWorker.postMessage(command);
+}
 
+// Create a file in the Emscripten Virtual File system
+xsbTerm.writeFile = function(fileName="", fileData="")
+{
+	xsbWorker.postMessage({fileName, fileData});
+}
+
+// Invoked by XSB web worker when query results are returned from a command
+xsbTerm.handleXSBOutput = function(results)
+{
 	// Print XSB query results if such results exist (XSB.execute() returns [""] when no query results exist which is equivilent to 'false' in JS)
-	if(results[0])
+	if(results.var[0])
 	{
-		let resultString = ""
-
-		for(let i = 0; i < results.length; i++)
+		for(let j = 0; j < results.var[0].length; j++)
 		{
-			// Append result of XSB query to resultString
-			resultString += results[i]
-
-			// Add newline to the end of each XSB query result unless it is the last XSB query result
-			if(i !== results.length - 1)
-				resultString += '\n'
+			for(let i = 0; i < results.var.length; i++)
+			{
+				term.echo("Var #" + i.toString() + ": " + results.var[i][j])
+			}
+			term.echo();
 		}
-
-		// Print resultString into Terminal
-		XSB.Events.onOutput(resultString)
 	}
+
+	if(results.isTrue)
+		term.echo("yes.")
+	else
+		term.echo("no.")
+
+	term.set_prompt("?- ");
+}
+
+// Creates new instance of web worker
+xsbTerm.startXSB = function()
+{
+	// Reset terminal prompt
+	term.set_prompt("?- ");
+
+	// Initialize XSB web worker
+	xsbWorker = new Worker("xsbTerminalWorker.js");
+
+	// When the XSB web worker returns query results resulting from an XSB command, pass results and standard output to executeXSBCommand() and handleXSBOutput()
+	xsbWorker.onmessage = handleWorkerMessage;
+}
+
+// Terminates XSB web worker
+xsbTerm.stopXSB = function()
+{
+	xsbWorker.terminate();
 }
 
 // Initialize Terminal object inside the (XSB_PROPERTIES.TERMINAL_ELEMENT_ID) element with custom startup message (XSB_PROPERTIES.STARTUP_MESSAGE)
-var term = $('#' + XSB_PROPERTIES.TERMINAL_ELEMENT_ID).terminal(handleXSBCommand, {greetings: XSB_PROPERTIES.STARTUP_MESSAGE, prompt: "?- "});
+var term = $('#' + XSB_PROPERTIES.TERMINAL_ELEMENT_ID).terminal(xsbTerm.executeXSBCommand, {greetings: XSB_PROPERTIES.STARTUP_MESSAGE, prompt: "?- "});
 var re = /^___terminal::/;
 
-// Make XSB-JS-Interface output to terminal rather then browser console
-XSB.Events.onOutput = function(output, isError)
-{
-	term.echo(output)
-}
-
-// Initialize XSB
-XSB.init()
+// Initialize XSB interface web worker after 1 second to prevent weird crashes
+setTimeout(() => {xsbTerm.startXSB();}, 1000);
