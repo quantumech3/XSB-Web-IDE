@@ -5,7 +5,8 @@ var xsbTerm =
 	handleXSBOutput: function(results){}, // Invoked by XSB web worker when query results are returned from a command
 	startXSB: function(){},
 	stopXSB: function(){},
-	writeFile: function(fileName="", fileData=""){} // Create a file in the Emscripten Virtual File system
+	writeFile: function(fileName="", fileData=""){}, // Create a file in the Emscripten Virtual File system
+	clear: function(){}
 }
 
 // When the XSB web worker returns query results resulting from an XSB command, pass results and standard output to executeXSBCommand() and handleXSBOutput()
@@ -83,6 +84,11 @@ xsbTerm.startXSB = function()
 xsbTerm.stopXSB = function()
 {
 	xsbWorker.terminate();
+}
+
+xsbTerm.clear = function()
+{
+	term.exec('clear')
 }
 
 // Initialize Terminal object inside the (XSB_PROPERTIES.TERMINAL_ELEMENT_ID) element with custom startup message (XSB_PROPERTIES.STARTUP_MESSAGE)
