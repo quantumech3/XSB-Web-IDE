@@ -5,7 +5,13 @@ server = Flask(__name__)
 # Send a file located in the presentation module when one is requested
 @server.route("/<path:file>")
 def generic_response(file):
-	return send_from_directory("./src/modules/presentation/", file)
+	# The XSB Terminal library currently assumes all library files are at root.
+	if "xsbInterface" in file:	# If a file from the xsbInterface is requested, then send it from ./src/modules/terminal. 
+		if file == "xsbInterface.wasm":
+			return send_from_directory('./src/modules/terminal/', file, mimetype="application/wasm")
+		return send_from_directory('./src/modules/terminal/', file)
+
+	return send_from_directory("./src/", file)
 
 # Send main webpage when "/" url is queried by client
 @server.route("/")
