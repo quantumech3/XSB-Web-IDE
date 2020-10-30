@@ -5,20 +5,32 @@ var xsbTerm =
 	handleXSBOutput: function(results){}, // Invoked by XSB web worker when query results are returned from a command
 	startXSB: function(){},
 	stopXSB: function(){},
-	writeFile: function(fileName="", fileData=""){}, // Create a file in the Emscripten Virtual File system
+	writeFile: function(fileName="", data=""){}, // Create a file in the Emscripten Virtual File system
+	readFile: function(fileName="", callback={}){}, // Read file from the Emscripten Virtual File system
 	clear: function(){}
 }
+
+// Used to handle results returned from XSB web worker commands
+let _callbackQueue = [];
 
 // When the XSB web worker returns query results resulting from an XSB command, pass results and standard output to executeXSBCommand() and handleXSBOutput()
 var handleWorkerMessage = function(message)
 {
-	// Print standard output from XSB interpreter
-	if(message.data.stdout)
-		term.echo(message.data.stdout);
+	if(message.data.command)
+	{
+		// TODO: Handle callbacks here
+	}
+	else
+	{
+		// Print standard output from XSB interpreter
+		if(message.data.stdout)
+			term.echo(message.data.stdout);
 
-	// Print results from XSB query
-	if(message.data.results)
-		xsbTerm.handleXSBOutput(message.data.results);
+		// Print results from XSB query
+		if(message.data.results)
+			xsbTerm.handleXSBOutput(message.data.results);
+	}
+	
 }
 
 // Invoked by JQuery terminal after the user inputs an XSB command
@@ -38,9 +50,14 @@ xsbTerm.executeXSBCommand = function(command="")
 }
 
 // Create a file in the Emscripten Virtual File system
-xsbTerm.writeFile = function(fileName="", fileData="")
+xsbTerm.writeFile = function(fileName="", data="")
 {
-	xsbWorker.postMessage({fileName, fileData});
+	xsbWorker.postMessage({fileName, data});
+}
+
+xsbTerm.readFile = function(fileName="", callback={})
+{
+	// TODO: Implement readFile() function
 }
 
 // Invoked by XSB web worker when query results are returned from a command

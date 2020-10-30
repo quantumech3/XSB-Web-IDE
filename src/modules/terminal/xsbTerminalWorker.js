@@ -36,12 +36,11 @@ XSB.init();
 // The main browser thread passes commands to this worker in the form of messages
 onmessage = function(command)
 {
-	// If the main browser thread requests for a file to be created, create a file in Emscripten's virtual file system
-	if(typeof command.data === "object")
+	if(command.data.command)
 	{
-		FS.writeFile(command.data.fileName, command.data.fileData);
+		// TODO: Handle commands
 	}
-	else
+	else if(typeof command.data == "string")
 	{
 		// Execute the specified XSB command and return the query results in the form of a message
 		this.postMessage(
@@ -51,4 +50,10 @@ onmessage = function(command)
 			}
 		);
 	}
+	else // TODO: Remove this entire else block once writeFile() command is implemented
+	{
+		// Temp code for debugging purposes. Allows scripts to be loaded into XSB's virtual file system
+		FS.writeFile(command.data.fileName, command.data.data); 
+	}
+	
 }
