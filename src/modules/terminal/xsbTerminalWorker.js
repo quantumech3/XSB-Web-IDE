@@ -33,12 +33,23 @@ self.importScripts("xsbInterface.js");
 
 XSB.init();
 
+// Used for read_file command
+let textDecoder = new TextDecoder();
+
 // The main browser thread passes commands to this worker in the form of messages
 onmessage = function(command)
 {
 	if(command.data.command)
 	{
-		// TODO: Handle commands
+		switch(command.data.command)
+		{
+			case "write_file": // Handle writeFile command
+				FS.writeFile(command.data.args[0], command.data.args[1]); 
+				break;
+			case "read_file": // Handle readFile command
+				// Return file data as a string
+				postMessage({command: "read_file_callback", args: [command.data.args[0], textDecoder.decode(FS.readFile(command.data.args[0]))]});
+		}
 	}
 	else if(typeof command.data == "string")
 	{
@@ -50,10 +61,4 @@ onmessage = function(command)
 			}
 		);
 	}
-	else // TODO: Remove this entire else block once writeFile() command is implemented
-	{
-		// Temp code for debugging purposes. Allows scripts to be loaded into XSB's virtual file system
-		FS.writeFile(command.data.fileName, command.data.data); 
-	}
-	
 }

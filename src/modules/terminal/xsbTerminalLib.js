@@ -18,7 +18,24 @@ var handleWorkerMessage = function(message)
 {
 	if(message.data.command)
 	{
-		// TODO: Handle callbacks here
+		switch(message.data.command)
+		{
+			case "read_file_callback": // Handle read_file_callback() command according to design document
+				for(let i = 0; i < _callbackQueue.length; i++)
+				{
+					let cmd = _callbackQueue[i]
+					let filePath = message.data.args[0];
+					let fileData = message.data.args[1];
+					// IF cmd.command == “read_file” AND cmd.args[0] == filePath:
+					if(cmd.command == "read_file" && cmd.args[0] == filePath)
+					{
+						cmd.args[1](fileData);
+						_callbackQueue.splice(i, 1)	// DEQUEUE element at index i from _callbackQueue
+						break;
+					}
+				}
+				break;
+		}
 	}
 	else
 	{
@@ -52,12 +69,13 @@ xsbTerm.executeXSBCommand = function(command="")
 // Create a file in the Emscripten Virtual File system
 xsbTerm.writeFile = function(fileName="", data="")
 {
-	xsbWorker.postMessage({fileName, data});
+	xsbWorker.postMessage({command: "write_file", args: [fileName, data]}); // Invoke readFile(fileName, data) command
 }
 
-xsbTerm.readFile = function(fileName="", callback={})
+xsbTerm.readFile = function(fileName="", callback=(fileData) => {}) 
 {
-	// TODO: Implement readFile() function
+	_callbackQueue.push({command: "read_file", args: [fileName, callback]})
+	xsbWorker.postMessage({command: "read_file", args: [fileName]})
 }
 
 // Invoked by XSB web worker when query results are returned from a command
@@ -101,6 +119,7 @@ xsbTerm.startXSB = function()
 xsbTerm.stopXSB = function()
 {
 	xsbWorker.terminate();
+	_callbackQueue = [] // Clear _callbackQueue
 }
 
 xsbTerm.clear = function()
