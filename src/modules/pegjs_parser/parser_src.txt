@@ -1,0 +1,62 @@
+statements =
+    (statement)*
+
+statement =
+	compound_term "."
+
+compound_term = 
+	term "(" compound_term ("," compound_term)* ")" ("(" compound_term ("," compound_term)* ")")* /
+	term "()" /
+    _compound_term operator compound_term /
+    term /
+	"(" compound_term ")(" compound_term ("," compound_term)* ")" /
+	"(" compound_term ")()" /
+	"[" compound_term ("," compound_term)* "]" / 
+	"[" compound_term ("," compound_term)* "|" compound_term "]" /
+	'"' [^"]* '"' 
+
+_compound_term =
+	term "(" compound_term ("," compound_term)* ")" ("(" compound_term ("," compound_term)* ")")* /
+	term "()" /
+	term /
+	"(" compound_term ")(" compound_term ("," compound_term)* ")" /
+    "(" compound_term ")()" /
+	"[" compound_term ("," compound_term)* "]" /
+	"[" compound_term ("," compound_term)* "|" compound_term "]" /
+	'"' [^"]* '"' 
+
+term = 
+    constant / variable
+
+constant =
+    float / integer / atom
+
+operator =
+	"+" / "-" / "/" / "*" / "^" / "," / ";" / ":-"
+
+atom = 
+	[a-z] ([a-z] / [A-Z] / [0-9] / "_")* /
+	"'" [^']+ "'" /
+	"{" atom "}" /
+	"[]"
+
+variable =
+    ([A-Z] / "_") ([a-z] / [A-Z] / [0-9])*
+
+float "Floating point number" =
+    "-"?[0-9]* "." [0-9]+ (["e" / "E"] "-"?[0-9]+)?
+
+integer = 
+	"0b" [0-1]* / // -?[0-1]* for base 2
+	"-0b" [0-1]* /
+	"0o" [0-7]* / // -?[0-1]* for base 2
+	"-0o" [0-7]* /
+	"0x" ([0-9] / [A-F] / [a-f])+ /  // -?0x([0-9]|[A-F]|[a-f])* for base 16
+	"-0x" ([0-9] / [A-f] / [a-f])+ /
+	"0'" . / // Character constant to integer conversion
+	"-0'" . / 
+	[0-9]+ / // -?[0-9]+ for base 10
+	"-" [0-9]+ 
+
+_ "whitespace" = 
+	" "
