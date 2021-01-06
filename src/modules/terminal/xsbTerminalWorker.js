@@ -33,15 +33,25 @@ self.importScripts("xsbInterface.js");
 
 XSB.init();
 
+// Used for read_file command
+let textDecoder = new TextDecoder();
+
 // The main browser thread passes commands to this worker in the form of messages
 onmessage = function(command)
 {
-	// If the main browser thread requests for a file to be created, create a file in Emscripten's virtual file system
-	if(typeof command.data === "object")
+	if(command.data.command)
 	{
-		FS.writeFile(command.data.fileName, command.data.fileData);
+		switch(command.data.command)
+		{
+			case "write_file": // Handle writeFile command
+				FS.writeFile(command.data.args[0], command.data.args[1]); 
+				break;
+			case "read_file": // Handle readFile command
+				// Return file data as a string
+				postMessage({command: "read_file_callback", args: [command.data.args[0], textDecoder.decode(FS.readFile(command.data.args[0]))]});
+		}
 	}
-	else
+	else if(typeof command.data == "string")
 	{
 		// Execute the specified XSB command and return the query results in the form of a message
 		this.postMessage(

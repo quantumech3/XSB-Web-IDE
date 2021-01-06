@@ -5,19 +5,49 @@ var xsbTerm =
 	handleXSBOutput: function(results){}, // Invoked by XSB web worker when query results are returned from a command
 	startXSB: function(){},
 	stopXSB: function(){},
-	writeFile: function(fileName="", fileData=""){} // Create a file in the Emscripten Virtual File system
+	writeFile: function(fileName="", data=""){}, // Create a file in the Emscripten Virtual File system
+	readFile: function(fileName="", callback={}){}, // Read file from the Emscripten Virtual File system
+	clear: function(){}
 }
+
+// Used to handle results returned from XSB web worker commands
+let _callbackQueue = [];
 
 // When the XSB web worker returns query results resulting from an XSB command, pass results and standard output to executeXSBCommand() and handleXSBOutput()
 var handleWorkerMessage = function(message)
 {
-	// Print standard output from XSB interpreter
-	if(message.data.stdout)
-		term.echo(message.data.stdout);
+	if(message.data.command)
+	{
+		switch(message.data.command)
+		{
+			case "read_file_callback": // Handle read_file_callback() command according to design document
+				for(let i = 0; i < _callbackQueue.length; i++)
+				{
+					let cmd = _callbackQueue[i]
+					let filePath = message.data.args[0];
+					let fileData = message.data.args[1];
+					// IF cmd.command == “read_file” AND cmd.args[0] == filePath:
+					if(cmd.command == "read_file" && cmd.args[0] == filePath)
+					{
+						cmd.args[1](fileData);
+						_callbackQueue.splice(i, 1)	// DEQUEUE element at index i from _callbackQueue
+						break;
+					}
+				}
+				break;
+		}
+	}
+	else
+	{
+		// Print standard output from XSB interpreter
+		if(message.data.stdout)
+			term.echo(message.data.stdout);
 
-	// Print results from XSB query
-	if(message.data.results)
-		xsbTerm.handleXSBOutput(message.data.results);
+		// Print results from XSB query
+		if(message.data.results)
+			xsbTerm.handleXSBOutput(message.data.results);
+	}
+	
 }
 
 // Invoked by JQuery terminal after the user inputs an XSB command
@@ -37,9 +67,15 @@ xsbTerm.executeXSBCommand = function(command="")
 }
 
 // Create a file in the Emscripten Virtual File system
-xsbTerm.writeFile = function(fileName="", fileData="")
+xsbTerm.writeFile = function(fileName="", data="")
 {
-	xsbWorker.postMessage({fileName, fileData});
+	xsbWorker.postMessage({command: "write_file", args: [fileName, data]}); // Invoke readFile(fileName, data) command
+}
+
+xsbTerm.readFile = function(fileName="", callback=(fileData) => {}) 
+{
+	_callbackQueue.push({command: "read_file", args: [fileName, callback]})
+	xsbWorker.postMessage({command: "read_file", args: [fileName]})
 }
 
 // Invoked by XSB web worker when query results are returned from a command
@@ -83,6 +119,12 @@ xsbTerm.startXSB = function()
 xsbTerm.stopXSB = function()
 {
 	xsbWorker.terminate();
+	_callbackQueue = [] // Clear _callbackQueue
+}
+
+xsbTerm.clear = function()
+{
+	term.exec('clear')
 }
 
 // Initialize Terminal object inside the (XSB_PROPERTIES.TERMINAL_ELEMENT_ID) element with custom startup message (XSB_PROPERTIES.STARTUP_MESSAGE)
