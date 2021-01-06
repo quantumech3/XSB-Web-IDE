@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<p id="out">null</p>
+	<textarea id="in" style="width: 100px; height: 100px;" oninput="onInput(document.getElementById('in').value)"></textarea>
+
+	<script src="./parser.js"></script>
+	<script>
+		function onInput(text) {
+			let preprocessedText = text;
+
+			try {
+				setOutput(exprsToPrefix(parser.parse(preconditionScript(text))));
+			} catch (error) {
+				setError(error.message);
+			}
+		}
+		
+		// Example of preconditioning. Padding will need to be added for every operator, not just commas.
+		function preconditionScript(text){
+			return text.replace(/,/, " , ");
+		}
+
+		function exprsToPrefix(trees) {
+			let output = "";
+
+			trees.forEach(tree => {
+				if(typeof tree == "string")
+					output += tree;
+				else
+					output += exprToPrefix(tree);
+					
+				output += ". ";
+			});
+
+			return output
+		}
+
+		// Assumes 1 expression
+		function exprToPrefix(tree)
+		{
+			let output = "";
+			
+			output += tree.functor + "(";
+
+			tree.args.forEach(arg => {
+				if(typeof arg == "string") {
+					output += arg;
+				}
+				else {
+					output += exprToPrefix(arg);
+				}
+
+				output += ",";
+			});
+
+			output = output.slice(0, output.length - 1); // Delete extra comma
+
+			output += ")"
+
+			return output
+		}
+
+		function setOutput(out) {
+			let outElement = document.getElementById("out");
+			outElement.style = "color: Black";
+
+			document.getElementById("out").textContent = out;
+		}
+
+		function setError(err) {
+			let outElement = document.getElementById("out");
+			outElement.style = "color: Red";
+
+			document.getElementById("out").textContent = err;
+		}
+
+	</script>
+</body>
+</html>
