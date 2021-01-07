@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+
+	<p>Press f12 to access console. Youll need to invoke <code>python start_server.py</code> in the console to host the server</p>
+
+	<p class="rainbow" style="font-size: 50px; font-weight: bolder; ">Documentation</p>
+	<ul>
+		<li>You must call <code>XSB.init()</code> to initialize the Emscripten runtime before you do anything else</li>
+		<li>Use <code>readFromFile(path)</code> to read data from a file as a string in the virtual file system</li>
+		<li>Use <code>writeToFile(path, str)</code> to write a string to a file in the Emscripten file system</li>
+		<li>After XSB has been initialized, you can use <code>XSB.execute(cmd)</code> to execute XSB queries and get the results as a dictionary. You can see the structure of the dictionary by trying the query yourself in the console</li>
+	</ul>
+	<p class="rainbow_spinning">:D joy</p>
+</head>
+<body>
+	<script src="xsbInterface.js"></script>
+	<script src="jasmine.js"></script>
+
+	<script>
+		XSB.init(); // Initialize XSB
+
+		setTimeout(() => {
+			// Prompt user for XSB input
+			writeToFile("script.P", prompt("Please enter script input"))
+
+			let ctr = 0
+			let result = XSB.execute("open('script.P', read, X).")
+		
+			// While there is valid syntax, increment ctr
+			for(result = XSB.execute("read(7, X)."); result.var.length > 0 && result.var[0] != "end_of_file" || result.var.length == 0; result = XSB.execute("read(7, X)."))
+			{
+				// if there is invalid syntax, report it. Statement number starts from 0
+				if(!result.isTrue)
+					console.log("Error on statement number: " + ctr)
+
+				ctr++
+			}
+		}, 1000)
+
+		
+	</script>
+</body>
+</html>

@@ -21,7 +21,7 @@
 			}
 		}
 		
-		// Example of preconditioning. Padding will need to be added for every operator, not just commas.
+		// Example of preconditioning. Padding will need to be added for every operator, not just commas. You will also need to add quotes around operators a + b => '+'(a,b). 
 		function preconditionScript(text){
 			return text.replace(/,/, " , ");
 		}

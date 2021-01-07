@@ -1,0 +1,32 @@
+@keyframes rainbow {
+	0% {color: red;}
+	33% {color: green;}
+	66% {color: blue;}
+	100% {color: red;}
+}
+
+@keyframes spinning {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+.rainbow {
+	animation-name: rainbow;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.spinning {
+	transform-origin:0%;
+	animation-name: spinning;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.rainbow_spinning {
+	transform-origin:0%;
+	animation-name: spinning, rainbow;
+	animation-duration: 1s;
+	font-size: 50px;
+	animation-iteration-count: infinite;
+}
