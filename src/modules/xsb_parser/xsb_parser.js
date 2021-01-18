@@ -70,12 +70,23 @@ function getStatementBounds(script, n)
 {
 	let newline = 0;
 	let indices = indexOfAll('.', script);
+	let column = 0;
 
-	for (let i = 0; i <= n; i++) {
-		if (script.substring(0, indices[i]).search('\n') != -1) {
+	for (column; column <= n; column++) {
+		if (script.substring(0, indices[column]).search('\n') != -1) {
 			newline++;
 		}
 	};
+
+	let lineNumbers = indexOfAll('\n', script)
+	// lineNumber = 0
+	while(lineNumbers[lineNumber] < indices[n])
+		lineNumber++
+	lineNumber--
+
+	if (newline < 0) {
+		newline = 0;
+	}
 
 	if (n == 0) {
 		return {
