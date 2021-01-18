@@ -68,24 +68,16 @@ function indexOfAll(re, str)
  */
 function getStatementBounds(script, n)
 {
-	let newline = 0;
 	let indices = indexOfAll('.', script);
-	let column = 0;
+	let lineNumbers = indexOfAll('\n', script);
+	let lineNumber = 0;
 
-	for (column; column <= n; column++) {
-		if (script.substring(0, indices[column]).search('\n') != -1) {
-			newline++;
-		}
-	};
-
-	let lineNumbers = indexOfAll('\n', script)
-	// lineNumber = 0
-	while(lineNumbers[lineNumber] < indices[n])
+	while(lineNumbers[lineNumber + 1] < indices[n])
 		lineNumber++
-	lineNumber--
+	// lineNumber--
 
-	if (newline < 0) {
-		newline = 0;
+	if (lineNumber < 0) {
+		lineNumber = 0;
 	}
 
 	if (n == 0) {
@@ -96,18 +88,18 @@ function getStatementBounds(script, n)
 			},
 			End: {
 				column: 0,
-				lineNumber: newline	
+				lineNumber: lineNumber
 			}
 		}
 	} else {
 		return {
 			Start: {
 				column: n - 1, // FIXME
-				lineNumber: newline - 1 // FIXME
+				lineNumber: lineNumber
 			},
 			End: {
 				column: n, // FIXME
-				lineNumber: newline
+				lineNumber: lineNumber + 1
 			}
 		}
 	}

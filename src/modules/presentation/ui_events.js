@@ -1,6 +1,6 @@
 var Menubar = 
 {
-	newButtonClicked: function(){},
+	newButtonClicked: function(){}, 
 	openButtonClicked: function(){},
 	fileInputClicked: function(){},
 	saveButtonClicked: function(){}
