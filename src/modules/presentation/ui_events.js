@@ -27,10 +27,10 @@ var TextEditor =
 function xsbParserErrorToMonacoError(error)
 {
 	return {
-		startLineNumber: error.Start.lineNumber,
-		startColumn: error.Start.column,
-		endLineNumber: error.End.lineNumber,
-		endColumn: error.End.column,
+		startLineNumber: error.Start.lineNumber + 1,
+		startColumn: error.Start.column + 1,
+		endLineNumber: error.End.lineNumber + 1,
+		endColumn: error.End.column + 2, // Indexing starts from 1 and is end-exclusive in monaco
 		message: error.message + '\n',
 		severity: monaco.MarkerSeverity.Error
 	}
