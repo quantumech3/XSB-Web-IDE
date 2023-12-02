@@ -10,7 +10,9 @@ def generic_response(file):
 		if ".wasm" in file: # Manually send file with mimetype according to extension (Flask mimetype inference is bad)
 			return send_from_directory('./src/modules/terminal/', file, mimetype="application/wasm")
 		elif ".js" in file:
-			return send_from_directory('./src/modules/terminal/', file, mimetype="text/javascript")
+			res = send_from_directory('./src/modules/terminal/', file, mimetype="text/javascript")
+			res.headers["Cross-Origin-Embedder-Policy"] = "credentialless"
+			return res
 		return send_from_directory('./src/modules/terminal/', file)
 		
 	return send_from_directory("./src/", file)
@@ -18,7 +20,10 @@ def generic_response(file):
 # Send main webpage when "/" url is queried by client
 @server.route("/")
 def home():
-	return send_from_directory("./src/modules/presentation/", "index.html")
+	res = send_from_directory("./src/modules/presentation/", "index.html")
+	res.headers["Cross-Origin-Opener-Policy"] = "same-origin"
+	res.headers["Cross-Origin-Embedder-Policy"] = "require-corp"
+	return res
 
 # Start server on port 8000
 server.run("localhost", "8000")
